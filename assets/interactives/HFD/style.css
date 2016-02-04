@@ -1,0 +1,260 @@
+.transformer{
+	display:none;
+}
+.line{
+	stroke-width:3;
+	fill-opacity:.2
+}
+#ob0line{
+	stroke:#6464E2;
+	fill:#6464E2;
+}
+#ob1line{
+	stroke:#F75C5C;
+	fill:#F75C5C;	
+}
+#ob2line{
+	stroke:#C9C935;
+	fill:#C9C935;
+}
+#ob3line{
+	stroke:#35C9C9;
+	fill:#35C9C9;
+}
+#chart-wrapper{
+}
+.axis, .label{
+	font-family:arial;
+}
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.year-label{
+	font-size:80px;
+	opacity:.2;
+	font-family:arial;
+}
+
+nav ul li #countryH{
+    text-align: left;
+    width: 278px;
+}
+.countryselector{
+	height:29px;
+}
+
+ul {
+	margin:0px;
+	padding:0px;
+}
+li {
+	display:inline;
+	float:left;
+}
+.tfr {
+	padding: 5px;
+}
+.handle{
+	cursor:col-resize;
+	fill:#fff;
+	stroke:#2E2E2E;
+	stroke-width:2px;
+	height:20px;
+}
+.axis .halo {
+  fill: none;
+  stroke: #2E2E2E;
+  stroke-width: 2px;
+  stroke-linecap: round;
+  padding:7px;
+}
+.styled-select select {
+   background: transparent;
+   border: none;
+   font-size: 14px;
+   height: 29px;
+   padding: 5px;
+   width: 268px;
+   cursor:pointer;
+   background: url(arrow-01.png) no-repeat 85% 0;
+   background-size: 29px 29px;
+   -webkit-appearance:none;
+}
+
+.styled-select {
+   height: 29px;
+   overflow: hidden;
+   width: 240px;
+
+}
+
+select{
+	font-size: 16px;
+	-webkit-appearance: none;
+	-webkit-border-radius: 0px;
+}
+option{
+	-webkit-appearance: none;
+}
+#ob0,.blue select,.blue select option{
+	background-color:#E0E0F9;
+	color:#6464E2;
+}
+.blue select:hover{
+	background-color:#6464E2;
+	color:#E0E0F9;
+	-webkit-background-color:#6464E2;
+	-webkit-color:#E0E0F9;
+}
+
+#ob1,.red select, .red select option{
+	background-color:#FDDEDE;
+	color:#F75C5C;
+}
+.red select:hover{
+	background-color:#F75C5C;
+	color:#FDDEDE;
+}
+#ob2,.yellow select,.yellow select option{
+	background-color:#F4F4D7;
+	color:#C9C935;
+}
+.yellow select:hover{
+	background-color:#C9C935;
+	color:#F4F4D7;
+}
+
+#ob3,.teal select,.teal select option{
+	background-color:#D7F4F4;
+	color:#35C9C9;
+}
+.teal select:hover{
+	background-color:#35C9C9;
+	color:#D7F4F4;
+}
+
+
+
+/*
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { 
+     Retina-specific stuff here 
+    .styled-select select {
+	   background: transparent;
+	   border: none;
+	   font-size: 28px;
+	   height: 58px;
+	   padding: 10px;
+	   width: 536px;
+	   background: url(Arrow-01.png) no-repeat 90% 0;
+	}
+
+	.styled-select {
+	   height: 58px;
+	   overflow: hidden;
+	   width: 480px;
+	}
+
+	.blue select{
+		background-color:#E0E0F9;
+		color:#6464E2;
+		border-color:#6464E2;
+	}
+
+	.red select{
+		background-color:#FDDEDE;
+		color:#F75C5C;
+		border-color:#F75C5C;
+	}
+	.yellow select{
+		background-color:#F4F4D7;
+		color:#C9C935;
+		border-color:#C9C935;
+	}
+	.teal select{
+		background-color:#D7F4F4;
+		color:#35C9C9;
+		border-color:#35C9C9;
+
+	}
+
+}
+
+Definitely Using*/
+
+
+.align-left{
+	text-align:left;
+}
+.align-right{
+	text-align:right;
+}
+#headers{
+	background-color:#2E2E2E;
+    color:#fff;
+    font-size:18px;
+    font-family:"Arial";
+    margin:0px;
+    padding:0px;
+}
+/*.chart{
+	width: 100%;
+}*/
+nav {
+    width: 100%;
+}
+
+nav ul {
+    display: flex;
+    flex-direction: row;
+    
+}
+
+nav ul li {
+    list-style: none;
+    flex-grow: 1;
+}
+
+nav ul li a {
+    display: block;
+    text-align: right;
+    padding:5px;
+    margin:0px;
+    font-family:arial;
+    font-size:14px;
+}
+#chart0wrapper #anim-wrapper{
+	width:100%;
+	overflow:hidden;
+}
+#chart0slider {
+	margin-left:2px;
+	float:left;
+	margin-top:15px;
+}
+#play-wrapper{
+	float:left;
+	background-color:#000;
+	height:48px;
+	width:48px;
+}
+#play-wrapper:hover{
+	background-color:#f0f0f0;
+	cursor:pointer;
+}
+div #play-controller{
+	float:bottom;
+	height:48px;
+	width:48px;
+	background-size: 48px 48px;
+}
+.playing{
+	background: url(pausebutton-01.png) no-repeat 0% 0;
+
+}
+.paused{
+	background: url(playbutton-01.png) no-repeat 0% 0;
+}

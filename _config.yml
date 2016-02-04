@@ -1,21 +1,96 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely need to edit after that.
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'jekyll serve'. If you change this file, please restart the server process.
+title:            Charts On Charts
+description:      All things charts.
+disqus_shortname: chartsoncharts
+reading_time:     false
+words_per_minute: 200
+logo:             images/logo.png
+# Your site's domain goes here (eg: //mmistakes.github.io, http://mademistakes.com, etc)
+# When testing locally leave blank or use http://localhost:4000
+# url: http://aronbordin.com/neo-hpstr-jekyll-theme
 
-# Site settings
-title: Charts On Charts
-email: stephen@holzmansmith.com
-description: > # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://yourdomain.com" # the base hostname & protocol for your site
-twitter_username: jekyllrb
-github_username:  jekyll
+menu:
+  - title: 'Home'
+    url: '/'
+  - title: 'Articles'
+    url: '/articles'
+    type: 'articles'
+  - title: 'Tags'
+    url: '/tags'
+  - title: 'About'
+    url: '/about'
+  #- title: 'Favorites'
+    #url: '#'
+    #submenu:
+     # - title: 'highlighter'
+      #  url: '/code-highlighting-post/'
+      #- title: 'intro'
+      #  url: '/readability-post/'
 
-# Build settings
-markdown: kramdown
+# Owner/author information
+owner:
+  name:           Stephen Holzman
+  site:           http://chartsoncharts.com
+  avatar:         images/avatar.jpg
+  bio:            "Data. Code. Art. Curious about the world and the people in it."
+  email:          stephen@chartsoncharts.com
+  # Social networking links used in footer. Update and remove as you like.
+  twitter: StephenHolz
+  facebook:
+  github: 
+  stackexchange:
+  linkedin:
+  instagram:
+  flickr:
+  tumblr:
+  # google plus id, include the '+', eg +AronBordin
+  google_plus:    +yourid
+
+social:
+  - title: "github"
+    url: "https://github.com/StephenHolzman"
+  - title: "linkedin"
+    url: "https://www.linkedin.com/in/stephen-holzman-14499aa7"
+  - title: "youtube"
+    url: "https://www.youtube.com/channel/UCqjTlEbIB8BuBjgiUTu--hg"
+# Background image to be tiled on all pages
+background:
+
+# Analytics and webmaster tools stuff goes here
+google_analytics: UA-73122018-1
+google_verify:
+# https://ssl.bing.com/webmaster/configure/verify/ownership Option 2 content= goes here
+bing_verify:
+
+# http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+timezone:    America/New_York
+future:      true
+highlighter: pygments
+markdown:    kramdown
+gems:
+  - jekyll-sitemap
+sass:
+  sass_dir: _sass
+  style: compressed
+
+# https://github.com/mojombo/jekyll/wiki/Permalinks
+permalink:   /:categories/:title/
+
+# Amount of post to show on home page
+paginate: 5
+
+kramdown:
+  auto_ids: true
+  footnote_nr: 1
+  entity_output: as_char
+  toc_levels: 1..6
+  enable_coderay: true
+
+  coderay:
+    coderay_line_numbers: nil
+    coderay_line_numbers_start: 1
+    coderay_tab_width: 4
+    coderay_bold_every: 10
+    coderay_css: class
+
+include: [".htaccess"]
+exclude: ["lib", "config.rb", "Capfile", "config", "Gemfile", "Gemfile.lock", "README.md", "LICENSE", "log", "Rakefile", "Rakefile.rb", "tmp", "less", "*.sublime-project", "*.sublime-workspace", "test", "spec", "Gruntfile.js", "package.json", "node_modules"]
