@@ -1,0 +1,664 @@
+---
+layout: post
+title: Population Distribution Code
+description: "D3 and R code to visualize population counts from the Human Mortality Database"
+modified: 2016-02-11
+tags: [D3, code, R]
+categories: [Code]
+author: "Stephen Holzman"
+image: "age-dist-code.png"
+---
+
+This visualization was treated mostly as a sketch for future modular code that is waiting on my JavaScript skills to grow a bit. It's likely I'm reinventing the wheel for a lot of this and I just need to stumble upon more blog posts to find better predefined functions and practices.
+
+The biggest goals were met:
+
+* Be responsive to device.
+* Give the user control to answer their own questions.
+
+Still to come:
+
+* Modular design for future/reusable charts.
+* Skimped on some aesthetic polishing.
+* Replace lazy remove-add transitions.
+
+One important decision that should stick is borrowing the 'demogdata' object structure from <a href="https://cran.r-project.org/web/packages/demography/index.html" target="_blank">Rob Hyndman's demography R package</a> when visualizing population data. I want to make it as easy as possible to lift code here for other peoples' projects as much as my own. A great way to do that is to complement existing tools.
+
+Of note, I'm also pulling in country data to the browser only as needed for this one rather than slamming users with 8mb of data up front. The R Code below produces a json file for each country in addition to one unused big file. Belgium also has some missing values that breaks the code and is left out for that reason.
+
+{% highlight R %}
+library(demography)
+library(HMDHFDplus)
+library(jsonlite)
+
+HMDcountries <- getHMDcountries()
+HFCcountries <- getHFCcountries(names=TRUE)
+
+count <- 1
+countries <-NULL
+countrykey <-NULL
+for (country in HMDcountries){
+  tempmatrix <- hmd.pop(country,"username","password")
+  tempmatrix <- extract.ages(tempmatrix, age=0:100)
+  
+  tempmatrix$label <- HFCcountries[match(country,HFCcountries$Code),1]
+  if(country == "FRATNP"){
+    tempmatrix$label <- "France, Total Population"
+  }
+  if(country == "FRACNP"){
+    tempmatrix$label <- "France, Civilians"
+  }
+  if(country == "NZL_NP"){
+    tempmatrix$label <- "New Zealand, Total"
+  }
+  if(country == "NZL_MA"){
+    tempmatrix$label <- "New Zealand, Maori"
+  }
+  if(country == "NZL_NM"){
+    tempmatrix$label <- "New Zealand, Non-Maori"
+  }
+  if(country == "GBRCENW"){
+    tempmatrix$label <- "UK, England/Wales Civilians"
+  }
+  if(country == "GBRTENW"){
+    tempmatrix$label <- "UK, England/Wales Total"
+  }
+  class(tempmatrix) <- NULL
+  tempmatrix$pop$total <- NULL
+  countries[count]<-list(tempmatrix)
+  names(countries)[count] <- country
+
+  countrykey$label <- tempmatrix$label
+  names(countrykey)[count] <- country
+  tempjson <- toJSON(tempmatrix,digits=6,pretty=TRUE)
+  write(tempjson,paste("~/some/location/data/",country,".json",sep=""))
+  count <- count + 1
+}
+
+alldata <- toJSON(countries,digits=6,pretty=TRUE)
+write(alldata,paste("~/some/location/data/alldata.json",sep=""))
+countrykey$BEL <- NULL
+countrykeyjson <- toJSON(countrykey,pretty=TRUE)
+write(countrykeyjson,"~/some/location/data/countrykey.json")
+{% endhighlight %}
+
+{% highlight JavaScript %}
+<!DOCTYPE html>
+<meta charset="utf-8"/>
+<link rel="stylesheet" href="style.css" type="text/css" media="screen"/>
+
+<div id="main-wrapper"></div>
+<noscript>
+
+<figure>
+  <img src="/images/usa-vs-japan-fertility.gif" alt="">
+  <figcaption>You need to enable JavaScript to view the full interactive version of this chart.</figcaption>
+</figure>
+
+</noscript>
+<script src="/assets/d3/d3.min.js"></script>
+
+<script>
+var variables = {
+	"CountrySelect":{
+		"title":"Select Country Below",
+		"smalltitle":"Country",
+		"type":"select",
+		"align":"align-left"
+	},
+	"TotalPopulation":{
+		"title":"Total Population",
+		"smalltitle":"Population",
+		"type":"stat",
+		"align":"align-right",
+		"get":"fertilityrates"
+	}
+};
+
+var observations = {
+	"ob0":{
+		"color":"blue",
+		"default":"United States of America",
+		"id":"ob0",
+		"label":"United States of America",
+		"code":"USA"
+	}
+}
+var target = "#main-wrapper";
+var id = "chart0";
+
+var controller_table = function(target,variables,observations,id,data){
+
+	//
+	var table = d3.select(target).append("div")
+										.attr("id",id)
+										.attr("class","controller_table");
+	var headers = table.append("nav")
+							.attr("id","headers")
+							.append("ul");
+
+
+	for (variable in variables){
+		
+		headers.append("li")
+				.append("a")
+				.attr("id",variable)
+				.attr("class",eval("variables."+variable+".align")+" "+eval("variables."+variable+".type"))
+				.text(eval("variables."+variable+".title"));
+	};
+
+	for(observation in observations){
+
+		var row = table.append("nav")
+							.attr("id",eval("observations."+observation+".id"))
+							.append("ul");
+
+		for(variable in variables){
+			if(eval("variables."+variable+".type")==="select"){
+
+				//Append list items and appropriate containers for select
+				var selector = row.append("li")
+									.append("div")
+									.attr("id",eval("observations."+observation+".id")+"dropdown")
+									.attr("class",eval("observations."+observation+".color")+" styled-select")
+									.append("select")
+									.attr("id",eval("observations."+observation+".id")+"selection");
+				
+				selector.on("change",function(){
+					d3.select(".year-label").remove();
+					var sel = document.getElementById(this.id);
+					var opts = sel.options;
+					var fullid = this.id;
+					index = 0;
+					observations[fullid.slice(0,3)].code = opts[[this.selectedIndex][0]].getAttribute("code");
+					observations[fullid.slice(0,3)].label = opts[[this.selectedIndex][0]].innerHTML;
+					d3.select("#chart-wrapper").remove();
+					d3.select("#anim-wrapper").remove();
+					
+					load_country();
+					paused = true;
+					//setTimeout(timer,speed);
+					
+				});
+				//Populate Select Options
+				selector.append("option")
+						.text("None")
+						.attr("code","None");
+						
+				
+				
+				for(item in data){
+					selector.append("option")
+							.attr("code",item)
+							.text(eval("data."+item+"[0]"));
+				};
+
+
+				//Set Default Select Options
+				var sel = document.getElementById(eval("observations."+observation+".id")+"selection");
+				var opts = sel.options;
+
+				for(var opt, j = 0; opt = opts[j]; j++) {
+					if(opt.value === eval("observations."+ observation +".default")) {
+	    				sel.selectedIndex = j;	    	
+	    				break;
+	    			}
+				};
+
+
+			}else if(eval("variables."+variable+".type")==="stat"){
+
+				row.append("li")
+					.append("a")
+					.attr("id",observation+"stat");
+			};
+			
+		};
+
+
+	};
+};
+
+var draw_popdist = function(target,id,country,data){
+
+	get_tickmarks(country,data);
+
+	var margin = {
+		top: 0,
+		bottom: 0,
+		left: 0,
+		right: 10,
+		middle: 50
+	}
+
+	width = window.innerWidth*.35;
+	height = 300;
+	bins = d3.range(101);
+	yScale = d3.scale.ordinal()
+				.domain(bins).rangeBands([height,0],-.3);
+
+	xScale1 = d3.scale.linear()
+				.domain([0,maxtick])
+				.range([0,width]);
+
+	xScale2 = d3.scale.linear()
+				.domain([0,maxtick])
+				.range([width,0]);
+
+	xAxis1 = d3.svg.axis()
+					.scale(xScale1)
+					.orient("bottom")
+					.ticks(3)
+					.tickFormat(function(d){
+						if(d === 0){
+							return d;
+						}else if(d < 1000000){
+							return d/1000 + "K";
+						}else{
+							return d/1000000 + "M";
+						};
+					});
+
+	xAxis2 = d3.svg.axis()
+					.scale(xScale2)
+					.orient("bottom")
+					.ticks(3)
+					.tickFormat(function(d){
+						if(d === 0){
+							
+						}else if(d < 1000000){
+							return d/1000 + "K";
+						}else{
+							return d/1000000 + "M";
+						};
+					});
+
+	yAxis2 = d3.svg.axis()
+					.scale(yScale)
+					.orient("left")
+					.ticks(2)
+					.tickFormat(function(d){
+						if (d === 100){
+							return ""
+						}else if(d % 10 === 0){
+							return d;
+						};
+					});
+
+	yAxis1 = d3.svg.axis()
+					.scale(yScale)
+					.orient("right")
+					.ticks(2)
+					.tickFormat(function(d){
+						if (d === 100){
+							return ""
+						}else if(d % 10 === 0){
+							return d;
+						};
+					});
+
+	chart = d3.select(target)
+				.append("svg")
+				.attr("id","chart-wrapper")
+				.attr("width",window.innerWidth*.9)
+				.attr("height",height + 40)
+
+	femaleLabel = chart.append("text")
+					.attr("class","sex-label")
+					.attr("text-anchor","end")
+					.attr("x",window.innerWidth*.35)
+					.attr("y",80)
+					.attr("font-family","arial")
+					.attr("fill","#8888D3")
+					.text("Females");
+
+	maleLabel = chart.append("text")
+					.attr("class","sex-label")
+					.attr("text-anchor","end")
+					.attr("x",window.innerWidth*.70)
+					.attr("y",80)
+					.attr("font-family","arial")
+					.attr("fill","#6464E2")
+					.text("Males");
+
+	leftAxis = chart.append("g")
+					.attr("class","x axis")
+					.attr("transform", "translate("+window.innerWidth*.1+"," + height + ")")
+					.call(xAxis2);
+
+	rightAxis = chart.append("g")
+					.attr("class","x axis")
+					.attr("transform", "translate("+window.innerWidth*.45+"," + height + ")")
+					.call(xAxis1);
+
+	leftVertAxis = chart.append("g")
+						.attr("class","y axis")
+						.attr("transform", "translate("+window.innerWidth*.1+",0)")
+					.call(yAxis2);
+
+	rightVertAxis = chart.append("g")
+						.attr("class","y axis")
+						.attr("transform", "translate("+window.innerWidth*.80+",0)")
+						.call(yAxis1);
+
+}
+var get_population = function(country,data,index){
+	femalepop = [];
+	malepop = [];
+	year = eval("data.year["+index+"]")
+	ageslength = eval("data.age.length");
+	for(var i = 0; i < ageslength; i++){
+		femalepop[i] = eval("data.pop.female["+i+"]["+index+"]")
+		malepop[i] = eval("data.pop.male["+i+"]["+index+"]")
+	}
+	//console.log(femalepop);
+	//console.log(year);
+}
+var rTransform = function(d,i) {
+    return "translate("+window.innerWidth*.45+","+yScale(i).toFixed(2)+")";
+}
+var lTransform = function(d,i) {
+    return "translate("+(xScale2(d)+window.innerWidth*.10)+","+yScale(i).toFixed(2)+")";
+}
+var draw_bars = function(){
+	chart.selectAll("rect.male")
+		.data(malepop)
+		.enter()
+		.append("rect")
+		.attr("class","male")
+		.attr("fill","#6464E2")
+		.attr("transform",rTransform)
+		.attr("width",function(d){return xScale1(d)})
+		.attr("height",yScale.rangeBand())
+		.attr("y",0)
+		.attr("opacity",.5);
+
+	chart.selectAll("rect.female")
+		.data(femalepop)
+		.enter()
+		.append("rect")
+		.attr("class","female")
+		.attr("fill","#8888D3")
+		.attr("transform",lTransform)
+		.attr("width",function(d){return xScale1(d)})
+		.attr("height",yScale.rangeBand())
+		.attr("y",0)
+		.attr("opacity",.5)
+	d3.select(".year-label").remove();
+	yearLabel = chart.append("text")
+					.attr("class","year-label")
+					.attr("text-anchor","end")
+					.attr("x",window.innerWidth*.75)
+					.attr("y",60)
+					.attr("font-family","arial")
+					.attr("fill","#000")
+					.text(eval("globaldata.year["+index+"]"));
+
+}
+var get_tickmarks = function(country,data){
+	var allcounts = [];
+	//Just in case you want custom ticks
+	ticks = null;
+	for(sex in eval("data.pop")) {
+
+		for(var i = 0, length = eval("data.pop."+sex+".length"); i < length; i++){
+
+			for(var j = 0, length2 = eval("data.pop."+sex+"["+i+"]"+".length"); j < length2; j++){
+				if(j % 10 === 0){
+					allcounts.push(Math.max(...eval("data.pop."+sex+"["+i+"]")));
+				};				
+			};
+		};
+
+	};
+	var maxcount = Math.max(...allcounts);
+	var i = 0;
+	var ceilingfound = false;
+
+	while(ceilingfound === false){
+		if(i < 7){
+			if(maxcount*1.15 < 1000*Math.pow(2,i)){
+				maxtick = 1000*Math.pow(2,i);
+				ticks = [0,maxtick/4,maxtick/2,maxtick*3/4,maxtick];
+				console.log(maxcount);
+				ceilingfound = true;
+			};
+		}else if(i < 17){
+			if(maxcount*1.15 < 100000*(i-7)){
+				maxtick = 100000*(i-7);
+				ticks = [0,maxtick/4,maxtick/2,maxtick*3/4,maxtick];
+				console.log(maxcount);
+				ceilingfound = true;
+			}
+		}else{
+			if(maxcount*1.15 < 1000000*(i-17)){
+				maxtick = 1000000*(i-17);
+				ticks = [0,maxtick/4,maxtick/2,maxtick*3/4,maxtick];
+				console.log(maxcount);
+				ceilingfound = true;
+			};
+		};
+		i++
+	};
+};
+//Setup slider input variables
+var slider_id = "chart0",
+	slider_dimensions = {"width":window.innerWidth*.6,"height":20};
+
+//Function that adds a slider to the DOM, same definitons as draw_2dchart with manipulated_variable being the year variable in this viz.
+
+var controller_slider = function(target,id,dimensions,manipulated_variable,data,country){
+
+	//Slider setup
+	slideMargin = {top: 2, right: 7, bottom: 2, left: 10},
+    slideWidth = window.innerWidth*.75 - slideMargin.left - slideMargin.right,
+    slideHeight = 20 - slideMargin.bottom - slideMargin.top;
+
+	xBar = d3.scale.linear()
+		        .domain([0,eval("data.year.length")-1])
+		        .range([0, slideWidth]);
+
+	//Establish brush 
+	var brush = d3.svg.brush()
+		        .x(xBar)
+		        .extent([0,0])
+		        .on("brush", brushed);
+
+	//Add svg and g element to the target wrapper
+	svgSlider = d3.select(target).append("svg")
+		    	.attr("id",id+"slider")
+		        .attr("width", slideWidth + slideMargin.left + slideMargin.right)
+		        .attr("height", slideHeight + slideMargin.top + slideMargin.bottom)
+		        .append("g")
+		        .attr("transform", "translate(" + slideMargin.left + "," + slideMargin.top + ")");
+	//transform it
+	svgSlider.append("g")
+		        .attr("class", "x axis")
+		        .attr("transform", "translate(0," + slideHeight / 2 + ")")
+		        .call(d3.svg.axis()
+		            .scale(xBar)
+		            .orient("bottom")
+		            .ticks(0)
+		            .tickSize(0)
+		            .tickPadding(12))
+		        .select(".domain")
+		        .select(function() { return this.parentNode.appendChild(this.cloneNode(true)); })
+		            .attr("class", "halo");
+
+	slider = svgSlider.append("g")
+		        .attr("class", "slider")
+		        .call(brush);
+
+	slider.selectAll(".extent,.resize")
+		        .remove();
+
+	slider.select(".background")
+		        .attr("height", slideHeight)
+		        .style("cursor", "col-resize");
+
+	//Append the handle circle to the slider. Could be another shape.
+	handle = slider.append("circle")
+		        .attr("class", "handle")
+		        .attr("transform", "translate(0," + slideHeight / 2 + ")")
+		        .attr("r", 6)
+		        .attr("cx", xBar(index));
+	
+	//Update the year value, this could use some cleaning for lifting function to future projects
+	var year_value = d3.select("#year_value");
+		    
+	year_value.text(manipulated_variable);
+
+
+	//Brushed function
+	function brushed() {
+    	
+    	//Stop the animation!
+	    slider_brushed = true;
+	    paused = true;
+
+	    value = brush.extent()[0];
+	        
+	    if (d3.event.sourceEvent) {
+		    value = Math.round( xBar.invert(d3.mouse(this)[0]) );
+		    if (value < 0) value = 0;
+		    else if (value > eval("data.year.length")-1) value = eval("data.year.length")-1;
+		    brush.extent([value, value]);
+		            
+		    year_value.text(value);
+		    handle.attr("cx", xBar(value));
+
+		    index = value;
+		    d3.select("#chart-wrapper").selectAll("rect").remove();
+		    get_population(observations.ob0.code,data,index);
+
+		    draw_bars();
+		    //update_lines(.001);
+		    d3.select(".year-label")
+		    	.text(eval("globaldata.year["+index+"]"));
+
+    	};
+
+    	
+	};	           
+};
+function controller_animation(target){
+	var anim_wrapper = d3.select(target)
+			.append("div")
+			.attr("id","anim-wrapper")
+
+	var background = d3.select("#anim-wrapper")
+		.append("div")
+		.attr("id","play-wrapper")
+
+	var playpause = d3.select("#play-wrapper")
+		.append("div")
+		.attr("id","play-controller")
+		.attr("class","playing")
+		//.attr("transform", "translate("+window.innerWidth*.1+",0)")
+		
+
+	d3.select("#play-controller").on("click",function(){
+		if (paused === true){
+			paused = false;
+			d3.select(this).attr("class","playing");
+			setTimeout(timer,speed);
+		}else{
+			paused = true;
+			d3.select(this).attr("class","paused")
+		};
+	});
+
+};
+
+
+function timer(){
+	if (paused === false){
+
+		d3.select(".year-label")
+			    	.text(eval("globaldata.year["+index+"]"));
+
+		if (index === 0){
+
+			handle.attr("cx", xBar(index));
+
+			d3.select("#chart-wrapper").selectAll("rect").remove();
+		    get_population(observations.ob0.code,globaldata,index);
+
+		    draw_bars();
+
+			index = index + 1;
+			setTimeout(timer,speed*3);
+		}else if (index < eval(eval("globaldata.year.length")-1)){
+			
+			handle.attr("cx", xBar(index));
+
+			d3.select("#chart-wrapper").selectAll("rect").remove();
+		    get_population(observations.ob0.code,globaldata,index);
+
+		    draw_bars();
+
+			index = index + 1;
+			setTimeout(timer,speed);
+		}else{
+			
+			handle.attr("cx", xBar(index));
+			d3.select("#chart-wrapper").selectAll("rect").remove();
+		    get_population(observations.ob0.code,globaldata,index);
+
+		    draw_bars();
+
+			index = 0;
+			setTimeout(timer,speed*16);		
+		};
+	}else{
+		d3.select("#play-controller").attr("class","paused")
+		//index = index-1
+		d3.select(".year-label")
+			    	.text(eval("globaldata.year["+index+"]"));
+	};
+	console.log(speed+" "+index);	
+};
+globaldata = null;
+
+function resize(){
+		//paused = true;
+
+		d3.select("#chart-wrapper").remove();
+		d3.select("#anim-wrapper").remove();
+		d3.select("#play-controller")
+			.attr("class","paused");
+		draw_popdist(target,"popdist",observations.ob0.code,globaldata);
+		get_population(observations.ob0.code,globaldata,index);
+		draw_bars();
+		controller_animation(target);
+		controller_slider("#anim-wrapper",slider_id,slider_dimensions,index,globaldata,observations.ob0.code);
+		
+
+};
+
+d3.select(window).on('resize',resize);
+index = 0;
+speed = 100;
+paused = true;
+
+d3.json("data/countrykey.json",function(key){
+	globalkey = key;
+	controller_table(target,variables,observations,id,key);
+});
+function load_country(){
+	d3.json("data/"+observations.ob0.code+".json", function(data) {
+		globaldata = data;
+		draw_popdist(target,"popdist",observations.ob0.code,data);
+		get_population(observations.ob0.code,data,index);
+		draw_bars();
+		controller_animation(target);
+		controller_slider("#anim-wrapper",slider_id,slider_dimensions,index,globaldata,observations.ob0.code);
+		setTimeout(timer(),speed);
+	});
+};
+load_country();
+
+
+
+</script>
+{% endhighlight %}

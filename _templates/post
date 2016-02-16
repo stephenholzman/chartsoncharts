@@ -6,9 +6,7 @@ categories: {{ dir }}
 description:
 tags: []
 image:
-  feature:
-  credit:
-  creditlink:
+	feature:
 comments:
 share:
 author: {{ author }}

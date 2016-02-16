@@ -1,12 +1,8 @@
 ---
 layout: page
 title: About All This...
-image:
-  feature: abstract-5.jpg
-  credit: dargadgetz
-  creditlink: http://www.dargadgetz.com/ios-7-abstract-wallpaper-pack-for-iphone-5-and-ipod-touch-retina/
 comments: false
-modified: 2014-12-24
+modified: 2016-02-12
 author: "Stephen Holzman"
 ---
 
@@ -31,6 +27,8 @@ There will always be a heavy emphasis on creating interactive charts that encour
 
 ## My Biography
 
-After graduating with a BS in Economics from FSU in 2012, I cofounded a studio-hostel-film project called <a href="http://www.thewitnessroom.com"> The Witness Room</a> to help small bands get on YouTube and promote their tours. As something of a news junkie, that inevitably lead to exploring other kinds of documentary filmmaking where subject-matter expertise is useful. I started learning to program in 2014 and picked up a Masters in Demography in 2015 so I can pretend to know what I'm talking about.
+After graduating with a BS in Economics from Florida State University in 2012, I cofounded a studio-hostel-film project called <a href="http://www.thewitnessroom.com" target="_blank"> The Witness Room</a> to help bands passing through Tallahassee <a href="https://www.youtube.com/watch?v=AquHBSvT0jc" target="_blank">get on YouTube</a> and promote their tours. As something of a news junkie, that inevitably lead to exploring other kinds of documentary filmmaking where subject-matter expertise is useful. I started learning to program in 2014 and picked up a Masters in Demography in 2015 so I can pretend to know what I'm talking about. <a href="http://popcenter.fsu.edu/" target="_blank">The program has been pretty great about providing resources and helping me get up to speed if you are in the market for graduate school!</a>
 
 Mostly just curious about everything.
+
+Please send feedback, inquiries, and phishing attempts to **stephen@chartsoncharts.com**.
