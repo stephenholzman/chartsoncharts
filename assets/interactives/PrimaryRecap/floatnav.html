@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<meta charset="utf-8"/>
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+<link rel="stylesheet" href="style.css" type="text/css" media="screen"/>
+<script src="/assets/d3/d3.min.js"></script>
+<script src="/assets/js/date.js"></script>
+<script src="/assets/js/vendor/jquery-1.9.1.min.js"></script>
+
+
+
+<div id="container"></div>
+
+
+<script>
+//Polling Functions
+var today = new Date();
+var startDate = "new Date(2015,2,1)";
+
+
+var FirstOfMonth = function(date){
+	return new Date(date.getFullYear(), date.getMonth(), 1)
+};
+var LastOfMonth = function(date){
+	return new Date(date.getFullYear(), date.getMonth()+1,0)
+};
+
+var calc_xScale = function(){
+	if(current_mode === "Polling"){
+		if(month_view != "all"){
+			xScale = d3.time.scale()
+					.range([0, width])
+					.domain([FirstOfMonth(time_window),LastOfMonth(time_window)]);
+		}else if(month_view === "all"){
+			xScale = d3.time.scale()
+						.range([0, width])
+						.domain([FirstOfMonth(eval(startDate)),LastOfMonth(today)])
+		}
+		
+	}
+}
+
+var calc_xAxis = function(){
+	if(current_mode === "Polling"){
+		if(month_view != "all"){
+			xAxis = d3.svg.axis()
+						.scale(xScale)
+						.orient("bottom")
+						.ticks(5)
+						.tickFormat(d3.time.format('%d'));	
+		}else if(month_view === "all"){
+			xAxis = d3.svg.axis()
+						.scale(xScale)
+						.orient("bottom")
+						.ticks(4)
+						.tickFormat(function(d){
+							if(d.getMonth()!=0){
+								return d3.time.format("%b")(d)
+							}else{
+								return d3.time.format("%Y")(d)
+							}
+						});
+		};
+	};
+};
+
+
+var parseDate = d3.time.format("%Y%m%d").parse;
+var parseDate2 = d3.time.format("%Y-%m-%d").parse;
+var draw_polling_chart = function(target,party,top){
+	var margin = {top: 0, left: 100, bottom: 30, right: 10},
+		width = window.innerWidth - margin.right - margin.left,
+		height = (window.innerHeight - 192);
+
+	top = 126;
+	chart = d3.select(target)
+					.append("svg")
+					.attr("id",party+"_poll_chart")
+					.attr("class","poll_chart")
+					.attr("width","100%")
+					.attr("height",
+						"100%")
+					.style("position","fixed")
+					.style("top",126)
+					//.style("left",0)
+					.append("g")
+					.attr("transform","translate(" + margin.left + "," + margin.top + ")");
+
+	calc_xScale();
+
+	if(party==="republican"){
+		ydomain = [0,50]
+	}else if(party==="democrat"){
+		ydomain = [0,65]
+	}
+	var yScale = d3.scale.linear()
+					.range([height,0])
+					.domain(ydomain);
+
+	
+	calc_xAxis();
+	
+	var yAxis = d3.svg.axis()
+					.scale(yScale)
+					.orient("left")
+					.tickValues([0,10,20,30,40])
+					.tickFormat(function(d){return d + "%";});
+	var draw_axies = function(){
+		/*if(view === "full" ){
+			console.log(view);
+			xAxis = d3.svg.axis()
+						.scale(xScale)
+						.orient("bottom")
+						.tickFormat(function(d){
+							if(d.getMonth()!=0){
+								return d3.time.format("%b")(d)
+							}else{
+								return d3.time.format("%Y")(d)
+							}
+						});
+		};*/
+
+		var timeAxis = chart.append("g")
+						.attr("id","timeAxis")
+						.attr("class","x axis")
+						.attr("transform", "translate(0," + height + ")")
+						.call(xAxis);
+
+		var pollAxis = chart.append("g")
+					.attr("class", "y axis")
+					.call(yAxis)
+
+
+		
+	}
+	draw_axies();
+
+	var color = d3.scale.category10();
+	var line = d3.svg.line()
+	    .interpolate("basis")
+	    .x(function(d) { if(typeof d.Date != 'undefined') {return xScale(d.Date); }})
+	    .y(function(d) { if(typeof d.Date != 'undefined') {return yScale(d.pollavg); }});
+
+	d3.csv("gop_daily_avg.csv",function(data){
+		
+		color.domain(d3.keys(data[0]).filter(function(key) { return key !== "date" || key !== "Weekday"||key !=="Month"||key !=="MonthName"||key !=="Quarter"||key !=="Year"; }));
+		data.forEach(function(d){
+			d.Date = parseDate2(d.Date);
+		});
+
+		var candidates = color.domain().map(function(name) {
+				return {
+					name: name,
+					values: data.map(function(d) {
+						if(d[name] != "NA"){
+							return {date: d.Date, pollavg: +d[name]};
+						}	
+					})
+			};
+		});
+
+		/*
+		var candidate = chart.selectAll(".candidate")
+							.data(candidates)
+							.enter().append("g")
+							.attr("class","candidate");
+		
+		//chart.append("g")
+		/*
+		candidate.append("path")
+				.attr("class", "line")
+				.attr("d", function(d,i) { if(d.values.pollavg !="NA"){return line(d.values);}})
+				.style("stroke", function(d) { return color(d.name); });
+		console.log(candidates[4])
+*/
+
+
+		//console.log(data[0]);
+	});
+	var resize = function(){
+		width = window.innerWidth - margin.right - margin.left,
+		height = (window.innerHeight - 192);
+
+		xScale.range([0, width]);
+		yScale.range([height, 0]);
+		if(month_view === "all"){
+			console.log(startDate);
+			/*xScale.domain([FirstOfMonth(eval(startDate)),LastOfMonth(today)])*/
+			xAxis = d3.svg.axis()
+						.scale(xScale)
+						.orient("bottom")
+						.ticks(4)
+						.tickFormat(function(d){
+							if(d.getMonth()!=0){
+								return d3.time.format("%b")(d)
+							}else{
+								return d3.time.format("%Y")(d)
+							}
+						});
+
+			/*d3.select("#timeAxis").transition()
+				.duration(600)
+				.call(xAxis);*/
+		}else{
+			xAxis = d3.svg.axis()
+						.scale(xScale)
+						.orient("bottom")
+						.ticks(4)
+						.tickFormat(d3.time.format("%d"))
+		}
+		d3.selectAll(".axis").remove();
+		
+		draw_axies();
+
+		
+	};
+	d3.select(window).on("resize",resize);
+};
+draw_polling_chart("#container","republican",126);
+
+var update_month = function(){
+	if(current_mode === "Polling"){
+		xScale.domain([FirstOfMonth(month_view),LastOfMonth(month_view)])
+		xAxis = d3.svg.axis()
+					.scale(xScale)
+					.orient("bottom")
+					.ticks(4)
+					.tickFormat(d3.time.format('%d'));
+
+		d3.select("#timeAxis").transition()
+			.duration(600)
+			.call(xAxis);
+	}
+}
+var header = d3.select("#container")
+				.append("div")
+				.attr("id","header")
+
+var title = header.append("h1")
+				.text("Need to catch up with the election?")
+
+var subtitle = header.append("h3")
+				.text("Review the 2016 Presidential Primary")
+
+//Mode Control
+
+var mode_select = d3.select("#container")
+						.append("div")
+						.attr("id","top_navbar")
+						.attr("class","navbar horizontal")
+						.append("ul")
+
+var modes = ["Polling","Debates","Funding","Primaries","Tweets"]
+var current_mode = "Polling";
+for(mode in modes){
+	mode_select.append("li")
+		.attr("id",modes[mode])
+		.attr("class","active mode")
+		.append("a")
+		.text(modes[mode])
+		.on("click",function(){
+			d3.selectAll(".mode")
+				.attr("class","active mode");
+
+			d3.select(this.parentNode)
+				.attr("class","active selected mode");
+
+			current_mode = d3.select(this)[0];
+			console.log(current_mode)
+		})
+};
+
+d3.select("#Polling").attr("class","active selected mode");
+
+//Date Control
+
+
+month_view = eval(today);
+var draw_datebar = function(){
+	datebar = d3.select("#container")
+			.append("div")
+			.attr("id","bottom_navbar")
+			.attr("class","navbar horizontal")
+			.append("ul");
+
+	var fullview = datebar.append("li")
+		.attr("id","fullview")
+		.attr("class","active")
+		.append("a")
+		.text("Overview")
+
+	fullview.on("click",function(){
+		if(month_view != "all"){
+			
+			d3.select(this.parentNode).attr("class","selected");
+
+			d3.selectAll(".month-direct")
+					.attr("class","month-direct active");
+
+			d3.select("#previous").attr("class","inactive");
+			d3.select("#next").attr("class","inactive");
+			d3.select("#"+dateIDformat(today)).attr("class","month-direct active feature-month");
+
+			month_view = "all";
+			if(current_mode === "Polling"){
+				console.log(startDate);
+				xScale.domain([FirstOfMonth(eval(startDate)),LastOfMonth(today)])
+				xAxis = d3.svg.axis()
+							.scale(xScale)
+							.orient("bottom")
+							.ticks(5)
+							.tickFormat(function(d){
+								if(d.getMonth()!=0){
+									return d3.time.format("%b")(d)
+								}else{
+									return d3.time.format("%Y")(d)
+								}
+							});
+
+				d3.select("#timeAxis").transition()
+					.duration(600)
+					.call(xAxis);
+			}
+			setTimeout(function(){
+				d3.select("#previous").attr("class","inactive");
+				
+			},100)
+
+
+		}
+	});
+};
+draw_datebar();
+
+
+
+var previous = navbar.append("li")
+	.attr("id","previous")
+	.attr("class","active")
+	.append("a")
+	.text("Previous")
+
+previous.on("click",function(){
+	if(month_view != "all" && monthNameFormat(month_view) != "Mar '15"){
+		d3.select("#"+dateIDformat(view))
+			.attr("class","month-direct active")
+		
+		
+		month_view = month_view.previous().month();
+
+		update_month();
+		d3.select("#"+dateIDformat(month_view))
+			.attr("class","month-direct selected feature-month");
+		d3.select("#next").attr("class","active");
+
+		
+		d3.select("#next").attr("class","active");
+		
+		if(monthNameFormat(eval(startDate))===monthNameFormat(month_view)){
+			d3.select("#previous").attr("class","inactive");
+		}else{
+			d3.select("#previous").attr("class","active");
+		};
+	};
+});
+
+for(var month = eval(startDate); today > month; month = month.next().month()){
+	navbar.append("li")
+		.attr("id",dateIDformat(month))
+		.attr("class","month-direct active")
+		.append("a")
+		.text(monthNameFormat(month))
+		.on("click",function(){
+			d3.selectAll(".month-direct")
+				.attr("class","month-direct active");
+
+			d3.select(this.parentNode).attr("class","month-direct selected feature-month");
+
+			d3.select("#fullview").attr("class","active");
+
+			month_view = monthNameFormat.parse(d3.select(this).text());
+			update_month();
+			if(monthNameFormat(today)===monthNameFormat(month_view)){
+				d3.select("#next").attr("class","inactive");
+			}else{
+				d3.select("#next").attr("class","active");
+			};
+			if(monthNameFormat(eval(startDate))===monthNameFormat(month_view)){
+				d3.select("#previous").attr("class","inactive");
+			}else{
+				d3.select("#previous").attr("class","active");
+			};
+		});
+};
+
+d3.select("#"+dateIDformat(today)).attr("class","month-direct active feature-month selected")
+
+var next = navbar.append("li")
+	.attr("id","next")
+	.attr("class","inactive")
+	.append("a")
+	.text("Next")
+
+next.on("click",function(){
+	if(month_view != "all" && monthNameFormat(view) != "Feb '16"){
+		d3.select("#"+dateIDformat(view))
+			.attr("class","month-direct active")
+		
+		
+		month_view = month_view.next().month();
+		update_month();
+		d3.select("#"+dateIDformat(month_view))
+			.attr("class","month-direct selected feature-month");
+		d3.select("#previous").attr("class","active");
+		
+		if(monthNameFormat(new Date())===monthNameFormat(month_view)){
+			d3.select("#next").attr("class","inactive");
+		}else{
+			d3.select("#next").attr("class","active");
+		};
+		if(monthNameFormat(eval(startDate))===monthNameFormat(month_view)){
+			d3.select("#previous").attr("class","inactive");
+		}else{
+			d3.select("#previous").attr("class","active");
+		};
+	};
+});
+
+
+
+</script>

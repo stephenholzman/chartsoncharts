@@ -1,0 +1,163 @@
+#container{
+	padding:0px;
+	width:100%;
+	left:0;
+	top:0;
+	height:100%;
+}
+#header{
+	width: 100%;
+	top: 0px;
+	background-color: #333;
+	z-index:100;
+	left:0;
+	color:#FFF;
+	position:absolute;
+	font-family:arial;
+	height:90px;
+}
+h1{
+	margin-top:10px;
+	margin-bottom:3px;
+	padding:0px 16px;
+	font-size:20px
+}
+h3{
+	margin-top:0px;
+	padding:0px 16px;
+	font-size:12px;
+}
+.axis path, .axis line{
+  fill: none;
+  stroke: #000;
+
+}
+.tick line{
+	stroke-radius:4;
+}
+
+.horizontal{
+	position: fixed;
+	width: 100%;
+	z-index:100;
+	left:0;
+}
+#bottom_navbar{
+	background-color: #333;
+	bottom: 0px;
+}
+#top_navbar{
+	background-color:#666;
+	top:90px;
+}
+
+#Republican_poll_chart{
+
+}
+#top_navbar ul li{
+	width:15%;
+}
+.horizontal ul {
+	text-align:center;
+	text-style-type: none;
+	margin: 0;
+	padding: 0;
+	width:100%;
+	height:36px;
+}
+
+li {
+	text-align:center;
+	display: none;
+	padding: 8px 8px;
+	cursor:pointer;
+
+}
+#tweetHandle {
+	text-align:center;
+	display: none;
+	padding: 8px 8px;
+	cursor:pointer;
+	float:right;
+	color:white;
+}
+#tweetHandle:hover{
+	color:#55ACEE;
+}
+.partybutton:hover{
+
+}
+#Democrats_button:hover{
+	background-color:#2E7AC6;
+}
+#Republicans_button:hover{
+	background-color:#AF4A4A;
+}
+#Democrats_button{
+	background-color:#3E92F7;
+}
+#Republicans_button{
+	background-color:#F96E6E;
+}
+.partybutton{
+	fill:white;
+}
+.partybutton:hover, .partyselected{
+	cursor:pointer;
+	fill:yellow;
+}
+#previous, #next, .feature-month, #top_navbar ul li{
+	display: inline-block;
+}
+@media screen and (min-width: 370px){
+	h1{
+		font-size:24px;
+	}
+	h3{
+		font-size:14px;
+	}
+	#tweetHandle{
+		display:inline-block;
+	}
+}
+@media screen and (min-width: 463px){
+	h1{
+		font-size:26px;
+	}
+}
+@media screen and (min-width: 568px){
+	h1{
+		font-size:32px;
+	}
+	h3{
+		font-size:16px;
+	}
+}
+@media screen and (min-width: 1000px) {
+
+	#previous, #next{
+		display: none;
+	}
+    .horizontal li {
+       	display: inline-block;
+    }
+}
+.selected a{
+	display: inline-block;
+	color:yellow;
+}
+#fullview {
+	float:left;
+	display: inline-block;
+}
+
+.active{
+	color:#fff;
+}
+.inactive{
+	color:#222;
+}
+.active:hover{
+	background-color: #111;
+	color:yellow;
+}
