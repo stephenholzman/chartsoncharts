@@ -65,6 +65,23 @@ var calc_titles = function(){
 			title = "Polling - All"
 			subtitle = current_party;
 		};		
+	}else if(current_mode==="Debates"){
+		title = "Debates and Town Halls"
+		subtitle = current_party;
+	}else if(current_mode==="Funding"){
+		title = "Campaign Finance"
+		subtitle = current_party;
+	}else if(current_mode==="Primaries"){
+		title = "Primaries and Caucuses";
+		subtitle = current_party;
+	}else if(current_mode==="Tweets"){
+		if(month_view != "all"){
+			title = "Top Tweets" + " - " + monthNames[month_view.getMonth()] + " " + month_view.getFullYear();
+			subtitle = current_party;
+		}else if(month_view === "all"){
+			title = "Top Tweets - All"
+			subtitle = current_party;
+		};	
 	};	
 };
 var update_titles = function(fadeout,fadein){
@@ -127,6 +144,7 @@ var update_mode = function(){
 		.style("opacity",0)
 		.duration(500);
 	d3.select(".chart").remove();
+	update_titles(500,500);
 	setTimeout(function(){
 		if(current_mode === "Polling"){
 			draw_pollingChart("#container",current_party);
@@ -137,14 +155,12 @@ var update_mode = function(){
 
 			d3.selectAll(".partybutton").remove();
 			draw_partybars("#container");
-			update_titles();
 
 
 		};
-	},500);
-	
 
-}
+	},500);
+};
 //Time Controls
 var get_FirstOfMonth = function(date){
 
@@ -157,9 +173,7 @@ var get_LastOfMonth = function(date){
 var calc_dateformatters = function(){
 	monthNameFormat = d3.time.format("%b '%y");
 	dateIDFormat = d3.time.format("%b%y");
-
 }
-calc_dateformatters();
 var update_month = function(){
 	if(current_mode === "Polling"){
 		
@@ -176,9 +190,10 @@ var update_month = function(){
 			.duration(600)
 			.call(yAxis);
 
-		update_titles(500,500);
+		
 
 	};
+	update_titles(500,500);
 };
 var draw_datebar = function(selection,startdate,enddate){
 	datebar = d3.select(selection)
@@ -317,6 +332,54 @@ var draw_datebar = function(selection,startdate,enddate){
 
 	d3.select("#"+today).attr("class","month-direct active feature-month selected");
 };
+//Candidate Controls
+var draw_candidateAvatar = function(selection,candidate_obj){
+	var svg = d3.select(selection).append("svg")
+	    .attr("width", "50px")
+	    .attr("height", "50px")
+	    .attr("id",candidate_obj.candidate)
+	    .attr("class","candidateAvatar")
+	    .style("z-index",candidate_obj.polling)
+	    .style("right","4px")
+	    .style("top",(101 + yScale(candidate_obj.polling))+"px")
+	    .style("position","fixed");
+
+	var g = svg.append("g");
+
+	var img = g.append("svg:image")
+	    .attr("xlink:href", candidate_obj.picture)
+	    .attr("width", 50)
+	    .attr("height", 50)
+	    .attr("x", 0)
+	    .attr("y",0);
+}
+var draw_candidateStandings = function(selection,party_candidates){
+	party_candidates.forEach(function(d){
+		draw_candidateAvatar(selection,d);
+	})
+}
+
+clinton_obj = {
+	candidate: "Clinton",
+	picture: "avatars/Clinton_400x400.png",
+	polling: 30
+}
+sanders_obj = {
+	candidate: "Sanders",
+	picture: "avatars/Sanders_400x400.png",
+	polling: 10
+}
+trump_obj = {
+	candidate: "Trump",
+	picture: "avatars/Trump_400x400.png",
+	polling: 43
+}
+rubio_obj = {
+	candidate: "Rubio",
+	picture: "avatars/Rubio_400x400.jpg",
+	polling: 5
+}
+democrat_candidates = [clinton_obj,sanders_obj,trump_obj,rubio_obj]
 
 //Party Controls
 var draw_partybars = function(selection){
@@ -335,7 +398,7 @@ var draw_partybars = function(selection){
 				d3.selectAll(".partybutton").remove();
 			
 				draw_partybars(selection);
-				update_titles();
+				update_titles(500,500);
 				update_month();
 			});
 			
@@ -362,7 +425,7 @@ var draw_partybars = function(selection){
 
 				d3.selectAll(".partybutton").remove();
 				draw_partybars(selection);
-				update_titles();
+				update_titles(500,500);
 				update_month();
 
 			});
@@ -379,7 +442,7 @@ var draw_partybars = function(selection){
 }
 //All plot margins and height stuff
 var calc_plotDimension = function(){
-	margin = {top: 0, left: 85, bottom: 30, right: 60};
+	margin = {top: 0, left: 85, bottom: 30, right: 80};
 	if(window.innerWidth<300){
 		width = 300 - margin.right - margin.left;
 	}else{
@@ -506,6 +569,7 @@ var draw_pollingChart = function(selection,party){
 	calc_yAxis(party);
 	draw_yAxis();
 
+	draw_candidateStandings("#container",democrat_candidates)
 	var resize = function(){
 		d3.selectAll(".partybutton").remove()
 		draw_partybars(selection);
@@ -519,11 +583,17 @@ var draw_pollingChart = function(selection,party){
 		d3.selectAll(".axis").remove();
 		draw_xAxis();
 		draw_yAxis();
+
+		d3.selectAll(".candidateAvatar").remove();
+		draw_candidateStandings("#container",democrat_candidates)
 	}
 	
 	d3.select(window).on("resize",resize);
 };
+var draw_primaryMap = function(selection,party){
 
+}
+calc_dateformatters();
 calc_defaults();
 draw_titles("#container",title,subtitle);
 draw_modebar("#container",modes);
@@ -534,7 +604,32 @@ d3.selectAll(".partybutton").remove()
 draw_partybars("#container");
 
 
-setTimeout(function(){
+setTimeout(function(){if(current_mode==="Polling"){
 	update_titles(500,500);
+};
 },4000)
+
+
+//Data manipualtion stuff
+d3.json("http://elections.huffingtonpost.com/pollster/api/polls.json?topic=2016-president-gop-primary", function(data){
+	console.log(data);
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </script>
