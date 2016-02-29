@@ -1,0 +1,6593 @@
+{
+ "title": "2016 National Democratic Primary",
+ "slug": "2016-national-democratic-primary",
+ "topic": "2016-president-dem-primary",
+ "state": "US",
+ "short_title": "2016 National Democratic Primary",
+ "election_date": null,
+ "poll_count": 273,
+ "last_updated": "2016-02-28T23:08:26.000Z",
+ "url": "http://elections.huffingtonpost.com/pollster/2016-national-democratic-primary",
+ "estimates": [
+  {
+   "choice": "Clinton",
+   "value": 49.8,
+   "lead_confidence": null,
+   "first_name": "Hillary",
+   "last_name": "Clinton",
+   "party": "Dem",
+   "incumbent": false
+  },
+  {
+   "choice": "Sanders",
+   "value": 40.6,
+   "lead_confidence": null,
+   "first_name": "Bernie",
+   "last_name": "Sanders",
+   "party": "Dem",
+   "incumbent": false
+  },
+  {
+   "choice": "Undecided",
+   "value": 8.2,
+   "lead_confidence": null,
+   "first_name": null,
+   "last_name": null,
+   "party": null,
+   "incumbent": null
+  },
+  {
+   "choice": "Other",
+   "value": 3.5,
+   "lead_confidence": null,
+   "first_name": null,
+   "last_name": null,
+   "party": null,
+   "incumbent": null
+  }
+ ],
+ "estimates_by_date": [
+  {
+   "date": "2016-02-27",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 40.6
+    },
+    {
+     "choice": "Clinton",
+     "value": 49.8
+    }
+   ]
+  },
+  {
+   "date": "2016-02-25",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 40.6
+    },
+    {
+     "choice": "Clinton",
+     "value": 49.7
+    },
+    {
+     "choice": "Other",
+     "value": 3.5
+    },
+    {
+     "choice": "Undecided",
+     "value": 8.2
+    }
+   ]
+  },
+  {
+   "date": "2016-02-24",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 40.6
+    },
+    {
+     "choice": "Clinton",
+     "value": 49.7
+    },
+    {
+     "choice": "Other",
+     "value": 3.5
+    },
+    {
+     "choice": "Undecided",
+     "value": 8.2
+    }
+   ]
+  },
+  {
+   "date": "2016-02-21",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 40.5
+    },
+    {
+     "choice": "Clinton",
+     "value": 49.5
+    },
+    {
+     "choice": "Other",
+     "value": 3.5
+    },
+    {
+     "choice": "Undecided",
+     "value": 8.2
+    }
+   ]
+  },
+  {
+   "date": "2016-02-17",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 40.4
+    },
+    {
+     "choice": "Clinton",
+     "value": 49.4
+    },
+    {
+     "choice": "Other",
+     "value": 3.6
+    },
+    {
+     "choice": "Undecided",
+     "value": 8.2
+    }
+   ]
+  },
+  {
+   "date": "2016-02-16",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 40.3
+    },
+    {
+     "choice": "Clinton",
+     "value": 49.4
+    },
+    {
+     "choice": "Other",
+     "value": 3.6
+    },
+    {
+     "choice": "Undecided",
+     "value": 8.2
+    }
+   ]
+  },
+  {
+   "date": "2016-02-15",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 40.2
+    },
+    {
+     "choice": "Clinton",
+     "value": 49.5
+    },
+    {
+     "choice": "Other",
+     "value": 3.6
+    },
+    {
+     "choice": "Undecided",
+     "value": 8.2
+    }
+   ]
+  },
+  {
+   "date": "2016-02-14",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 40.1
+    },
+    {
+     "choice": "Clinton",
+     "value": 49.5
+    },
+    {
+     "choice": "Other",
+     "value": 3.6
+    },
+    {
+     "choice": "Undecided",
+     "value": 8.2
+    }
+   ]
+  },
+  {
+   "date": "2016-02-11",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 39.3
+    },
+    {
+     "choice": "Clinton",
+     "value": 49.9
+    },
+    {
+     "choice": "Other",
+     "value": 3.6
+    },
+    {
+     "choice": "Undecided",
+     "value": 8.3
+    }
+   ]
+  },
+  {
+   "date": "2016-02-10",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 39
+    },
+    {
+     "choice": "Clinton",
+     "value": 50
+    },
+    {
+     "choice": "Undecided",
+     "value": 8.3
+    }
+   ]
+  },
+  {
+   "date": "2016-02-07",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 38.3
+    },
+    {
+     "choice": "Clinton",
+     "value": 50.3
+    },
+    {
+     "choice": "Other",
+     "value": 3.7
+    },
+    {
+     "choice": "Undecided",
+     "value": 8.2
+    },
+    {
+     "choice": "O'Malley",
+     "value": 1.8
+    }
+   ]
+  },
+  {
+   "date": "2016-02-04",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 37.7
+    },
+    {
+     "choice": "Clinton",
+     "value": 50.6
+    },
+    {
+     "choice": "Other",
+     "value": 3.8
+    },
+    {
+     "choice": "Undecided",
+     "value": 7.9
+    }
+   ]
+  },
+  {
+   "date": "2016-02-03",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 37.5
+    },
+    {
+     "choice": "Clinton",
+     "value": 50.7
+    },
+    {
+     "choice": "Other",
+     "value": 3.8
+    },
+    {
+     "choice": "Undecided",
+     "value": 7.8
+    },
+    {
+     "choice": "O'Malley",
+     "value": 2
+    }
+   ]
+  },
+  {
+   "date": "2016-02-01",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 37.1
+    },
+    {
+     "choice": "Clinton",
+     "value": 50.8
+    },
+    {
+     "choice": "Other",
+     "value": 3.8
+    },
+    {
+     "choice": "Undecided",
+     "value": 7.7
+    },
+    {
+     "choice": "O'Malley",
+     "value": 2
+    }
+   ]
+  },
+  {
+   "date": "2016-01-31",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 36.9
+    },
+    {
+     "choice": "Clinton",
+     "value": 50.8
+    },
+    {
+     "choice": "Other",
+     "value": 3.8
+    },
+    {
+     "choice": "Undecided",
+     "value": 7.7
+    },
+    {
+     "choice": "O'Malley",
+     "value": 2.1
+    }
+   ]
+  },
+  {
+   "date": "2016-01-30",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 36.8
+    },
+    {
+     "choice": "Clinton",
+     "value": 50.8
+    },
+    {
+     "choice": "O'Malley",
+     "value": 2.1
+    }
+   ]
+  },
+  {
+   "date": "2016-01-27",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 36.3
+    },
+    {
+     "choice": "Clinton",
+     "value": 51
+    },
+    {
+     "choice": "Other",
+     "value": 3.8
+    },
+    {
+     "choice": "Undecided",
+     "value": 7.8
+    },
+    {
+     "choice": "O'Malley",
+     "value": 2.2
+    }
+   ]
+  },
+  {
+   "date": "2016-01-24",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 36.1
+    },
+    {
+     "choice": "Clinton",
+     "value": 51.2
+    },
+    {
+     "choice": "Other",
+     "value": 3.7
+    },
+    {
+     "choice": "Undecided",
+     "value": 7.7
+    },
+    {
+     "choice": "O'Malley",
+     "value": 2.2
+    }
+   ]
+  },
+  {
+   "date": "2016-01-21",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 35.7
+    },
+    {
+     "choice": "Clinton",
+     "value": 51.6
+    },
+    {
+     "choice": "Other",
+     "value": 3.7
+    },
+    {
+     "choice": "Undecided",
+     "value": 7.5
+    },
+    {
+     "choice": "O'Malley",
+     "value": 2.3
+    }
+   ]
+  },
+  {
+   "date": "2016-01-20",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 35.6
+    },
+    {
+     "choice": "Clinton",
+     "value": 51.9
+    },
+    {
+     "choice": "Undecided",
+     "value": 7.4
+    },
+    {
+     "choice": "O'Malley",
+     "value": 2.3
+    }
+   ]
+  },
+  {
+   "date": "2016-01-19",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 35.5
+    },
+    {
+     "choice": "Clinton",
+     "value": 52
+    },
+    {
+     "choice": "Other",
+     "value": 3.6
+    },
+    {
+     "choice": "Undecided",
+     "value": 7.4
+    },
+    {
+     "choice": "O'Malley",
+     "value": 2.3
+    }
+   ]
+  },
+  {
+   "date": "2016-01-18",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 35.5
+    },
+    {
+     "choice": "Clinton",
+     "value": 52.2
+    },
+    {
+     "choice": "Other",
+     "value": 3.5
+    },
+    {
+     "choice": "Undecided",
+     "value": 7.3
+    },
+    {
+     "choice": "O'Malley",
+     "value": 2.3
+    }
+   ]
+  },
+  {
+   "date": "2016-01-17",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 35.4
+    },
+    {
+     "choice": "Clinton",
+     "value": 52.3
+    },
+    {
+     "choice": "Other",
+     "value": 3.5
+    },
+    {
+     "choice": "Undecided",
+     "value": 7.2
+    },
+    {
+     "choice": "O'Malley",
+     "value": 2.3
+    }
+   ]
+  },
+  {
+   "date": "2016-01-13",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 35.4
+    },
+    {
+     "choice": "Clinton",
+     "value": 53
+    },
+    {
+     "choice": "Undecided",
+     "value": 7
+    },
+    {
+     "choice": "O'Malley",
+     "value": 2.4
+    }
+   ]
+  },
+  {
+   "date": "2016-01-11",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 35.3
+    },
+    {
+     "choice": "Clinton",
+     "value": 53.3
+    },
+    {
+     "choice": "Other",
+     "value": 3.2
+    },
+    {
+     "choice": "Undecided",
+     "value": 7
+    },
+    {
+     "choice": "O'Malley",
+     "value": 2.5
+    }
+   ]
+  },
+  {
+   "date": "2016-01-10",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 35.3
+    },
+    {
+     "choice": "Clinton",
+     "value": 53.5
+    },
+    {
+     "choice": "Other",
+     "value": 3.2
+    },
+    {
+     "choice": "Undecided",
+     "value": 6.9
+    },
+    {
+     "choice": "O'Malley",
+     "value": 2.5
+    }
+   ]
+  },
+  {
+   "date": "2016-01-08",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 35.2
+    },
+    {
+     "choice": "Clinton",
+     "value": 53.9
+    },
+    {
+     "choice": "Other",
+     "value": 3.2
+    },
+    {
+     "choice": "Undecided",
+     "value": 6.8
+    },
+    {
+     "choice": "O'Malley",
+     "value": 2.6
+    }
+   ]
+  },
+  {
+   "date": "2016-01-07",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 35.1
+    },
+    {
+     "choice": "Clinton",
+     "value": 54.1
+    },
+    {
+     "choice": "Other",
+     "value": 3.2
+    },
+    {
+     "choice": "Undecided",
+     "value": 6.7
+    },
+    {
+     "choice": "O'Malley",
+     "value": 2.6
+    }
+   ]
+  },
+  {
+   "date": "2016-01-06",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 34.9
+    },
+    {
+     "choice": "Clinton",
+     "value": 54.2
+    },
+    {
+     "choice": "Other",
+     "value": 3.2
+    },
+    {
+     "choice": "Undecided",
+     "value": 6.7
+    },
+    {
+     "choice": "O'Malley",
+     "value": 2.7
+    }
+   ]
+  },
+  {
+   "date": "2016-01-03",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 34.2
+    },
+    {
+     "choice": "Clinton",
+     "value": 54.5
+    },
+    {
+     "choice": "Other",
+     "value": 3.3
+    },
+    {
+     "choice": "Undecided",
+     "value": 6.5
+    },
+    {
+     "choice": "O'Malley",
+     "value": 2.7
+    }
+   ]
+  },
+  {
+   "date": "2015-12-30",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 33.3
+    },
+    {
+     "choice": "Clinton",
+     "value": 54.8
+    },
+    {
+     "choice": "Undecided",
+     "value": 6.5
+    },
+    {
+     "choice": "O'Malley",
+     "value": 2.6
+    }
+   ]
+  },
+  {
+   "date": "2015-12-23",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 31.4
+    },
+    {
+     "choice": "Clinton",
+     "value": 55.8
+    },
+    {
+     "choice": "Undecided",
+     "value": 6.7
+    },
+    {
+     "choice": "O'Malley",
+     "value": 2.7
+    }
+   ]
+  },
+  {
+   "date": "2015-12-21",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 30.9
+    },
+    {
+     "choice": "Clinton",
+     "value": 56
+    },
+    {
+     "choice": "Other",
+     "value": 3.2
+    },
+    {
+     "choice": "Undecided",
+     "value": 6.9
+    },
+    {
+     "choice": "O'Malley",
+     "value": 2.7
+    }
+   ]
+  },
+  {
+   "date": "2015-12-20",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 30.7
+    },
+    {
+     "choice": "Clinton",
+     "value": 56
+    },
+    {
+     "choice": "Other",
+     "value": 3.2
+    },
+    {
+     "choice": "Undecided",
+     "value": 6.9
+    },
+    {
+     "choice": "O'Malley",
+     "value": 2.7
+    }
+   ]
+  },
+  {
+   "date": "2015-12-17",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 30.4
+    },
+    {
+     "choice": "Clinton",
+     "value": 56
+    },
+    {
+     "choice": "Other",
+     "value": 3.2
+    },
+    {
+     "choice": "Undecided",
+     "value": 7.3
+    },
+    {
+     "choice": "O'Malley",
+     "value": 2.8
+    }
+   ]
+  },
+  {
+   "date": "2015-12-16",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 30.4
+    },
+    {
+     "choice": "Clinton",
+     "value": 55.9
+    },
+    {
+     "choice": "Undecided",
+     "value": 7.4
+    },
+    {
+     "choice": "O'Malley",
+     "value": 2.8
+    }
+   ]
+  },
+  {
+   "date": "2015-12-15",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 30.5
+    },
+    {
+     "choice": "Clinton",
+     "value": 55.9
+    },
+    {
+     "choice": "Other",
+     "value": 3.2
+    },
+    {
+     "choice": "Undecided",
+     "value": 7.5
+    },
+    {
+     "choice": "O'Malley",
+     "value": 2.9
+    }
+   ]
+  },
+  {
+   "date": "2015-12-13",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 30.4
+    },
+    {
+     "choice": "Clinton",
+     "value": 55.7
+    },
+    {
+     "choice": "Other",
+     "value": 3.3
+    },
+    {
+     "choice": "Undecided",
+     "value": 7.7
+    },
+    {
+     "choice": "O'Malley",
+     "value": 2.9
+    }
+   ]
+  },
+  {
+   "date": "2015-12-09",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 30.6
+    },
+    {
+     "choice": "Clinton",
+     "value": 55.5
+    },
+    {
+     "choice": "Other",
+     "value": 3.3
+    },
+    {
+     "choice": "Undecided",
+     "value": 8.1
+    },
+    {
+     "choice": "O'Malley",
+     "value": 3
+    }
+   ]
+  },
+  {
+   "date": "2015-12-08",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 30.7
+    },
+    {
+     "choice": "Clinton",
+     "value": 55.4
+    },
+    {
+     "choice": "Other",
+     "value": 3.3
+    },
+    {
+     "choice": "Undecided",
+     "value": 8.2
+    },
+    {
+     "choice": "O'Malley",
+     "value": 3
+    }
+   ]
+  },
+  {
+   "date": "2015-12-07",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 30.8
+    },
+    {
+     "choice": "Clinton",
+     "value": 55.5
+    },
+    {
+     "choice": "Other",
+     "value": 3.4
+    },
+    {
+     "choice": "Undecided",
+     "value": 8.3
+    },
+    {
+     "choice": "O'Malley",
+     "value": 3
+    }
+   ]
+  },
+  {
+   "date": "2015-12-06",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 30.9
+    },
+    {
+     "choice": "Clinton",
+     "value": 55.6
+    },
+    {
+     "choice": "Other",
+     "value": 3.4
+    },
+    {
+     "choice": "Undecided",
+     "value": 8.3
+    },
+    {
+     "choice": "O'Malley",
+     "value": 3
+    }
+   ]
+  },
+  {
+   "date": "2015-12-04",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 31.1
+    },
+    {
+     "choice": "Clinton",
+     "value": 55.6
+    },
+    {
+     "choice": "Other",
+     "value": 3.4
+    },
+    {
+     "choice": "Undecided",
+     "value": 8.2
+    },
+    {
+     "choice": "O'Malley",
+     "value": 3.1
+    }
+   ]
+  },
+  {
+   "date": "2015-12-02",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 31.3
+    },
+    {
+     "choice": "Clinton",
+     "value": 55.7
+    },
+    {
+     "choice": "Undecided",
+     "value": 8
+    },
+    {
+     "choice": "O'Malley",
+     "value": 3.1
+    }
+   ]
+  },
+  {
+   "date": "2015-12-01",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 31.4
+    },
+    {
+     "choice": "Clinton",
+     "value": 55.7
+    },
+    {
+     "choice": "Other",
+     "value": 3.5
+    },
+    {
+     "choice": "Undecided",
+     "value": 8
+    },
+    {
+     "choice": "O'Malley",
+     "value": 3.1
+    }
+   ]
+  },
+  {
+   "date": "2015-11-30",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 31.4
+    },
+    {
+     "choice": "Clinton",
+     "value": 55.7
+    },
+    {
+     "choice": "Other",
+     "value": 3.5
+    },
+    {
+     "choice": "Undecided",
+     "value": 8
+    },
+    {
+     "choice": "O'Malley",
+     "value": 3.1
+    }
+   ]
+  },
+  {
+   "date": "2015-11-25",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 31.3
+    },
+    {
+     "choice": "Clinton",
+     "value": 55.7
+    },
+    {
+     "choice": "Undecided",
+     "value": 7.9
+    },
+    {
+     "choice": "O'Malley",
+     "value": 3
+    }
+   ]
+  },
+  {
+   "date": "2015-11-23",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 31.2
+    },
+    {
+     "choice": "Clinton",
+     "value": 56
+    },
+    {
+     "choice": "Other",
+     "value": 3.7
+    },
+    {
+     "choice": "Undecided",
+     "value": 7.8
+    },
+    {
+     "choice": "O'Malley",
+     "value": 3
+    }
+   ]
+  },
+  {
+   "date": "2015-11-19",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 31.2
+    },
+    {
+     "choice": "Clinton",
+     "value": 55.9
+    },
+    {
+     "choice": "Other",
+     "value": 3.8
+    },
+    {
+     "choice": "Undecided",
+     "value": 7.5
+    },
+    {
+     "choice": "O'Malley",
+     "value": 3
+    }
+   ]
+  },
+  {
+   "date": "2015-11-18",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 31.1
+    },
+    {
+     "choice": "Clinton",
+     "value": 55.9
+    },
+    {
+     "choice": "Undecided",
+     "value": 7.5
+    },
+    {
+     "choice": "O'Malley",
+     "value": 3
+    }
+   ]
+  },
+  {
+   "date": "2015-11-17",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 31.1
+    },
+    {
+     "choice": "Clinton",
+     "value": 55.8
+    },
+    {
+     "choice": "Other",
+     "value": 3.9
+    },
+    {
+     "choice": "Undecided",
+     "value": 7.5
+    },
+    {
+     "choice": "O'Malley",
+     "value": 2.9
+    }
+   ]
+  },
+  {
+   "date": "2015-11-16",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 31.1
+    },
+    {
+     "choice": "Clinton",
+     "value": 55.7
+    },
+    {
+     "choice": "Other",
+     "value": 3.9
+    },
+    {
+     "choice": "Undecided",
+     "value": 7.6
+    },
+    {
+     "choice": "O'Malley",
+     "value": 2.9
+    }
+   ]
+  },
+  {
+   "date": "2015-11-11",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 30.8
+    },
+    {
+     "choice": "Clinton",
+     "value": 55.2
+    },
+    {
+     "choice": "Undecided",
+     "value": 7.9
+    },
+    {
+     "choice": "O'Malley",
+     "value": 2.6
+    }
+   ]
+  },
+  {
+   "date": "2015-11-10",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 30.7
+    },
+    {
+     "choice": "Clinton",
+     "value": 55.2
+    },
+    {
+     "choice": "Other",
+     "value": 4
+    },
+    {
+     "choice": "Undecided",
+     "value": 8
+    },
+    {
+     "choice": "O'Malley",
+     "value": 2.6
+    }
+   ]
+  },
+  {
+   "date": "2015-11-09",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 30.7
+    },
+    {
+     "choice": "Clinton",
+     "value": 55.1
+    },
+    {
+     "choice": "Other",
+     "value": 3.9
+    },
+    {
+     "choice": "Undecided",
+     "value": 8
+    },
+    {
+     "choice": "O'Malley",
+     "value": 2.5
+    },
+    {
+     "choice": "Lessig",
+     "value": 1.2
+    }
+   ]
+  },
+  {
+   "date": "2015-11-08",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 30.7
+    },
+    {
+     "choice": "Clinton",
+     "value": 55
+    },
+    {
+     "choice": "Other",
+     "value": 3.9
+    },
+    {
+     "choice": "Undecided",
+     "value": 8.1
+    },
+    {
+     "choice": "O'Malley",
+     "value": 2.5
+    }
+   ]
+  },
+  {
+   "date": "2015-11-04",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 30.5
+    },
+    {
+     "choice": "Clinton",
+     "value": 54.8
+    },
+    {
+     "choice": "Undecided",
+     "value": 8.3
+    },
+    {
+     "choice": "O'Malley",
+     "value": 2.4
+    }
+   ]
+  },
+  {
+   "date": "2015-11-03",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 30.5
+    },
+    {
+     "choice": "Clinton",
+     "value": 54.7
+    },
+    {
+     "choice": "Other",
+     "value": 3.7
+    },
+    {
+     "choice": "Undecided",
+     "value": 8.3
+    },
+    {
+     "choice": "O'Malley",
+     "value": 2.3
+    },
+    {
+     "choice": "Lessig",
+     "value": 1.1
+    }
+   ]
+  },
+  {
+   "date": "2015-11-02",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 30.4
+    },
+    {
+     "choice": "Clinton",
+     "value": 54.7
+    },
+    {
+     "choice": "Undecided",
+     "value": 8.3
+    },
+    {
+     "choice": "O'Malley",
+     "value": 2.3
+    },
+    {
+     "choice": "Lessig",
+     "value": 1.1
+    }
+   ]
+  },
+  {
+   "date": "2015-11-01",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 30.2
+    },
+    {
+     "choice": "Clinton",
+     "value": 54.5
+    },
+    {
+     "choice": "Other",
+     "value": 3.7
+    },
+    {
+     "choice": "Undecided",
+     "value": 8.4
+    },
+    {
+     "choice": "O'Malley",
+     "value": 2.2
+    }
+   ]
+  },
+  {
+   "date": "2015-10-29",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 29.4
+    },
+    {
+     "choice": "Clinton",
+     "value": 53.8
+    },
+    {
+     "choice": "Other",
+     "value": 3.6
+    },
+    {
+     "choice": "Undecided",
+     "value": 8.4
+    },
+    {
+     "choice": "O'Malley",
+     "value": 2
+    },
+    {
+     "choice": "Lessig",
+     "value": 0.9
+    }
+   ]
+  },
+  {
+   "date": "2015-10-28",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 29.2
+    },
+    {
+     "choice": "Clinton",
+     "value": 53.6
+    },
+    {
+     "choice": "Undecided",
+     "value": 8.5
+    },
+    {
+     "choice": "O'Malley",
+     "value": 1.9
+    }
+   ]
+  },
+  {
+   "date": "2015-10-27",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 29
+    },
+    {
+     "choice": "Clinton",
+     "value": 53.2
+    },
+    {
+     "choice": "Other",
+     "value": 3.5
+    },
+    {
+     "choice": "Undecided",
+     "value": 8.6
+    },
+    {
+     "choice": "O'Malley",
+     "value": 1.9
+    },
+    {
+     "choice": "Lessig",
+     "value": 0.8
+    }
+   ]
+  },
+  {
+   "date": "2015-10-26",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 28.7
+    },
+    {
+     "choice": "Clinton",
+     "value": 52.9
+    },
+    {
+     "choice": "Undecided",
+     "value": 8.4
+    },
+    {
+     "choice": "O'Malley",
+     "value": 1.8
+    }
+   ]
+  },
+  {
+   "date": "2015-10-25",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 28.3
+    },
+    {
+     "choice": "Clinton",
+     "value": 52.5
+    },
+    {
+     "choice": "Other",
+     "value": 3.3
+    },
+    {
+     "choice": "Undecided",
+     "value": 8.4
+    },
+    {
+     "choice": "O'Malley",
+     "value": 1.7
+    }
+   ]
+  },
+  {
+   "date": "2015-10-21",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 27
+    },
+    {
+     "choice": "Clinton",
+     "value": 51.3
+    },
+    {
+     "choice": "Undecided",
+     "value": 8.1
+    },
+    {
+     "choice": "O'Malley",
+     "value": 1.5
+    },
+    {
+     "choice": "Biden",
+     "value": 15.8
+    },
+    {
+     "choice": "Chafee",
+     "value": 0.3
+    }
+   ]
+  },
+  {
+   "date": "2015-10-19",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 26.3
+    },
+    {
+     "choice": "Clinton",
+     "value": 50.5
+    },
+    {
+     "choice": "Other",
+     "value": 3
+    },
+    {
+     "choice": "Undecided",
+     "value": 7.9
+    },
+    {
+     "choice": "O'Malley",
+     "value": 1.4
+    },
+    {
+     "choice": "Chafee",
+     "value": 0.3
+    },
+    {
+     "choice": "Webb",
+     "value": 1.1
+    }
+   ]
+  },
+  {
+   "date": "2015-10-18",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 26.1
+    },
+    {
+     "choice": "Clinton",
+     "value": 50.1
+    },
+    {
+     "choice": "Other",
+     "value": 2.9
+    },
+    {
+     "choice": "Undecided",
+     "value": 7.9
+    },
+    {
+     "choice": "O'Malley",
+     "value": 1.4
+    },
+    {
+     "choice": "Lessig",
+     "value": 0.2
+    },
+    {
+     "choice": "Biden",
+     "value": 16.4
+    },
+    {
+     "choice": "Chafee",
+     "value": 0.4
+    },
+    {
+     "choice": "Webb",
+     "value": 1
+    }
+   ]
+  },
+  {
+   "date": "2015-10-17",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 25.8
+    },
+    {
+     "choice": "Clinton",
+     "value": 49.7
+    },
+    {
+     "choice": "Other",
+     "value": 2.8
+    },
+    {
+     "choice": "Undecided",
+     "value": 7.8
+    },
+    {
+     "choice": "O'Malley",
+     "value": 1.3
+    },
+    {
+     "choice": "Lessig",
+     "value": 0.1
+    },
+    {
+     "choice": "Biden",
+     "value": 16.6
+    },
+    {
+     "choice": "Chafee",
+     "value": 0.4
+    },
+    {
+     "choice": "Webb",
+     "value": 1
+    }
+   ]
+  },
+  {
+   "date": "2015-10-15",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 25.2
+    },
+    {
+     "choice": "Clinton",
+     "value": 48.8
+    },
+    {
+     "choice": "Other",
+     "value": 2.7
+    },
+    {
+     "choice": "Undecided",
+     "value": 7.7
+    },
+    {
+     "choice": "O'Malley",
+     "value": 1.2
+    },
+    {
+     "choice": "Lessig",
+     "value": 0
+    },
+    {
+     "choice": "Biden",
+     "value": 17
+    },
+    {
+     "choice": "Chafee",
+     "value": 0.4
+    },
+    {
+     "choice": "Webb",
+     "value": 1
+    }
+   ]
+  },
+  {
+   "date": "2015-10-14",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 25.1
+    },
+    {
+     "choice": "Clinton",
+     "value": 48.5
+    },
+    {
+     "choice": "Undecided",
+     "value": 7.7
+    },
+    {
+     "choice": "O'Malley",
+     "value": 1.2
+    },
+    {
+     "choice": "Biden",
+     "value": 17.2
+    },
+    {
+     "choice": "Chafee",
+     "value": 0.5
+    }
+   ]
+  },
+  {
+   "date": "2015-10-12",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 24.9
+    },
+    {
+     "choice": "Clinton",
+     "value": 47.8
+    },
+    {
+     "choice": "Other",
+     "value": 2.5
+    },
+    {
+     "choice": "Undecided",
+     "value": 7.7
+    },
+    {
+     "choice": "O'Malley",
+     "value": 1.1
+    },
+    {
+     "choice": "Lessig",
+     "value": 0
+    },
+    {
+     "choice": "Biden",
+     "value": 17.5
+    },
+    {
+     "choice": "Chafee",
+     "value": 0.5
+    },
+    {
+     "choice": "Webb",
+     "value": 1
+    }
+   ]
+  },
+  {
+   "date": "2015-10-08",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 24.5
+    },
+    {
+     "choice": "Clinton",
+     "value": 46.7
+    },
+    {
+     "choice": "Undecided",
+     "value": 7.7
+    },
+    {
+     "choice": "O'Malley",
+     "value": 1.1
+    },
+    {
+     "choice": "Lessig",
+     "value": 0
+    },
+    {
+     "choice": "Biden",
+     "value": 18.2
+    },
+    {
+     "choice": "Chafee",
+     "value": 0.6
+    },
+    {
+     "choice": "Webb",
+     "value": 1
+    }
+   ]
+  },
+  {
+   "date": "2015-10-07",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 24.4
+    },
+    {
+     "choice": "Clinton",
+     "value": 46.4
+    },
+    {
+     "choice": "Undecided",
+     "value": 7.7
+    },
+    {
+     "choice": "O'Malley",
+     "value": 1.1
+    },
+    {
+     "choice": "Biden",
+     "value": 18.4
+    },
+    {
+     "choice": "Chafee",
+     "value": 0.6
+    }
+   ]
+  },
+  {
+   "date": "2015-10-05",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 24.3
+    },
+    {
+     "choice": "Clinton",
+     "value": 45.8
+    },
+    {
+     "choice": "Other",
+     "value": 2.5
+    },
+    {
+     "choice": "Undecided",
+     "value": 7.8
+    },
+    {
+     "choice": "O'Malley",
+     "value": 1
+    },
+    {
+     "choice": "Lessig",
+     "value": 0
+    },
+    {
+     "choice": "Biden",
+     "value": 18.7
+    },
+    {
+     "choice": "Chafee",
+     "value": 0.7
+    },
+    {
+     "choice": "Webb",
+     "value": 0.9
+    }
+   ]
+  },
+  {
+   "date": "2015-10-04",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 24.3
+    },
+    {
+     "choice": "Clinton",
+     "value": 45.5
+    },
+    {
+     "choice": "Other",
+     "value": 2.5
+    },
+    {
+     "choice": "Undecided",
+     "value": 7.9
+    },
+    {
+     "choice": "O'Malley",
+     "value": 1
+    },
+    {
+     "choice": "Lessig",
+     "value": 0
+    },
+    {
+     "choice": "Biden",
+     "value": 18.9
+    },
+    {
+     "choice": "Chafee",
+     "value": 0.7
+    },
+    {
+     "choice": "Webb",
+     "value": 0.9
+    }
+   ]
+  },
+  {
+   "date": "2015-10-01",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 24.7
+    },
+    {
+     "choice": "Clinton",
+     "value": 44.7
+    },
+    {
+     "choice": "O'Malley",
+     "value": 1
+    },
+    {
+     "choice": "Biden",
+     "value": 19.2
+    },
+    {
+     "choice": "Chafee",
+     "value": 0.6
+    },
+    {
+     "choice": "Webb",
+     "value": 0.9
+    }
+   ]
+  },
+  {
+   "date": "2015-09-30",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 24.7
+    },
+    {
+     "choice": "Clinton",
+     "value": 44.5
+    },
+    {
+     "choice": "Undecided",
+     "value": 8.1
+    },
+    {
+     "choice": "O'Malley",
+     "value": 1
+    },
+    {
+     "choice": "Biden",
+     "value": 19.2
+    },
+    {
+     "choice": "Chafee",
+     "value": 0.5
+    },
+    {
+     "choice": "Webb",
+     "value": 0.9
+    },
+    {
+     "choice": "Cuomo",
+     "value": 2.1
+    },
+    {
+     "choice": "Gillibrand",
+     "value": 0.9
+    }
+   ]
+  },
+  {
+   "date": "2015-09-29",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 24.9
+    },
+    {
+     "choice": "Clinton",
+     "value": 44.4
+    },
+    {
+     "choice": "Other",
+     "value": 2.7
+    },
+    {
+     "choice": "Undecided",
+     "value": 8.2
+    },
+    {
+     "choice": "O'Malley",
+     "value": 1
+    },
+    {
+     "choice": "Biden",
+     "value": 19.1
+    },
+    {
+     "choice": "Chafee",
+     "value": 0.5
+    },
+    {
+     "choice": "Webb",
+     "value": 0.9
+    }
+   ]
+  },
+  {
+   "date": "2015-09-28",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 24.9
+    },
+    {
+     "choice": "Clinton",
+     "value": 44.2
+    },
+    {
+     "choice": "Other",
+     "value": 2.7
+    },
+    {
+     "choice": "Undecided",
+     "value": 8.2
+    },
+    {
+     "choice": "O'Malley",
+     "value": 1
+    },
+    {
+     "choice": "Lessig",
+     "value": 0
+    },
+    {
+     "choice": "Biden",
+     "value": 19.1
+    },
+    {
+     "choice": "Chafee",
+     "value": 0.5
+    },
+    {
+     "choice": "Webb",
+     "value": 0.9
+    }
+   ]
+  },
+  {
+   "date": "2015-09-27",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 25
+    },
+    {
+     "choice": "Clinton",
+     "value": 44.2
+    },
+    {
+     "choice": "Other",
+     "value": 2.7
+    },
+    {
+     "choice": "Undecided",
+     "value": 8.3
+    },
+    {
+     "choice": "O'Malley",
+     "value": 1.1
+    },
+    {
+     "choice": "Biden",
+     "value": 19.1
+    },
+    {
+     "choice": "Chafee",
+     "value": 0.5
+    },
+    {
+     "choice": "Webb",
+     "value": 0.9
+    }
+   ]
+  },
+  {
+   "date": "2015-09-24",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 25.3
+    },
+    {
+     "choice": "Clinton",
+     "value": 44.1
+    },
+    {
+     "choice": "Other",
+     "value": 2.8
+    },
+    {
+     "choice": "Undecided",
+     "value": 8.4
+    },
+    {
+     "choice": "O'Malley",
+     "value": 1.1
+    },
+    {
+     "choice": "Biden",
+     "value": 18.9
+    },
+    {
+     "choice": "Chafee",
+     "value": 0.4
+    },
+    {
+     "choice": "Webb",
+     "value": 0.9
+    }
+   ]
+  },
+  {
+   "date": "2015-09-23",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 25.4
+    },
+    {
+     "choice": "Clinton",
+     "value": 44.1
+    },
+    {
+     "choice": "Undecided",
+     "value": 8.4
+    },
+    {
+     "choice": "O'Malley",
+     "value": 1.1
+    },
+    {
+     "choice": "Biden",
+     "value": 18.9
+    },
+    {
+     "choice": "Chafee",
+     "value": 0.4
+    },
+    {
+     "choice": "Webb",
+     "value": 0.9
+    },
+    {
+     "choice": "Cuomo",
+     "value": 2.1
+    },
+    {
+     "choice": "Gillibrand",
+     "value": 0.9
+    }
+   ]
+  },
+  {
+   "date": "2015-09-22",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 25.5
+    },
+    {
+     "choice": "Clinton",
+     "value": 44.1
+    },
+    {
+     "choice": "Other",
+     "value": 2.9
+    },
+    {
+     "choice": "Undecided",
+     "value": 8.5
+    },
+    {
+     "choice": "O'Malley",
+     "value": 1.1
+    },
+    {
+     "choice": "Biden",
+     "value": 18.8
+    },
+    {
+     "choice": "Chafee",
+     "value": 0.4
+    },
+    {
+     "choice": "Webb",
+     "value": 0.9
+    }
+   ]
+  },
+  {
+   "date": "2015-09-21",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 25.7
+    },
+    {
+     "choice": "Clinton",
+     "value": 44.2
+    },
+    {
+     "choice": "Other",
+     "value": 2.9
+    },
+    {
+     "choice": "Undecided",
+     "value": 8.5
+    },
+    {
+     "choice": "O'Malley",
+     "value": 1.1
+    },
+    {
+     "choice": "Lessig",
+     "value": 0
+    },
+    {
+     "choice": "Biden",
+     "value": 18.8
+    },
+    {
+     "choice": "Chafee",
+     "value": 0.4
+    },
+    {
+     "choice": "Webb",
+     "value": 0.9
+    }
+   ]
+  },
+  {
+   "date": "2015-09-20",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 25.7
+    },
+    {
+     "choice": "Clinton",
+     "value": 44.3
+    },
+    {
+     "choice": "Other",
+     "value": 3
+    },
+    {
+     "choice": "Undecided",
+     "value": 8.5
+    },
+    {
+     "choice": "O'Malley",
+     "value": 1.1
+    },
+    {
+     "choice": "Chafee",
+     "value": 0.4
+    },
+    {
+     "choice": "Webb",
+     "value": 0.9
+    }
+   ]
+  },
+  {
+   "date": "2015-09-19",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 25.7
+    },
+    {
+     "choice": "Clinton",
+     "value": 44.4
+    },
+    {
+     "choice": "Other",
+     "value": 3
+    },
+    {
+     "choice": "Undecided",
+     "value": 8.6
+    },
+    {
+     "choice": "O'Malley",
+     "value": 1.2
+    },
+    {
+     "choice": "Biden",
+     "value": 18.6
+    },
+    {
+     "choice": "Chafee",
+     "value": 0.4
+    },
+    {
+     "choice": "Webb",
+     "value": 0.9
+    }
+   ]
+  },
+  {
+   "date": "2015-09-18",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 25.8
+    },
+    {
+     "choice": "Clinton",
+     "value": 44.4
+    },
+    {
+     "choice": "Other",
+     "value": 3.1
+    },
+    {
+     "choice": "Undecided",
+     "value": 8.6
+    },
+    {
+     "choice": "O'Malley",
+     "value": 1.2
+    },
+    {
+     "choice": "Lessig",
+     "value": 0.1
+    },
+    {
+     "choice": "Biden",
+     "value": 18.7
+    },
+    {
+     "choice": "Chafee",
+     "value": 0.4
+    },
+    {
+     "choice": "Webb",
+     "value": 1
+    }
+   ]
+  },
+  {
+   "date": "2015-09-16",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 25.8
+    },
+    {
+     "choice": "Clinton",
+     "value": 44.7
+    },
+    {
+     "choice": "Undecided",
+     "value": 8.8
+    },
+    {
+     "choice": "O'Malley",
+     "value": 1.3
+    },
+    {
+     "choice": "Biden",
+     "value": 18.7
+    },
+    {
+     "choice": "Chafee",
+     "value": 0.4
+    },
+    {
+     "choice": "Webb",
+     "value": 1
+    },
+    {
+     "choice": "Cuomo",
+     "value": 2.1
+    },
+    {
+     "choice": "Gillibrand",
+     "value": 1
+    }
+   ]
+  },
+  {
+   "date": "2015-09-15",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 25.8
+    },
+    {
+     "choice": "Clinton",
+     "value": 44.7
+    },
+    {
+     "choice": "Other",
+     "value": 3.2
+    },
+    {
+     "choice": "Undecided",
+     "value": 8.9
+    },
+    {
+     "choice": "O'Malley",
+     "value": 1.3
+    },
+    {
+     "choice": "Biden",
+     "value": 18.7
+    },
+    {
+     "choice": "Chafee",
+     "value": 0.4
+    },
+    {
+     "choice": "Webb",
+     "value": 1
+    }
+   ]
+  },
+  {
+   "date": "2015-09-13",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 25.4
+    },
+    {
+     "choice": "Clinton",
+     "value": 44.9
+    },
+    {
+     "choice": "Other",
+     "value": 3.2
+    },
+    {
+     "choice": "Undecided",
+     "value": 9
+    },
+    {
+     "choice": "O'Malley",
+     "value": 1.4
+    },
+    {
+     "choice": "Biden",
+     "value": 18.7
+    },
+    {
+     "choice": "Chafee",
+     "value": 0.5
+    },
+    {
+     "choice": "Webb",
+     "value": 1
+    }
+   ]
+  },
+  {
+   "date": "2015-09-10",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 24.9
+    },
+    {
+     "choice": "Clinton",
+     "value": 45.4
+    },
+    {
+     "choice": "Other",
+     "value": 3.2
+    },
+    {
+     "choice": "Undecided",
+     "value": 9.5
+    },
+    {
+     "choice": "O'Malley",
+     "value": 1.4
+    },
+    {
+     "choice": "Biden",
+     "value": 18.5
+    },
+    {
+     "choice": "Chafee",
+     "value": 0.5
+    },
+    {
+     "choice": "Webb",
+     "value": 1.1
+    }
+   ]
+  },
+  {
+   "date": "2015-09-09",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 24.7
+    },
+    {
+     "choice": "Clinton",
+     "value": 45.5
+    },
+    {
+     "choice": "Undecided",
+     "value": 9.6
+    },
+    {
+     "choice": "O'Malley",
+     "value": 1.4
+    },
+    {
+     "choice": "Biden",
+     "value": 18.5
+    },
+    {
+     "choice": "Chafee",
+     "value": 0.5
+    },
+    {
+     "choice": "Webb",
+     "value": 1.1
+    },
+    {
+     "choice": "Cuomo",
+     "value": 2.1
+    },
+    {
+     "choice": "Gillibrand",
+     "value": 1
+    }
+   ]
+  },
+  {
+   "date": "2015-09-08",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 24.5
+    },
+    {
+     "choice": "Clinton",
+     "value": 45.7
+    },
+    {
+     "choice": "Other",
+     "value": 3.2
+    },
+    {
+     "choice": "Undecided",
+     "value": 9.8
+    },
+    {
+     "choice": "O'Malley",
+     "value": 1.4
+    },
+    {
+     "choice": "Biden",
+     "value": 18.4
+    },
+    {
+     "choice": "Chafee",
+     "value": 0.5
+    },
+    {
+     "choice": "Webb",
+     "value": 1.1
+    }
+   ]
+  },
+  {
+   "date": "2015-09-07",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 24.3
+    },
+    {
+     "choice": "Clinton",
+     "value": 45.9
+    },
+    {
+     "choice": "Other",
+     "value": 3.2
+    },
+    {
+     "choice": "Undecided",
+     "value": 9.9
+    },
+    {
+     "choice": "O'Malley",
+     "value": 1.4
+    },
+    {
+     "choice": "Chafee",
+     "value": 0.5
+    },
+    {
+     "choice": "Webb",
+     "value": 1.2
+    }
+   ]
+  },
+  {
+   "date": "2015-09-02",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 23.6
+    },
+    {
+     "choice": "Clinton",
+     "value": 46.6
+    },
+    {
+     "choice": "Other",
+     "value": 3.2
+    },
+    {
+     "choice": "Undecided",
+     "value": 10.4
+    },
+    {
+     "choice": "O'Malley",
+     "value": 1.4
+    },
+    {
+     "choice": "Biden",
+     "value": 17.1
+    },
+    {
+     "choice": "Chafee",
+     "value": 0.6
+    },
+    {
+     "choice": "Webb",
+     "value": 1.3
+    },
+    {
+     "choice": "Cuomo",
+     "value": 2.1
+    },
+    {
+     "choice": "Gillibrand",
+     "value": 1
+    }
+   ]
+  },
+  {
+   "date": "2015-09-01",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 23.5
+    },
+    {
+     "choice": "Clinton",
+     "value": 46.7
+    },
+    {
+     "choice": "Other",
+     "value": 3.2
+    },
+    {
+     "choice": "Undecided",
+     "value": 10.4
+    },
+    {
+     "choice": "O'Malley",
+     "value": 1.4
+    },
+    {
+     "choice": "Biden",
+     "value": 16.9
+    },
+    {
+     "choice": "Chafee",
+     "value": 0.6
+    },
+    {
+     "choice": "Webb",
+     "value": 1.2
+    }
+   ]
+  },
+  {
+   "date": "2015-08-30",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 23.4
+    },
+    {
+     "choice": "Clinton",
+     "value": 47
+    },
+    {
+     "choice": "Other",
+     "value": 3.2
+    },
+    {
+     "choice": "Undecided",
+     "value": 10.2
+    },
+    {
+     "choice": "O'Malley",
+     "value": 1.4
+    },
+    {
+     "choice": "Lessig",
+     "value": 0.9
+    },
+    {
+     "choice": "Chafee",
+     "value": 0.6
+    },
+    {
+     "choice": "Webb",
+     "value": 1.2
+    }
+   ]
+  },
+  {
+   "date": "2015-08-26",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 23.1
+    },
+    {
+     "choice": "Clinton",
+     "value": 47.7
+    },
+    {
+     "choice": "Undecided",
+     "value": 10.1
+    },
+    {
+     "choice": "O'Malley",
+     "value": 1.5
+    },
+    {
+     "choice": "Biden",
+     "value": 15.8
+    },
+    {
+     "choice": "Chafee",
+     "value": 0.6
+    },
+    {
+     "choice": "Webb",
+     "value": 1.2
+    },
+    {
+     "choice": "Cuomo",
+     "value": 2.1
+    },
+    {
+     "choice": "Gillibrand",
+     "value": 1
+    }
+   ]
+  },
+  {
+   "date": "2015-08-25",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 23
+    },
+    {
+     "choice": "Clinton",
+     "value": 47.9
+    },
+    {
+     "choice": "Other",
+     "value": 3.3
+    },
+    {
+     "choice": "Undecided",
+     "value": 10.1
+    },
+    {
+     "choice": "O'Malley",
+     "value": 1.5
+    },
+    {
+     "choice": "Biden",
+     "value": 15.6
+    },
+    {
+     "choice": "Chafee",
+     "value": 0.6
+    },
+    {
+     "choice": "Webb",
+     "value": 1.2
+    }
+   ]
+  },
+  {
+   "date": "2015-08-22",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 22.5
+    },
+    {
+     "choice": "Clinton",
+     "value": 48.7
+    },
+    {
+     "choice": "O'Malley",
+     "value": 1.5
+    },
+    {
+     "choice": "Biden",
+     "value": 15.1
+    },
+    {
+     "choice": "Chafee",
+     "value": 0.6
+    },
+    {
+     "choice": "Webb",
+     "value": 1.3
+    },
+    {
+     "choice": "Warren",
+     "value": 8.4
+    }
+   ]
+  },
+  {
+   "date": "2015-08-19",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 21.9
+    },
+    {
+     "choice": "Clinton",
+     "value": 49.4
+    },
+    {
+     "choice": "Undecided",
+     "value": 10.2
+    },
+    {
+     "choice": "O'Malley",
+     "value": 1.6
+    },
+    {
+     "choice": "Biden",
+     "value": 14.6
+    },
+    {
+     "choice": "Chafee",
+     "value": 0.6
+    },
+    {
+     "choice": "Webb",
+     "value": 1.3
+    },
+    {
+     "choice": "Cuomo",
+     "value": 2.2
+    },
+    {
+     "choice": "Gillibrand",
+     "value": 1
+    }
+   ]
+  },
+  {
+   "date": "2015-08-18",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 21.7
+    },
+    {
+     "choice": "Clinton",
+     "value": 49.7
+    },
+    {
+     "choice": "Other",
+     "value": 3.2
+    },
+    {
+     "choice": "Undecided",
+     "value": 10.1
+    },
+    {
+     "choice": "O'Malley",
+     "value": 1.6
+    },
+    {
+     "choice": "Biden",
+     "value": 14.4
+    },
+    {
+     "choice": "Chafee",
+     "value": 0.6
+    },
+    {
+     "choice": "Webb",
+     "value": 1.3
+    }
+   ]
+  },
+  {
+   "date": "2015-08-16",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 21.3
+    },
+    {
+     "choice": "Clinton",
+     "value": 50.1
+    },
+    {
+     "choice": "Other",
+     "value": 3.2
+    },
+    {
+     "choice": "Undecided",
+     "value": 10.1
+    },
+    {
+     "choice": "O'Malley",
+     "value": 1.6
+    },
+    {
+     "choice": "Biden",
+     "value": 14
+    },
+    {
+     "choice": "Chafee",
+     "value": 0.6
+    },
+    {
+     "choice": "Webb",
+     "value": 1.3
+    }
+   ]
+  },
+  {
+   "date": "2015-08-13",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 21
+    },
+    {
+     "choice": "Clinton",
+     "value": 50.8
+    },
+    {
+     "choice": "Other",
+     "value": 3.1
+    },
+    {
+     "choice": "Undecided",
+     "value": 9.9
+    },
+    {
+     "choice": "O'Malley",
+     "value": 1.7
+    },
+    {
+     "choice": "Biden",
+     "value": 13.4
+    },
+    {
+     "choice": "Chafee",
+     "value": 0.7
+    },
+    {
+     "choice": "Webb",
+     "value": 1.3
+    }
+   ]
+  },
+  {
+   "date": "2015-08-12",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 20.8
+    },
+    {
+     "choice": "Clinton",
+     "value": 51.1
+    },
+    {
+     "choice": "Undecided",
+     "value": 9.7
+    },
+    {
+     "choice": "O'Malley",
+     "value": 1.7
+    },
+    {
+     "choice": "Biden",
+     "value": 13.2
+    },
+    {
+     "choice": "Chafee",
+     "value": 0.7
+    },
+    {
+     "choice": "Webb",
+     "value": 1.4
+    },
+    {
+     "choice": "Cuomo",
+     "value": 2.2
+    },
+    {
+     "choice": "Gillibrand",
+     "value": 1
+    }
+   ]
+  },
+  {
+   "date": "2015-08-09",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 20.2
+    },
+    {
+     "choice": "Clinton",
+     "value": 51.9
+    },
+    {
+     "choice": "Other",
+     "value": 3.1
+    },
+    {
+     "choice": "Undecided",
+     "value": 9.6
+    },
+    {
+     "choice": "O'Malley",
+     "value": 1.7
+    },
+    {
+     "choice": "Chafee",
+     "value": 0.7
+    },
+    {
+     "choice": "Webb",
+     "value": 1.4
+    }
+   ]
+  },
+  {
+   "date": "2015-08-05",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 19.2
+    },
+    {
+     "choice": "Clinton",
+     "value": 53.2
+    },
+    {
+     "choice": "Undecided",
+     "value": 9.5
+    },
+    {
+     "choice": "O'Malley",
+     "value": 1.7
+    },
+    {
+     "choice": "Biden",
+     "value": 12.3
+    },
+    {
+     "choice": "Chafee",
+     "value": 0.7
+    },
+    {
+     "choice": "Webb",
+     "value": 1.4
+    },
+    {
+     "choice": "Cuomo",
+     "value": 2.2
+    },
+    {
+     "choice": "Gillibrand",
+     "value": 1
+    }
+   ]
+  },
+  {
+   "date": "2015-08-04",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 19
+    },
+    {
+     "choice": "Clinton",
+     "value": 53.5
+    },
+    {
+     "choice": "Other",
+     "value": 3
+    },
+    {
+     "choice": "Undecided",
+     "value": 9.5
+    },
+    {
+     "choice": "O'Malley",
+     "value": 1.7
+    },
+    {
+     "choice": "Biden",
+     "value": 12.3
+    },
+    {
+     "choice": "Chafee",
+     "value": 0.7
+    },
+    {
+     "choice": "Webb",
+     "value": 1.4
+    }
+   ]
+  },
+  {
+   "date": "2015-08-03",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 18.8
+    },
+    {
+     "choice": "Clinton",
+     "value": 53.8
+    },
+    {
+     "choice": "Other",
+     "value": 3
+    },
+    {
+     "choice": "Undecided",
+     "value": 9.5
+    },
+    {
+     "choice": "O'Malley",
+     "value": 1.6
+    },
+    {
+     "choice": "Chafee",
+     "value": 0.7
+    },
+    {
+     "choice": "Webb",
+     "value": 1.4
+    }
+   ]
+  },
+  {
+   "date": "2015-08-02",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 18.5
+    },
+    {
+     "choice": "Clinton",
+     "value": 54.1
+    },
+    {
+     "choice": "Other",
+     "value": 2.9
+    },
+    {
+     "choice": "Undecided",
+     "value": 9.5
+    },
+    {
+     "choice": "O'Malley",
+     "value": 1.6
+    },
+    {
+     "choice": "Biden",
+     "value": 12.1
+    },
+    {
+     "choice": "Chafee",
+     "value": 0.7
+    },
+    {
+     "choice": "Webb",
+     "value": 1.4
+    }
+   ]
+  },
+  {
+   "date": "2015-07-30",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 18
+    },
+    {
+     "choice": "Clinton",
+     "value": 54.9
+    },
+    {
+     "choice": "Other",
+     "value": 2.9
+    },
+    {
+     "choice": "Undecided",
+     "value": 9.6
+    },
+    {
+     "choice": "O'Malley",
+     "value": 1.5
+    },
+    {
+     "choice": "Chafee",
+     "value": 0.6
+    },
+    {
+     "choice": "Webb",
+     "value": 1.4
+    }
+   ]
+  },
+  {
+   "date": "2015-07-29",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 17.9
+    },
+    {
+     "choice": "Clinton",
+     "value": 55.1
+    },
+    {
+     "choice": "Undecided",
+     "value": 9.7
+    },
+    {
+     "choice": "O'Malley",
+     "value": 1.4
+    },
+    {
+     "choice": "Biden",
+     "value": 11.8
+    },
+    {
+     "choice": "Chafee",
+     "value": 0.6
+    },
+    {
+     "choice": "Webb",
+     "value": 1.4
+    },
+    {
+     "choice": "Cuomo",
+     "value": 2.2
+    },
+    {
+     "choice": "Gillibrand",
+     "value": 1
+    },
+    {
+     "choice": "Warren",
+     "value": 8.8
+    }
+   ]
+  },
+  {
+   "date": "2015-07-28",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 17.8
+    },
+    {
+     "choice": "Clinton",
+     "value": 55.3
+    },
+    {
+     "choice": "Other",
+     "value": 2.8
+    },
+    {
+     "choice": "Undecided",
+     "value": 9.8
+    },
+    {
+     "choice": "O'Malley",
+     "value": 1.4
+    },
+    {
+     "choice": "Biden",
+     "value": 11.7
+    },
+    {
+     "choice": "Chafee",
+     "value": 0.6
+    },
+    {
+     "choice": "Webb",
+     "value": 1.4
+    }
+   ]
+  },
+  {
+   "date": "2015-07-25",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 17.6
+    },
+    {
+     "choice": "Clinton",
+     "value": 56
+    },
+    {
+     "choice": "Other",
+     "value": 2.6
+    },
+    {
+     "choice": "Undecided",
+     "value": 10
+    },
+    {
+     "choice": "O'Malley",
+     "value": 1.2
+    },
+    {
+     "choice": "Biden",
+     "value": 11.5
+    },
+    {
+     "choice": "Chafee",
+     "value": 0.5
+    },
+    {
+     "choice": "Webb",
+     "value": 1.3
+    }
+   ]
+  },
+  {
+   "date": "2015-07-21",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 17.5
+    },
+    {
+     "choice": "Clinton",
+     "value": 56.6
+    },
+    {
+     "choice": "Undecided",
+     "value": 10.1
+    },
+    {
+     "choice": "O'Malley",
+     "value": 1
+    },
+    {
+     "choice": "Chafee",
+     "value": 0.4
+    },
+    {
+     "choice": "Webb",
+     "value": 1.3
+    }
+   ]
+  },
+  {
+   "date": "2015-07-20",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 17.5
+    },
+    {
+     "choice": "Clinton",
+     "value": 56.6
+    },
+    {
+     "choice": "Other",
+     "value": 2.4
+    },
+    {
+     "choice": "Undecided",
+     "value": 10.1
+    },
+    {
+     "choice": "O'Malley",
+     "value": 1
+    },
+    {
+     "choice": "Biden",
+     "value": 11.2
+    },
+    {
+     "choice": "Chafee",
+     "value": 0.4
+    },
+    {
+     "choice": "Webb",
+     "value": 1.3
+    },
+    {
+     "choice": "Cuomo",
+     "value": 2.2
+    },
+    {
+     "choice": "Warren",
+     "value": 8.9
+    }
+   ]
+  },
+  {
+   "date": "2015-07-19",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 17.4
+    },
+    {
+     "choice": "Clinton",
+     "value": 56.7
+    },
+    {
+     "choice": "Other",
+     "value": 2.4
+    },
+    {
+     "choice": "Undecided",
+     "value": 10.1
+    },
+    {
+     "choice": "O'Malley",
+     "value": 0.9
+    },
+    {
+     "choice": "Biden",
+     "value": 11.2
+    },
+    {
+     "choice": "Chafee",
+     "value": 0.4
+    },
+    {
+     "choice": "Webb",
+     "value": 1.3
+    }
+   ]
+  },
+  {
+   "date": "2015-07-15",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 17.4
+    },
+    {
+     "choice": "Clinton",
+     "value": 57.1
+    },
+    {
+     "choice": "Other",
+     "value": 2.2
+    },
+    {
+     "choice": "Undecided",
+     "value": 9.8
+    },
+    {
+     "choice": "O'Malley",
+     "value": 0.9
+    },
+    {
+     "choice": "Biden",
+     "value": 11.1
+    },
+    {
+     "choice": "Chafee",
+     "value": 0.3
+    },
+    {
+     "choice": "Webb",
+     "value": 1.2
+    }
+   ]
+  },
+  {
+   "date": "2015-07-14",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 17.3
+    },
+    {
+     "choice": "Clinton",
+     "value": 57.1
+    },
+    {
+     "choice": "Other",
+     "value": 2.2
+    },
+    {
+     "choice": "Undecided",
+     "value": 9.7
+    },
+    {
+     "choice": "O'Malley",
+     "value": 0.9
+    },
+    {
+     "choice": "Chafee",
+     "value": 0.3
+    },
+    {
+     "choice": "Webb",
+     "value": 1.2
+    }
+   ]
+  },
+  {
+   "date": "2015-07-12",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 17.3
+    },
+    {
+     "choice": "Clinton",
+     "value": 57.3
+    },
+    {
+     "choice": "Other",
+     "value": 2.2
+    },
+    {
+     "choice": "Undecided",
+     "value": 9.6
+    },
+    {
+     "choice": "O'Malley",
+     "value": 0.8
+    },
+    {
+     "choice": "Biden",
+     "value": 11.1
+    },
+    {
+     "choice": "Chafee",
+     "value": 0.2
+    },
+    {
+     "choice": "Webb",
+     "value": 1.2
+    }
+   ]
+  },
+  {
+   "date": "2015-07-06",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 16.8
+    },
+    {
+     "choice": "Clinton",
+     "value": 57.8
+    },
+    {
+     "choice": "Other",
+     "value": 2
+    },
+    {
+     "choice": "Undecided",
+     "value": 9.4
+    },
+    {
+     "choice": "O'Malley",
+     "value": 1
+    },
+    {
+     "choice": "Biden",
+     "value": 11.2
+    },
+    {
+     "choice": "Chafee",
+     "value": 0.2
+    },
+    {
+     "choice": "Webb",
+     "value": 1.2
+    }
+   ]
+  },
+  {
+   "date": "2015-06-29",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 15.8
+    },
+    {
+     "choice": "Clinton",
+     "value": 58.4
+    },
+    {
+     "choice": "Other",
+     "value": 1.8
+    },
+    {
+     "choice": "Undecided",
+     "value": 9.5
+    },
+    {
+     "choice": "O'Malley",
+     "value": 1.1
+    },
+    {
+     "choice": "Biden",
+     "value": 11.3
+    },
+    {
+     "choice": "Chafee",
+     "value": 0.2
+    },
+    {
+     "choice": "Webb",
+     "value": 1.2
+    }
+   ]
+  },
+  {
+   "date": "2015-06-28",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 15.7
+    },
+    {
+     "choice": "Clinton",
+     "value": 58.4
+    },
+    {
+     "choice": "Other",
+     "value": 1.8
+    },
+    {
+     "choice": "Undecided",
+     "value": 9.5
+    },
+    {
+     "choice": "O'Malley",
+     "value": 1.1
+    },
+    {
+     "choice": "Biden",
+     "value": 11.3
+    },
+    {
+     "choice": "Chafee",
+     "value": 0.2
+    },
+    {
+     "choice": "Webb",
+     "value": 1.2
+    }
+   ]
+  },
+  {
+   "date": "2015-06-23",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 14.9
+    },
+    {
+     "choice": "Clinton",
+     "value": 58.6
+    },
+    {
+     "choice": "Other",
+     "value": 1.8
+    },
+    {
+     "choice": "Undecided",
+     "value": 9.4
+    },
+    {
+     "choice": "O'Malley",
+     "value": 1.3
+    },
+    {
+     "choice": "Biden",
+     "value": 11.3
+    },
+    {
+     "choice": "Chafee",
+     "value": 0.3
+    },
+    {
+     "choice": "Webb",
+     "value": 1.2
+    },
+    {
+     "choice": "Cuomo",
+     "value": 2.3
+    }
+   ]
+  },
+  {
+   "date": "2015-06-22",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 14.8
+    },
+    {
+     "choice": "Clinton",
+     "value": 58.7
+    },
+    {
+     "choice": "Other",
+     "value": 1.8
+    },
+    {
+     "choice": "Undecided",
+     "value": 9.4
+    },
+    {
+     "choice": "O'Malley",
+     "value": 1.3
+    },
+    {
+     "choice": "Biden",
+     "value": 11.3
+    },
+    {
+     "choice": "Chafee",
+     "value": 0.3
+    },
+    {
+     "choice": "Webb",
+     "value": 1.2
+    }
+   ]
+  },
+  {
+   "date": "2015-06-18",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 14.3
+    },
+    {
+     "choice": "Clinton",
+     "value": 58.8
+    },
+    {
+     "choice": "Other",
+     "value": 1.9
+    },
+    {
+     "choice": "Undecided",
+     "value": 9.3
+    },
+    {
+     "choice": "O'Malley",
+     "value": 1.4
+    },
+    {
+     "choice": "Chafee",
+     "value": 0.4
+    },
+    {
+     "choice": "Webb",
+     "value": 1.2
+    }
+   ]
+  },
+  {
+   "date": "2015-06-15",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 14
+    },
+    {
+     "choice": "Clinton",
+     "value": 59
+    },
+    {
+     "choice": "Other",
+     "value": 1.9
+    },
+    {
+     "choice": "Undecided",
+     "value": 9.1
+    },
+    {
+     "choice": "O'Malley",
+     "value": 1.5
+    },
+    {
+     "choice": "Biden",
+     "value": 11.2
+    },
+    {
+     "choice": "Chafee",
+     "value": 0.4
+    },
+    {
+     "choice": "Webb",
+     "value": 1.2
+    }
+   ]
+  },
+  {
+   "date": "2015-06-14",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 13.8
+    },
+    {
+     "choice": "Clinton",
+     "value": 59
+    },
+    {
+     "choice": "Other",
+     "value": 1.9
+    },
+    {
+     "choice": "Undecided",
+     "value": 9.1
+    },
+    {
+     "choice": "O'Malley",
+     "value": 1.5
+    },
+    {
+     "choice": "Biden",
+     "value": 11.1
+    },
+    {
+     "choice": "Chafee",
+     "value": 0.4
+    },
+    {
+     "choice": "Webb",
+     "value": 1.2
+    }
+   ]
+  },
+  {
+   "date": "2015-06-08",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 13.1
+    },
+    {
+     "choice": "Clinton",
+     "value": 59.3
+    },
+    {
+     "choice": "Other",
+     "value": 2
+    },
+    {
+     "choice": "Undecided",
+     "value": 9.2
+    },
+    {
+     "choice": "O'Malley",
+     "value": 1.5
+    },
+    {
+     "choice": "Biden",
+     "value": 10.9
+    },
+    {
+     "choice": "Chafee",
+     "value": 0.5
+    },
+    {
+     "choice": "Webb",
+     "value": 1.2
+    }
+   ]
+  },
+  {
+   "date": "2015-06-02",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 12.5
+    },
+    {
+     "choice": "Clinton",
+     "value": 59.6
+    },
+    {
+     "choice": "Other",
+     "value": 2.1
+    },
+    {
+     "choice": "Undecided",
+     "value": 9.3
+    },
+    {
+     "choice": "O'Malley",
+     "value": 1.6
+    },
+    {
+     "choice": "Biden",
+     "value": 10.7
+    },
+    {
+     "choice": "Chafee",
+     "value": 0.5
+    },
+    {
+     "choice": "Webb",
+     "value": 1.2
+    },
+    {
+     "choice": "Cuomo",
+     "value": 2.3
+    },
+    {
+     "choice": "Warren",
+     "value": 9.7
+    }
+   ]
+  },
+  {
+   "date": "2015-06-01",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 12.4
+    },
+    {
+     "choice": "Clinton",
+     "value": 59.7
+    },
+    {
+     "choice": "Other",
+     "value": 2.2
+    },
+    {
+     "choice": "Undecided",
+     "value": 9.3
+    },
+    {
+     "choice": "O'Malley",
+     "value": 1.6
+    },
+    {
+     "choice": "Biden",
+     "value": 10.7
+    },
+    {
+     "choice": "Chafee",
+     "value": 0.5
+    },
+    {
+     "choice": "Webb",
+     "value": 1.2
+    }
+   ]
+  },
+  {
+   "date": "2015-05-31",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 12.3
+    },
+    {
+     "choice": "Clinton",
+     "value": 59.7
+    },
+    {
+     "choice": "Other",
+     "value": 2.2
+    },
+    {
+     "choice": "Undecided",
+     "value": 9.3
+    },
+    {
+     "choice": "O'Malley",
+     "value": 1.6
+    },
+    {
+     "choice": "Biden",
+     "value": 10.6
+    },
+    {
+     "choice": "Chafee",
+     "value": 0.5
+    },
+    {
+     "choice": "Webb",
+     "value": 1.2
+    }
+   ]
+  },
+  {
+   "date": "2015-05-26",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 11.8
+    },
+    {
+     "choice": "Clinton",
+     "value": 59.9
+    },
+    {
+     "choice": "Other",
+     "value": 2.4
+    },
+    {
+     "choice": "Undecided",
+     "value": 9.4
+    },
+    {
+     "choice": "O'Malley",
+     "value": 1.6
+    },
+    {
+     "choice": "Biden",
+     "value": 10.5
+    },
+    {
+     "choice": "Chafee",
+     "value": 0.5
+    },
+    {
+     "choice": "Webb",
+     "value": 1.2
+    }
+   ]
+  },
+  {
+   "date": "2015-05-25",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 11.7
+    },
+    {
+     "choice": "Clinton",
+     "value": 59.9
+    },
+    {
+     "choice": "Other",
+     "value": 2.4
+    },
+    {
+     "choice": "Undecided",
+     "value": 9.4
+    },
+    {
+     "choice": "O'Malley",
+     "value": 1.6
+    },
+    {
+     "choice": "Biden",
+     "value": 10.4
+    },
+    {
+     "choice": "Chafee",
+     "value": 0.5
+    },
+    {
+     "choice": "Webb",
+     "value": 1.2
+    }
+   ]
+  },
+  {
+   "date": "2015-05-18",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 10.9
+    },
+    {
+     "choice": "Clinton",
+     "value": 60.3
+    },
+    {
+     "choice": "Other",
+     "value": 2.7
+    },
+    {
+     "choice": "Undecided",
+     "value": 9.4
+    },
+    {
+     "choice": "O'Malley",
+     "value": 1.6
+    },
+    {
+     "choice": "Biden",
+     "value": 10.1
+    },
+    {
+     "choice": "Webb",
+     "value": 1.2
+    }
+   ]
+  },
+  {
+   "date": "2015-05-16",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 10.7
+    },
+    {
+     "choice": "Clinton",
+     "value": 60.5
+    },
+    {
+     "choice": "O'Malley",
+     "value": 1.6
+    },
+    {
+     "choice": "Biden",
+     "value": 10
+    },
+    {
+     "choice": "Cuomo",
+     "value": 2.4
+    }
+   ]
+  },
+  {
+   "date": "2015-05-12",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 10.3
+    },
+    {
+     "choice": "Clinton",
+     "value": 60.8
+    },
+    {
+     "choice": "Other",
+     "value": 3
+    },
+    {
+     "choice": "Undecided",
+     "value": 9.4
+    },
+    {
+     "choice": "O'Malley",
+     "value": 1.6
+    },
+    {
+     "choice": "Biden",
+     "value": 9.8
+    },
+    {
+     "choice": "Chafee",
+     "value": 0.4
+    },
+    {
+     "choice": "Webb",
+     "value": 1.1
+    },
+    {
+     "choice": "Cuomo",
+     "value": 2.4
+    },
+    {
+     "choice": "Warren",
+     "value": 10
+    }
+   ]
+  },
+  {
+   "date": "2015-05-11",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 10.2
+    },
+    {
+     "choice": "Clinton",
+     "value": 60.9
+    },
+    {
+     "choice": "Other",
+     "value": 3
+    },
+    {
+     "choice": "Undecided",
+     "value": 9.3
+    },
+    {
+     "choice": "O'Malley",
+     "value": 1.6
+    },
+    {
+     "choice": "Biden",
+     "value": 9.8
+    },
+    {
+     "choice": "Webb",
+     "value": 1.1
+    }
+   ]
+  },
+  {
+   "date": "2015-05-10",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 10.1
+    },
+    {
+     "choice": "Clinton",
+     "value": 61
+    },
+    {
+     "choice": "Undecided",
+     "value": 9.3
+    },
+    {
+     "choice": "O'Malley",
+     "value": 1.6
+    },
+    {
+     "choice": "Chafee",
+     "value": 0.4
+    },
+    {
+     "choice": "Webb",
+     "value": 1.1
+    }
+   ]
+  },
+  {
+   "date": "2015-05-04",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 9.4
+    },
+    {
+     "choice": "Clinton",
+     "value": 61.5
+    },
+    {
+     "choice": "Other",
+     "value": 3.1
+    },
+    {
+     "choice": "Undecided",
+     "value": 9.2
+    },
+    {
+     "choice": "O'Malley",
+     "value": 1.6
+    },
+    {
+     "choice": "Biden",
+     "value": 9.7
+    },
+    {
+     "choice": "Webb",
+     "value": 1.1
+    }
+   ]
+  },
+  {
+   "date": "2015-04-27",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 8.7
+    },
+    {
+     "choice": "Clinton",
+     "value": 61.6
+    },
+    {
+     "choice": "Other",
+     "value": 3.3
+    },
+    {
+     "choice": "Undecided",
+     "value": 9.1
+    },
+    {
+     "choice": "O'Malley",
+     "value": 1.6
+    },
+    {
+     "choice": "Biden",
+     "value": 9.6
+    },
+    {
+     "choice": "Webb",
+     "value": 1.1
+    }
+   ]
+  },
+  {
+   "date": "2015-04-21",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 8.1
+    },
+    {
+     "choice": "Clinton",
+     "value": 61.8
+    },
+    {
+     "choice": "Other",
+     "value": 3.5
+    },
+    {
+     "choice": "Undecided",
+     "value": 8.9
+    },
+    {
+     "choice": "O'Malley",
+     "value": 1.6
+    },
+    {
+     "choice": "Biden",
+     "value": 9.8
+    },
+    {
+     "choice": "Chafee",
+     "value": 0.4
+    },
+    {
+     "choice": "Webb",
+     "value": 1.1
+    },
+    {
+     "choice": "Cuomo",
+     "value": 2.4
+    },
+    {
+     "choice": "Warren",
+     "value": 10.3
+    }
+   ]
+  },
+  {
+   "date": "2015-04-20",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 8
+    },
+    {
+     "choice": "Clinton",
+     "value": 61.9
+    },
+    {
+     "choice": "Other",
+     "value": 3.5
+    },
+    {
+     "choice": "Undecided",
+     "value": 8.9
+    },
+    {
+     "choice": "O'Malley",
+     "value": 1.6
+    },
+    {
+     "choice": "Biden",
+     "value": 9.8
+    },
+    {
+     "choice": "Webb",
+     "value": 1.1
+    }
+   ]
+  },
+  {
+   "date": "2015-04-19",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 7.9
+    },
+    {
+     "choice": "Clinton",
+     "value": 61.9
+    },
+    {
+     "choice": "Other",
+     "value": 3.5
+    },
+    {
+     "choice": "Undecided",
+     "value": 8.9
+    },
+    {
+     "choice": "O'Malley",
+     "value": 1.6
+    },
+    {
+     "choice": "Biden",
+     "value": 9.8
+    },
+    {
+     "choice": "Chafee",
+     "value": 0.4
+    },
+    {
+     "choice": "Webb",
+     "value": 1.1
+    }
+   ]
+  },
+  {
+   "date": "2015-04-13",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 7.3
+    },
+    {
+     "choice": "Clinton",
+     "value": 61.9
+    },
+    {
+     "choice": "Other",
+     "value": 3.7
+    },
+    {
+     "choice": "Undecided",
+     "value": 8.7
+    },
+    {
+     "choice": "O'Malley",
+     "value": 1.7
+    },
+    {
+     "choice": "Biden",
+     "value": 10.1
+    },
+    {
+     "choice": "Webb",
+     "value": 1
+    }
+   ]
+  },
+  {
+   "date": "2015-04-02",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 6.6
+    },
+    {
+     "choice": "Clinton",
+     "value": 61.6
+    },
+    {
+     "choice": "Other",
+     "value": 4
+    },
+    {
+     "choice": "Undecided",
+     "value": 8.6
+    },
+    {
+     "choice": "O'Malley",
+     "value": 1.6
+    },
+    {
+     "choice": "Biden",
+     "value": 10.7
+    },
+    {
+     "choice": "Webb",
+     "value": 1.1
+    }
+   ]
+  },
+  {
+   "date": "2015-03-31",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 6.5
+    },
+    {
+     "choice": "Clinton",
+     "value": 61.5
+    },
+    {
+     "choice": "Other",
+     "value": 4
+    },
+    {
+     "choice": "Undecided",
+     "value": 8.6
+    },
+    {
+     "choice": "O'Malley",
+     "value": 1.6
+    },
+    {
+     "choice": "Biden",
+     "value": 10.8
+    },
+    {
+     "choice": "Webb",
+     "value": 1.1
+    },
+    {
+     "choice": "Cuomo",
+     "value": 2.5
+    },
+    {
+     "choice": "Warren",
+     "value": 10.6
+    }
+   ]
+  },
+  {
+   "date": "2015-03-29",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 6.4
+    },
+    {
+     "choice": "Clinton",
+     "value": 61.4
+    },
+    {
+     "choice": "Other",
+     "value": 4
+    },
+    {
+     "choice": "Undecided",
+     "value": 8.6
+    },
+    {
+     "choice": "O'Malley",
+     "value": 1.5
+    },
+    {
+     "choice": "Biden",
+     "value": 11
+    },
+    {
+     "choice": "Webb",
+     "value": 1.1
+    },
+    {
+     "choice": "Warren",
+     "value": 10.7
+    }
+   ]
+  },
+  {
+   "date": "2015-03-23",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 6.1
+    },
+    {
+     "choice": "Clinton",
+     "value": 61.2
+    },
+    {
+     "choice": "Other",
+     "value": 4.1
+    },
+    {
+     "choice": "Undecided",
+     "value": 8.4
+    },
+    {
+     "choice": "O'Malley",
+     "value": 1.5
+    },
+    {
+     "choice": "Biden",
+     "value": 11.3
+    },
+    {
+     "choice": "Webb",
+     "value": 1.1
+    },
+    {
+     "choice": "Schweitzer",
+     "value": 1.4
+    }
+   ]
+  },
+  {
+   "date": "2015-03-16",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 5.7
+    },
+    {
+     "choice": "Clinton",
+     "value": 60.8
+    },
+    {
+     "choice": "Other",
+     "value": 4.1
+    },
+    {
+     "choice": "Undecided",
+     "value": 8.2
+    },
+    {
+     "choice": "O'Malley",
+     "value": 1.4
+    },
+    {
+     "choice": "Biden",
+     "value": 11.8
+    },
+    {
+     "choice": "Webb",
+     "value": 1.2
+    },
+    {
+     "choice": "Schweitzer",
+     "value": 1.4
+    }
+   ]
+  },
+  {
+   "date": "2015-03-15",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 5.6
+    },
+    {
+     "choice": "Clinton",
+     "value": 60.8
+    },
+    {
+     "choice": "Other",
+     "value": 4.1
+    },
+    {
+     "choice": "Undecided",
+     "value": 8.2
+    },
+    {
+     "choice": "O'Malley",
+     "value": 1.4
+    },
+    {
+     "choice": "Biden",
+     "value": 11.9
+    },
+    {
+     "choice": "Webb",
+     "value": 1.2
+    },
+    {
+     "choice": "Warren",
+     "value": 10.9
+    }
+   ]
+  },
+  {
+   "date": "2015-03-09",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 5.3
+    },
+    {
+     "choice": "Clinton",
+     "value": 60.5
+    },
+    {
+     "choice": "Other",
+     "value": 4
+    },
+    {
+     "choice": "Undecided",
+     "value": 8.1
+    },
+    {
+     "choice": "O'Malley",
+     "value": 1.3
+    },
+    {
+     "choice": "Biden",
+     "value": 12
+    },
+    {
+     "choice": "Webb",
+     "value": 1.2
+    },
+    {
+     "choice": "Schweitzer",
+     "value": 1.4
+    }
+   ]
+  },
+  {
+   "date": "2015-03-04",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 5.1
+    },
+    {
+     "choice": "Clinton",
+     "value": 60.3
+    },
+    {
+     "choice": "Undecided",
+     "value": 8
+    },
+    {
+     "choice": "O'Malley",
+     "value": 1.3
+    },
+    {
+     "choice": "Biden",
+     "value": 12.1
+    },
+    {
+     "choice": "Webb",
+     "value": 1.3
+    },
+    {
+     "choice": "Warren",
+     "value": 11
+    }
+   ]
+  },
+  {
+   "date": "2015-03-02",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 5
+    },
+    {
+     "choice": "Clinton",
+     "value": 60.2
+    },
+    {
+     "choice": "Other",
+     "value": 3.9
+    },
+    {
+     "choice": "Undecided",
+     "value": 8
+    },
+    {
+     "choice": "O'Malley",
+     "value": 1.3
+    },
+    {
+     "choice": "Biden",
+     "value": 12.1
+    },
+    {
+     "choice": "Webb",
+     "value": 1.3
+    },
+    {
+     "choice": "Warren",
+     "value": 11
+    }
+   ]
+  },
+  {
+   "date": "2015-02-23",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 4.7
+    },
+    {
+     "choice": "Clinton",
+     "value": 60.1
+    },
+    {
+     "choice": "Other",
+     "value": 3.8
+    },
+    {
+     "choice": "Undecided",
+     "value": 8
+    },
+    {
+     "choice": "O'Malley",
+     "value": 1.3
+    },
+    {
+     "choice": "Biden",
+     "value": 12.1
+    },
+    {
+     "choice": "Webb",
+     "value": 1.3
+    },
+    {
+     "choice": "Schweitzer",
+     "value": 1.4
+    }
+   ]
+  },
+  {
+   "date": "2015-02-22",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 4.7
+    },
+    {
+     "choice": "Clinton",
+     "value": 60
+    },
+    {
+     "choice": "Undecided",
+     "value": 8
+    },
+    {
+     "choice": "O'Malley",
+     "value": 1.2
+    },
+    {
+     "choice": "Biden",
+     "value": 12.2
+    },
+    {
+     "choice": "Webb",
+     "value": 1.3
+    },
+    {
+     "choice": "Warren",
+     "value": 11.2
+    }
+   ]
+  },
+  {
+   "date": "2015-02-15",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 4.5
+    },
+    {
+     "choice": "Clinton",
+     "value": 59.8
+    },
+    {
+     "choice": "Other",
+     "value": 3.8
+    },
+    {
+     "choice": "Undecided",
+     "value": 7.8
+    },
+    {
+     "choice": "O'Malley",
+     "value": 1.2
+    },
+    {
+     "choice": "Biden",
+     "value": 12
+    },
+    {
+     "choice": "Webb",
+     "value": 1.4
+    },
+    {
+     "choice": "Warren",
+     "value": 11.2
+    }
+   ]
+  },
+  {
+   "date": "2015-01-27",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 4.1
+    },
+    {
+     "choice": "Clinton",
+     "value": 60.5
+    },
+    {
+     "choice": "Other",
+     "value": 3.6
+    },
+    {
+     "choice": "Undecided",
+     "value": 7.4
+    },
+    {
+     "choice": "O'Malley",
+     "value": 1
+    },
+    {
+     "choice": "Biden",
+     "value": 11.6
+    },
+    {
+     "choice": "Webb",
+     "value": 1.4
+    },
+    {
+     "choice": "Cuomo",
+     "value": 2.6
+    },
+    {
+     "choice": "Warren",
+     "value": 11.4
+    }
+   ]
+  },
+  {
+   "date": "2015-01-25",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 4.1
+    },
+    {
+     "choice": "Clinton",
+     "value": 60.5
+    },
+    {
+     "choice": "Undecided",
+     "value": 7.4
+    },
+    {
+     "choice": "O'Malley",
+     "value": 1
+    },
+    {
+     "choice": "Biden",
+     "value": 11.5
+    },
+    {
+     "choice": "Webb",
+     "value": 1.4
+    },
+    {
+     "choice": "Warren",
+     "value": 11.4
+    }
+   ]
+  },
+  {
+   "date": "2015-01-19",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 4.1
+    },
+    {
+     "choice": "Clinton",
+     "value": 60.6
+    },
+    {
+     "choice": "Other",
+     "value": 3.5
+    },
+    {
+     "choice": "Undecided",
+     "value": 7.4
+    },
+    {
+     "choice": "O'Malley",
+     "value": 1
+    },
+    {
+     "choice": "Biden",
+     "value": 11.4
+    },
+    {
+     "choice": "Webb",
+     "value": 1.3
+    },
+    {
+     "choice": "Warren",
+     "value": 11.3
+    }
+   ]
+  },
+  {
+   "date": "2015-01-12",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 4
+    },
+    {
+     "choice": "Clinton",
+     "value": 60.8
+    },
+    {
+     "choice": "Other",
+     "value": 3.3
+    },
+    {
+     "choice": "Undecided",
+     "value": 7.3
+    },
+    {
+     "choice": "O'Malley",
+     "value": 0.9
+    },
+    {
+     "choice": "Biden",
+     "value": 11.2
+    },
+    {
+     "choice": "Webb",
+     "value": 1.3
+    },
+    {
+     "choice": "Warren",
+     "value": 11.3
+    },
+    {
+     "choice": "Schweitzer",
+     "value": 1.3
+    }
+   ]
+  },
+  {
+   "date": "2014-12-21",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 3.6
+    },
+    {
+     "choice": "Clinton",
+     "value": 61.3
+    },
+    {
+     "choice": "Other",
+     "value": 2.9
+    },
+    {
+     "choice": "Undecided",
+     "value": 7.3
+    },
+    {
+     "choice": "O'Malley",
+     "value": 0.8
+    },
+    {
+     "choice": "Biden",
+     "value": 10.9
+    },
+    {
+     "choice": "Webb",
+     "value": 1.3
+    },
+    {
+     "choice": "Cuomo",
+     "value": 2.7
+    },
+    {
+     "choice": "Warren",
+     "value": 11.2
+    },
+    {
+     "choice": "Patrick",
+     "value": 1
+    }
+   ]
+  },
+  {
+   "date": "2014-12-14",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 3.4
+    },
+    {
+     "choice": "Clinton",
+     "value": 61.6
+    },
+    {
+     "choice": "Other",
+     "value": 2.7
+    },
+    {
+     "choice": "Undecided",
+     "value": 7.3
+    },
+    {
+     "choice": "O'Malley",
+     "value": 0.8
+    },
+    {
+     "choice": "Biden",
+     "value": 10.8
+    },
+    {
+     "choice": "Webb",
+     "value": 1.4
+    },
+    {
+     "choice": "Warren",
+     "value": 11.1
+    }
+   ]
+  },
+  {
+   "date": "2014-12-09",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 3.3
+    },
+    {
+     "choice": "Clinton",
+     "value": 61.7
+    },
+    {
+     "choice": "Other",
+     "value": 2.6
+    },
+    {
+     "choice": "Undecided",
+     "value": 7.3
+    },
+    {
+     "choice": "O'Malley",
+     "value": 0.8
+    },
+    {
+     "choice": "Biden",
+     "value": 10.7
+    },
+    {
+     "choice": "Webb",
+     "value": 1.4
+    },
+    {
+     "choice": "Cuomo",
+     "value": 2.7
+    },
+    {
+     "choice": "Warren",
+     "value": 11.1
+    }
+   ]
+  },
+  {
+   "date": "2014-11-23",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 3.1
+    },
+    {
+     "choice": "Clinton",
+     "value": 62.2
+    },
+    {
+     "choice": "Other",
+     "value": 2.5
+    },
+    {
+     "choice": "Undecided",
+     "value": 7.2
+    },
+    {
+     "choice": "O'Malley",
+     "value": 0.8
+    },
+    {
+     "choice": "Biden",
+     "value": 10.6
+    },
+    {
+     "choice": "Webb",
+     "value": 1.4
+    },
+    {
+     "choice": "Cuomo",
+     "value": 2.7
+    },
+    {
+     "choice": "Warren",
+     "value": 10.9
+    },
+    {
+     "choice": "Patrick",
+     "value": 1
+    }
+   ]
+  },
+  {
+   "date": "2014-10-12",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 2.7
+    },
+    {
+     "choice": "Clinton",
+     "value": 62.8
+    },
+    {
+     "choice": "Other",
+     "value": 3
+    },
+    {
+     "choice": "Undecided",
+     "value": 6.8
+    },
+    {
+     "choice": "O'Malley",
+     "value": 1
+    },
+    {
+     "choice": "Biden",
+     "value": 10.5
+    },
+    {
+     "choice": "Webb",
+     "value": 1.5
+    },
+    {
+     "choice": "Warren",
+     "value": 10.4
+    }
+   ]
+  },
+  {
+   "date": "2014-07-22",
+   "estimates": [
+    {
+     "choice": "Clinton",
+     "value": 64.1
+    },
+    {
+     "choice": "Other",
+     "value": 3.2
+    },
+    {
+     "choice": "Undecided",
+     "value": 7
+    },
+    {
+     "choice": "O'Malley",
+     "value": 1.2
+    },
+    {
+     "choice": "Biden",
+     "value": 10.9
+    },
+    {
+     "choice": "Cuomo",
+     "value": 2.8
+    },
+    {
+     "choice": "Warren",
+     "value": 9
+    }
+   ]
+  },
+  {
+   "date": "2014-07-20",
+   "estimates": [
+    {
+     "choice": "Clinton",
+     "value": 64.1
+    },
+    {
+     "choice": "Other",
+     "value": 3.2
+    },
+    {
+     "choice": "Undecided",
+     "value": 7
+    },
+    {
+     "choice": "O'Malley",
+     "value": 1.2
+    },
+    {
+     "choice": "Biden",
+     "value": 10.9
+    },
+    {
+     "choice": "Cuomo",
+     "value": 2.8
+    },
+    {
+     "choice": "Warren",
+     "value": 9
+    }
+   ]
+  },
+  {
+   "date": "2014-06-30",
+   "estimates": [
+    {
+     "choice": "Clinton",
+     "value": 64.4
+    },
+    {
+     "choice": "Other",
+     "value": 3.1
+    },
+    {
+     "choice": "Undecided",
+     "value": 7.1
+    },
+    {
+     "choice": "O'Malley",
+     "value": 1.2
+    },
+    {
+     "choice": "Biden",
+     "value": 10.9
+    },
+    {
+     "choice": "Cuomo",
+     "value": 2.8
+    },
+    {
+     "choice": "Warren",
+     "value": 8.7
+    },
+    {
+     "choice": "Schweitzer",
+     "value": 1
+    }
+   ]
+  },
+  {
+   "date": "2014-06-01",
+   "estimates": [
+    {
+     "choice": "Sanders",
+     "value": 1.6
+    },
+    {
+     "choice": "Clinton",
+     "value": 64.8
+    },
+    {
+     "choice": "Undecided",
+     "value": 7.2
+    },
+    {
+     "choice": "O'Malley",
+     "value": 1.2
+    },
+    {
+     "choice": "Biden",
+     "value": 10.9
+    },
+    {
+     "choice": "Webb",
+     "value": 2
+    },
+    {
+     "choice": "Cuomo",
+     "value": 2.9
+    },
+    {
+     "choice": "Warren",
+     "value": 8.4
+    },
+    {
+     "choice": "Schweitzer",
+     "value": 1
+    }
+   ]
+  },
+  {
+   "date": "2014-04-15",
+   "estimates": [
+    {
+     "choice": "Clinton",
+     "value": 65.3
+    },
+    {
+     "choice": "Other",
+     "value": 3.1
+    },
+    {
+     "choice": "Undecided",
+     "value": 7.4
+    },
+    {
+     "choice": "O'Malley",
+     "value": 1.3
+    },
+    {
+     "choice": "Biden",
+     "value": 10.9
+    },
+    {
+     "choice": "Cuomo",
+     "value": 3
+    },
+    {
+     "choice": "Warren",
+     "value": 7.9
+    }
+   ]
+  },
+  {
+   "date": "2014-03-30",
+   "estimates": [
+    {
+     "choice": "Clinton",
+     "value": 65.4
+    },
+    {
+     "choice": "Undecided",
+     "value": 7.6
+    },
+    {
+     "choice": "Biden",
+     "value": 10.8
+    },
+    {
+     "choice": "Cuomo",
+     "value": 3
+    },
+    {
+     "choice": "Warren",
+     "value": 7.7
+    },
+    {
+     "choice": "Schweitzer",
+     "value": 1
+    }
+   ]
+  },
+  {
+   "date": "2014-03-09",
+   "estimates": [
+    {
+     "choice": "Clinton",
+     "value": 65.5
+    },
+    {
+     "choice": "Other",
+     "value": 3.2
+    },
+    {
+     "choice": "Undecided",
+     "value": 7.9
+    },
+    {
+     "choice": "O'Malley",
+     "value": 1.3
+    },
+    {
+     "choice": "Biden",
+     "value": 10.8
+    },
+    {
+     "choice": "Cuomo",
+     "value": 3.1
+    },
+    {
+     "choice": "Gillibrand",
+     "value": 1
+    },
+    {
+     "choice": "Warren",
+     "value": 7.5
+    },
+    {
+     "choice": "Schweitzer",
+     "value": 1
+    },
+    {
+     "choice": "Warner",
+     "value": 0.4
+    },
+    {
+     "choice": "Booker",
+     "value": 3
+    }
+   ]
+  },
+  {
+   "date": "2014-01-26",
+   "estimates": [
+    {
+     "choice": "Clinton",
+     "value": 65.4
+    },
+    {
+     "choice": "Undecided",
+     "value": 8.6
+    },
+    {
+     "choice": "O'Malley",
+     "value": 1.3
+    },
+    {
+     "choice": "Biden",
+     "value": 10.8
+    },
+    {
+     "choice": "Cuomo",
+     "value": 3.1
+    },
+    {
+     "choice": "Gillibrand",
+     "value": 1
+    },
+    {
+     "choice": "Warren",
+     "value": 7.1
+    },
+    {
+     "choice": "Schweitzer",
+     "value": 1
+    },
+    {
+     "choice": "Warner",
+     "value": 0.6
+    },
+    {
+     "choice": "Booker",
+     "value": 2
+    }
+   ]
+  },
+  {
+   "date": "2014-01-23",
+   "estimates": [
+    {
+     "choice": "Clinton",
+     "value": 65.4
+    },
+    {
+     "choice": "Other",
+     "value": 3.3
+    },
+    {
+     "choice": "Undecided",
+     "value": 8.7
+    },
+    {
+     "choice": "Biden",
+     "value": 10.8
+    },
+    {
+     "choice": "Warren",
+     "value": 7.1
+    }
+   ]
+  },
+  {
+   "date": "2014-01-19",
+   "estimates": [
+    {
+     "choice": "Clinton",
+     "value": 65.4
+    },
+    {
+     "choice": "Other",
+     "value": 3.3
+    },
+    {
+     "choice": "Undecided",
+     "value": 8.8
+    },
+    {
+     "choice": "O'Malley",
+     "value": 1.3
+    },
+    {
+     "choice": "Biden",
+     "value": 10.8
+    },
+    {
+     "choice": "Cuomo",
+     "value": 3.2
+    },
+    {
+     "choice": "Warren",
+     "value": 7
+    },
+    {
+     "choice": "Schweitzer",
+     "value": 1
+    },
+    {
+     "choice": "Dean",
+     "value": 2
+    }
+   ]
+  },
+  {
+   "date": "2013-12-16",
+   "estimates": [
+    {
+     "choice": "Clinton",
+     "value": 65.2
+    },
+    {
+     "choice": "Other",
+     "value": 3.3
+    },
+    {
+     "choice": "Undecided",
+     "value": 9.4
+    },
+    {
+     "choice": "O'Malley",
+     "value": 1.4
+    },
+    {
+     "choice": "Biden",
+     "value": 10.8
+    },
+    {
+     "choice": "Cuomo",
+     "value": 3.2
+    },
+    {
+     "choice": "Warren",
+     "value": 6.8
+    },
+    {
+     "choice": "Patrick",
+     "value": 1
+    }
+   ]
+  },
+  {
+   "date": "2013-12-15",
+   "estimates": [
+    {
+     "choice": "Clinton",
+     "value": 65.2
+    },
+    {
+     "choice": "Undecided",
+     "value": 9.4
+    },
+    {
+     "choice": "O'Malley",
+     "value": 1.4
+    },
+    {
+     "choice": "Biden",
+     "value": 10.8
+    },
+    {
+     "choice": "Cuomo",
+     "value": 3.2
+    },
+    {
+     "choice": "Warren",
+     "value": 6.8
+    },
+    {
+     "choice": "Schweitzer",
+     "value": 1
+    },
+    {
+     "choice": "Booker",
+     "value": 2
+    },
+    {
+     "choice": "Dean",
+     "value": 2
+    },
+    {
+     "choice": "Kerry",
+     "value": 2
+    }
+   ]
+  },
+  {
+   "date": "2013-12-09",
+   "estimates": [
+    {
+     "choice": "Clinton",
+     "value": 65.1
+    },
+    {
+     "choice": "Other",
+     "value": 3.3
+    },
+    {
+     "choice": "Undecided",
+     "value": 9.6
+    },
+    {
+     "choice": "O'Malley",
+     "value": 1.4
+    },
+    {
+     "choice": "Biden",
+     "value": 10.8
+    },
+    {
+     "choice": "Cuomo",
+     "value": 3.2
+    },
+    {
+     "choice": "Warren",
+     "value": 6.7
+    },
+    {
+     "choice": "Schweitzer",
+     "value": 1
+    },
+    {
+     "choice": "Dean",
+     "value": 1
+    }
+   ]
+  },
+  {
+   "date": "2013-12-05",
+   "estimates": [
+    {
+     "choice": "Clinton",
+     "value": 65
+    },
+    {
+     "choice": "Undecided",
+     "value": 9.7
+    },
+    {
+     "choice": "O'Malley",
+     "value": 1.4
+    },
+    {
+     "choice": "Biden",
+     "value": 10.8
+    },
+    {
+     "choice": "Cuomo",
+     "value": 3.2
+    },
+    {
+     "choice": "Warren",
+     "value": 6.7
+    }
+   ]
+  },
+  {
+   "date": "2013-11-20",
+   "estimates": [
+    {
+     "choice": "Clinton",
+     "value": 64.7
+    },
+    {
+     "choice": "Other",
+     "value": 3.2
+    },
+    {
+     "choice": "Undecided",
+     "value": 10.1
+    },
+    {
+     "choice": "O'Malley",
+     "value": 1.3
+    },
+    {
+     "choice": "Biden",
+     "value": 10.8
+    },
+    {
+     "choice": "Cuomo",
+     "value": 3.3
+    },
+    {
+     "choice": "Warren",
+     "value": 6.6
+    }
+   ]
+  },
+  {
+   "date": "2013-10-31",
+   "estimates": [
+    {
+     "choice": "Clinton",
+     "value": 64.3
+    },
+    {
+     "choice": "Undecided",
+     "value": 10.6
+    },
+    {
+     "choice": "O'Malley",
+     "value": 1.3
+    },
+    {
+     "choice": "Biden",
+     "value": 10.8
+    },
+    {
+     "choice": "Cuomo",
+     "value": 3.3
+    },
+    {
+     "choice": "Gillibrand",
+     "value": 1
+    },
+    {
+     "choice": "Warren",
+     "value": 6.5
+    },
+    {
+     "choice": "Schweitzer",
+     "value": 1.1
+    },
+    {
+     "choice": "Warner",
+     "value": 0.9
+    },
+    {
+     "choice": "Booker",
+     "value": 1
+    }
+   ]
+  },
+  {
+   "date": "2013-10-28",
+   "estimates": [
+    {
+     "choice": "Clinton",
+     "value": 64.3
+    },
+    {
+     "choice": "Other",
+     "value": 3.2
+    },
+    {
+     "choice": "Undecided",
+     "value": 10.7
+    },
+    {
+     "choice": "O'Malley",
+     "value": 1.3
+    },
+    {
+     "choice": "Biden",
+     "value": 10.9
+    },
+    {
+     "choice": "Schweitzer",
+     "value": 1.1
+    }
+   ]
+  },
+  {
+   "date": "2013-10-01",
+   "estimates": [
+    {
+     "choice": "Clinton",
+     "value": 63.7
+    },
+    {
+     "choice": "Other",
+     "value": 3.2
+    },
+    {
+     "choice": "Undecided",
+     "value": 11.4
+    },
+    {
+     "choice": "O'Malley",
+     "value": 1.3
+    },
+    {
+     "choice": "Biden",
+     "value": 11.1
+    }
+   ]
+  },
+  {
+   "date": "2013-09-29",
+   "estimates": [
+    {
+     "choice": "Clinton",
+     "value": 63.7
+    },
+    {
+     "choice": "Other",
+     "value": 3.2
+    },
+    {
+     "choice": "Undecided",
+     "value": 11.5
+    },
+    {
+     "choice": "O'Malley",
+     "value": 1.3
+    },
+    {
+     "choice": "Biden",
+     "value": 11.1
+    },
+    {
+     "choice": "Cuomo",
+     "value": 3.4
+    },
+    {
+     "choice": "Warren",
+     "value": 6.4
+    },
+    {
+     "choice": "Warner",
+     "value": 1
+    }
+   ]
+  },
+  {
+   "date": "2013-09-17",
+   "estimates": [
+    {
+     "choice": "Clinton",
+     "value": 63.6
+    },
+    {
+     "choice": "Other",
+     "value": 3.1
+    },
+    {
+     "choice": "Undecided",
+     "value": 11.8
+    },
+    {
+     "choice": "Biden",
+     "value": 11.2
+    }
+   ]
+  },
+  {
+   "date": "2013-09-08",
+   "estimates": [
+    {
+     "choice": "Clinton",
+     "value": 63.5
+    },
+    {
+     "choice": "Other",
+     "value": 3.1
+    },
+    {
+     "choice": "Undecided",
+     "value": 12
+    },
+    {
+     "choice": "O'Malley",
+     "value": 1.3
+    },
+    {
+     "choice": "Biden",
+     "value": 11.2
+    },
+    {
+     "choice": "Cuomo",
+     "value": 3.4
+    },
+    {
+     "choice": "Warren",
+     "value": 6.3
+    }
+   ]
+  },
+  {
+   "date": "2013-08-02",
+   "estimates": [
+    {
+     "choice": "Clinton",
+     "value": 62.8
+    },
+    {
+     "choice": "Other",
+     "value": 3.1
+    },
+    {
+     "choice": "Undecided",
+     "value": 12.6
+    },
+    {
+     "choice": "O'Malley",
+     "value": 1.3
+    },
+    {
+     "choice": "Biden",
+     "value": 11.7
+    },
+    {
+     "choice": "Cuomo",
+     "value": 3.5
+    },
+    {
+     "choice": "Booker",
+     "value": 1
+    },
+    {
+     "choice": "Villaraigosa",
+     "value": 3
+    }
+   ]
+  },
+  {
+   "date": "2013-07-21",
+   "estimates": [
+    {
+     "choice": "Clinton",
+     "value": 62.5
+    },
+    {
+     "choice": "Undecided",
+     "value": 12.5
+    },
+    {
+     "choice": "O'Malley",
+     "value": 1.3
+    },
+    {
+     "choice": "Biden",
+     "value": 11.8
+    },
+    {
+     "choice": "Cuomo",
+     "value": 3.5
+    },
+    {
+     "choice": "Gillibrand",
+     "value": 1
+    },
+    {
+     "choice": "Warren",
+     "value": 6.1
+    },
+    {
+     "choice": "Schweitzer",
+     "value": 1.1
+    },
+    {
+     "choice": "Warner",
+     "value": 1.3
+    },
+    {
+     "choice": "Booker",
+     "value": 1
+    }
+   ]
+  },
+  {
+   "date": "2013-07-18",
+   "estimates": [
+    {
+     "choice": "Clinton",
+     "value": 62.5
+    },
+    {
+     "choice": "Undecided",
+     "value": 12.6
+    },
+    {
+     "choice": "O'Malley",
+     "value": 1.3
+    },
+    {
+     "choice": "Biden",
+     "value": 11.9
+    },
+    {
+     "choice": "Cuomo",
+     "value": 3.5
+    }
+   ]
+  },
+  {
+   "date": "2013-05-27",
+   "estimates": [
+    {
+     "choice": "Clinton",
+     "value": 61.4
+    },
+    {
+     "choice": "Other",
+     "value": 3
+    },
+    {
+     "choice": "Undecided",
+     "value": 12.5
+    },
+    {
+     "choice": "O'Malley",
+     "value": 1.3
+    },
+    {
+     "choice": "Biden",
+     "value": 12.8
+    }
+   ]
+  },
+  {
+   "date": "2013-05-20",
+   "estimates": [
+    {
+     "choice": "Clinton",
+     "value": 61.2
+    },
+    {
+     "choice": "Other",
+     "value": 3
+    },
+    {
+     "choice": "Undecided",
+     "value": 12.4
+    },
+    {
+     "choice": "O'Malley",
+     "value": 1.3
+    },
+    {
+     "choice": "Biden",
+     "value": 12.9
+    }
+   ]
+  },
+  {
+   "date": "2013-05-13",
+   "estimates": [
+    {
+     "choice": "Clinton",
+     "value": 61.1
+    },
+    {
+     "choice": "Other",
+     "value": 3
+    },
+    {
+     "choice": "Undecided",
+     "value": 12.3
+    },
+    {
+     "choice": "O'Malley",
+     "value": 1.3
+    },
+    {
+     "choice": "Biden",
+     "value": 13
+    }
+   ]
+  },
+  {
+   "date": "2013-05-09",
+   "estimates": [
+    {
+     "choice": "Clinton",
+     "value": 61
+    },
+    {
+     "choice": "Undecided",
+     "value": 12.3
+    },
+    {
+     "choice": "O'Malley",
+     "value": 1.3
+    },
+    {
+     "choice": "Biden",
+     "value": 13
+    },
+    {
+     "choice": "Cuomo",
+     "value": 3.7
+    },
+    {
+     "choice": "Gillibrand",
+     "value": 1
+    },
+    {
+     "choice": "Warren",
+     "value": 5.7
+    },
+    {
+     "choice": "Schweitzer",
+     "value": 1
+    },
+    {
+     "choice": "Patrick",
+     "value": 1
+    },
+    {
+     "choice": "Warner",
+     "value": 1.8
+    }
+   ]
+  },
+  {
+   "date": "2013-04-29",
+   "estimates": [
+    {
+     "choice": "Clinton",
+     "value": 60.8
+    },
+    {
+     "choice": "Other",
+     "value": 2.9
+    },
+    {
+     "choice": "Undecided",
+     "value": 12.2
+    },
+    {
+     "choice": "O'Malley",
+     "value": 1.4
+    },
+    {
+     "choice": "Biden",
+     "value": 13.1
+    },
+    {
+     "choice": "Cuomo",
+     "value": 3.7
+    },
+    {
+     "choice": "Patrick",
+     "value": 1
+    },
+    {
+     "choice": "Warner",
+     "value": 2
+    }
+   ]
+  },
+  {
+   "date": "2013-03-30",
+   "estimates": [
+    {
+     "choice": "Clinton",
+     "value": 60.2
+    },
+    {
+     "choice": "Undecided",
+     "value": 12
+    },
+    {
+     "choice": "O'Malley",
+     "value": 1.4
+    },
+    {
+     "choice": "Biden",
+     "value": 13.5
+    },
+    {
+     "choice": "Cuomo",
+     "value": 3.8
+    },
+    {
+     "choice": "Gillibrand",
+     "value": 1
+    },
+    {
+     "choice": "Warren",
+     "value": 5.5
+    },
+    {
+     "choice": "Schweitzer",
+     "value": 0.9
+    },
+    {
+     "choice": "Patrick",
+     "value": 1
+    },
+    {
+     "choice": "Warner",
+     "value": 1.7
+    }
+   ]
+  },
+  {
+   "date": "2013-02-03",
+   "estimates": [
+    {
+     "choice": "Clinton",
+     "value": 59.2
+    },
+    {
+     "choice": "Undecided",
+     "value": 11.4
+    },
+    {
+     "choice": "O'Malley",
+     "value": 1.5
+    },
+    {
+     "choice": "Biden",
+     "value": 14.2
+    },
+    {
+     "choice": "Cuomo",
+     "value": 3.9
+    },
+    {
+     "choice": "Gillibrand",
+     "value": 1
+    },
+    {
+     "choice": "Warren",
+     "value": 5.3
+    },
+    {
+     "choice": "Schweitzer",
+     "value": 0.7
+    },
+    {
+     "choice": "Patrick",
+     "value": 0
+    },
+    {
+     "choice": "Warner",
+     "value": 1.3
+    }
+   ]
+  },
+  {
+   "date": "2013-01-21",
+   "estimates": [
+    {
+     "choice": "Clinton",
+     "value": 58.9
+    },
+    {
+     "choice": "Other",
+     "value": 2.8
+    },
+    {
+     "choice": "Undecided",
+     "value": 11.2
+    },
+    {
+     "choice": "O'Malley",
+     "value": 1.5
+    },
+    {
+     "choice": "Biden",
+     "value": 14.4
+    }
+   ]
+  },
+  {
+   "date": "2013-01-14",
+   "estimates": [
+    {
+     "choice": "Clinton",
+     "value": 58.7
+    },
+    {
+     "choice": "O'Malley",
+     "value": 1.6
+    },
+    {
+     "choice": "Biden",
+     "value": 14.5
+    }
+   ]
+  },
+  {
+   "date": "2013-01-06",
+   "estimates": [
+    {
+     "choice": "Clinton",
+     "value": 58.6
+    },
+    {
+     "choice": "Undecided",
+     "value": 11
+    },
+    {
+     "choice": "O'Malley",
+     "value": 1.6
+    },
+    {
+     "choice": "Biden",
+     "value": 14.6
+    },
+    {
+     "choice": "Cuomo",
+     "value": 4
+    },
+    {
+     "choice": "Gillibrand",
+     "value": 1
+    },
+    {
+     "choice": "Warren",
+     "value": 5.1
+    },
+    {
+     "choice": "Schweitzer",
+     "value": 0.7
+    },
+    {
+     "choice": "Patrick",
+     "value": 0.4
+    },
+    {
+     "choice": "Warner",
+     "value": 1.2
+    }
+   ]
+  },
+  {
+   "date": "2012-12-02",
+   "estimates": [
+    {
+     "choice": "Clinton",
+     "value": 57.8
+    },
+    {
+     "choice": "Undecided",
+     "value": 10.4
+    },
+    {
+     "choice": "O'Malley",
+     "value": 1.7
+    },
+    {
+     "choice": "Biden",
+     "value": 15
+    },
+    {
+     "choice": "Cuomo",
+     "value": 4
+    },
+    {
+     "choice": "Warren",
+     "value": 5
+    },
+    {
+     "choice": "Schweitzer",
+     "value": 0.6
+    },
+    {
+     "choice": "Patrick",
+     "value": 1
+    },
+    {
+     "choice": "Warner",
+     "value": 1.2
+    }
+   ]
+  }
+ ]
+}

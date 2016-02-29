@@ -30,12 +30,20 @@ h3{
 .axis path, .axis line{
   fill: none;
   stroke: #000;
+  shape-rendering: cripEdges;
 
+}
+.axis{
+	background-color: yellow;
 }
 .tick line{
 	stroke-radius:4;
 }
-
+.candidateline{
+	fill: none;
+  	stroke: steelblue;
+  	stroke-width: 1.5px;
+}
 .horizontal{
 	position: fixed;
 	width: 100%;
