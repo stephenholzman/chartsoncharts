@@ -39,10 +39,10 @@ h3{
 .tick line{
 	stroke-radius:4;
 }
-.candidateline{
+.candidate{
 	fill: none;
   	stroke: steelblue;
-  	stroke-width: 1.5px;
+  	stroke-width: 2px;
 }
 .horizontal{
 	position: fixed;

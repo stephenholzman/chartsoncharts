@@ -4,19 +4,23 @@
 <meta name="MobileOptimized" content="320">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
 <link rel="stylesheet" href="style.css" type="text/css" media="screen"/>
+<script src="/assets/js/d3-queue/d3-queue.min.js"></script>
 <script src="/assets/d3/d3.min.js"></script>
 <script src="/assets/js/date.js"></script>
 <script src="/assets/js/vendor/jquery-1.9.1.min.js"></script>
 
 <div id="container"></div>
+
+
 <script>
 //Starting default Variables
-var CALC_defaults = function(){
-	title = "National Primary Polling"
-	subtitle = "Republicans"
+var calc_defaults = function(){
+	title = "Need to catch up with the election?"
+	subtitle = "Review the 2016 Presidential Primary"
 
+	citation = "Source: HuffPo Pollster"
 
-	//today = dateIDFormat(new Date());
+	today = dateIDFormat(new Date());
 	month_view = "all";
 	startDate = "new Date(2015,3,1)";
 
@@ -25,23 +29,8 @@ var CALC_defaults = function(){
 
 	current_party = "Republicans"
 }
-//All plot margins and height stuff
-var calc_plotDimension = function(){
-	margin = {top: 0, left: 85, bottom: 30, right: 80};
-	if(window.innerWidth<300){
-		width = 300 - margin.right - margin.left;
-	}else{
-		width = window.innerWidth - margin.right - margin.left;
-	};
-
-	if(window.innerHeight<300){
-		height = 300 - 192
-	}else{
-		height = (window.innerHeight - 162);
-	};
-};
 //Title Controls
-var DRAW_titles = function(selection,title,subtitle){
+var draw_titles = function(selection,title,subtitle){
 	var header = d3.select(selection)
 				.append("div")
 				.attr("id","header");
@@ -56,27 +45,63 @@ var DRAW_titles = function(selection,title,subtitle){
 				.attr("class","title-text")
 				.text(subtitle);
 };
-//Citation Controls
-var DRAW_citeBar = function(selection){
-	citeBar = d3.select(selection)
-			.append("div")
-			.attr("id","bottom_navbar")
-			.attr("class","navbar horizontal")
-			.append("ul");
-	var dataSource = citeBar
-					.append("li")
-					.attr("id","dataSource")
-					.text("Source: Huffington Post Pollster API")
-					.on("click", function() { window.open("http://elections.huffingtonpost.com/pollster/api"); });
-
-	var tweetHandle = citeBar
-						.append("li")
-						.attr("id","tweetHandle")
-						.text("@StephenHolz")
-						.on("click", function() { window.open("http://twitter.com/StephenHolz"); });
+var calc_titles = function(){
+	var monthNames = ["January", "February", "March", "April", "May", "June","July", "August", "September", "October", "November", "December"];
+	if(current_mode==="Polling"){
+		if(month_view != "all"){
+			title = current_mode + " - " + monthNames[month_view.getMonth()] + " " + month_view.getFullYear();
+			subtitle = current_party;
+		}else if(month_view === "all"){
+			title = "National Polling"
+			subtitle = current_party;
+		};		
+	}else if(current_mode==="Debates"){
+		title = "Debates and Town Halls"
+		subtitle = current_party;
+	}else if(current_mode==="Funding"){
+		title = "Campaign Finance"
+		subtitle = current_party;
+	}else if(current_mode==="Primaries"){
+		title = "Primaries and Caucuses";
+		subtitle = current_party;
+	}else if(current_mode==="Tweets"){
+		if(month_view != "all"){
+			title = "Top Tweets" + " - " + monthNames[month_view.getMonth()] + " " + month_view.getFullYear();
+			subtitle = current_party;
+		}else if(month_view === "all"){
+			title = "Top Tweets - All"
+			subtitle = current_party;
+		};	
+	};	
 };
+var update_titles = function(fadeout,fadein){
+	d3.selectAll(".title-text")
+		.transition()
+		.style("opacity","0")
+		.duration(fadeout)
 
-//Time Controls
+	setTimeout(function(){
+		calc_titles();
+
+		d3.select("#title")
+		.transition()
+		.text(title)
+		.style("opacity","1")
+		.duration(fadein);
+
+		d3.select("#subtitle")
+		.transition()
+		.text(subtitle)
+		.style("opacity","1")
+		.duration(fadein);
+
+	},fadeout);
+}
+//Date Manipulation
+var calc_dateformatters = function(){
+	monthNameFormat = d3.time.format("%b '%y");
+	dateIDFormat = d3.time.format("%b%y");
+}
 var get_FirstOfMonth = function(date){
 
 	return new Date(date.getFullYear(), date.getMonth(), 1);
@@ -85,78 +110,158 @@ var get_LastOfMonth = function(date){
 
 	return new Date(date.getFullYear(), date.getMonth()+1,0);
 };
-//Candidate Controls
-var draw_candidateAvatar = function(selection,candidate_obj){
-	var svg = d3.select(selection).append("svg")
-	    .attr("width", "50px")
-	    .attr("height", "50px")
-	    .attr("id",candidate_obj.candidate)
-	    .attr("class","candidateAvatar")
-	    .style("z-index",candidate_obj.polling)
-	    .style("right","4px")
-	    .style("top",(101 + yScale(candidate_obj.polling))+"px")
-	    .style("position","fixed");
-
-	var g = svg.append("g");
-
-	var img = g.append("svg:image")
-	    .attr("xlink:href", candidate_obj.picture)
-	    .attr("width", 50)
-	    .attr("height", 50)
-	    .attr("x", 0)
-	    .attr("y",0);
-}
-var draw_candidateStandings = function(selection,party_candidates){
-	party_candidates.forEach(function(d){
-		draw_candidateAvatar(selection,d);
-	})
+var draw_pollschart = function(selection){
+	d3_queue.queue()
+	.defer(d3.csv,"gop_national_estimates.csv")
+	.await(function(error,gop) {
+	  if (error) throw error;
+	  console.log(gop);
+	});
 }
 
-clinton_obj = {
-	name: "Clinton",
-	picture: "avatars/Clinton_400x400.png"
+//Mode Controls
+var draw_modebar = function(selection,modes){
+	var mode_select = d3.select(selection)
+						.append("div")
+						.attr("id","top_navbar")
+						.attr("class","navbar horizontal")
+						.append("ul")
+
+	for(mode in modes){
+
+		mode_select.append("li")
+			.attr("id",modes[mode])
+			.attr("class","active mode")
+			.on("click",function(){
+				d3.selectAll(".mode")
+					.attr("class","active mode");
+
+				d3.select(this)
+					.attr("class","active selected mode");
+
+				current_mode = d3.select(this).text();
+				update_mode();
+				
+			})
+			.append("a")
+			.text(modes[mode])
+			
+	};
+
+	d3.select("#Polling").attr("class","active selected mode");
+};
+var update_mode = function(){
+	d3.select(".chart").transition()
+		.style("opacity",0)
+		.duration(500);
+	update_titles(500,500);
+	setTimeout(function(){
+		d3.select(".chart").remove();
+
+		if(current_mode === "Polling"){
+			draw_pollchart("#container",current_party);
+			draw_data();
+			d3.select(".chart").style("opacity",0);
+			d3.select(".chart").transition()
+			.style("opacity",1)
+			.duration(500);
+
+			d3.selectAll(".partybutton").remove();
+			draw_partybars("#container");
+
+
+
+		};
+
+	},500);
+};
+//Party controls
+var draw_partybars = function(selection){
+	dembutton = d3.select(selection)
+			.append("svg")
+			.attr("id","Democrats_button")
+			.attr("class","partybutton")
+			.style("width","40px")
+			.style("height",((window.innerHeight-162)/2)+"px")
+			.style("position","fixed")
+			.style("top","126px")
+			.style("left","0px")
+			.on("click",function(){
+				current_party = "Democrats"
+
+				d3.selectAll(".partybutton").remove();
+			
+				draw_partybars(selection);
+				update_titles(500,500);
+				d3.selectAll(".candidateline").remove();
+				update_chart();
+
+
+			});
+			
+
+
+	dembutton.append("g")
+			.attr("class","partytext")
+			.attr("transform", "translate(25,"+(38+((window.innerHeight-162)/4))+")rotate(-90)")
+			.append("text")
+			.text("Democrats")
+			.style("font-family","Arial")
+
+
+	repbutton = d3.select(selection)
+			.append("svg")
+			.attr("id","Republicans_button")
+			.attr("class","partybutton")
+			.style("width","40px")
+			.style("height",((window.innerHeight-162)/2)+"px")
+			.style("position","fixed")
+			.style("bottom","36px")
+			.style("left","0px")
+			.on("click",function(){
+				current_party = "Republicans"
+
+				d3.selectAll(".partybutton").remove();
+			
+				draw_partybars(selection);
+				update_titles(500,500);
+				d3.selectAll(".candidateline").remove();
+				update_chart();
+
+
+			});
+
+	repbutton.append("g")
+			.attr("class","partytext")
+			.attr("transform", "translate(25,"+(44+((window.innerHeight-162)/4))+")rotate(-90)")
+			.append("text")
+			.text("Republicans")
+			.style("font-family","Arial")
+
+	d3.select("#"+current_party+"_button")
+		.attr("class","partybutton partyselected");
+
 }
-sanders_obj = {
-	name: "Sanders",
-	picture: "avatars/Sanders_400x400.png"
-}
-trump_obj = {
-	name: "Trump",
-	picture: "avatars/Trump_400x400.png"
-}
-rubio_obj = {
-	name: "Rubio",
-	picture: "avatars/Rubio_400x400.jpg"
-}
-cruz_obj = {
-	name: "Cruz"
-}
-carson_obj = {
-	name: "carson"
-}
-kasich_obj = {
-	name: "Kasich"
-}
-carson_obj = {
-	name: "Carson"
-}
-bush_obj = {
-	name: "Bush"
-}
-paul_obj = {
-	name: "Rand Paul"
-}
-fiorina_obj = {
-	name: "Fiorina"
-}
-christie_obj = {
-	name: "Christie"
-}
-jindal_obj = {
-	name: "Jindal"
-}
-democrat_candidates = [clinton_obj,sanders_obj]
-republican_candidates = [trump_obj,rubio_obj,carson_obj,kasich_obj,cruz_obj,bush_obj,paul_obj,fiorina_obj,christie_obj]
+//citation bar
+var draw_citeBar = function(selection){
+	citeBar = d3.select(selection)
+			.append("div")
+			.attr("id","bottom_navbar")
+			.attr("class","navbar horizontal")
+			.append("ul");
+	var dataSource = citeBar
+					.append("li")
+					.attr("id","dataSource")
+					.text(citation)
+					.on("click", function() { window.open("http://elections.huffingtonpost.com/pollster/api"); });
+	var tweetHandle = citeBar
+						.append("li")
+						.attr("id","tweetHandle")
+						.text("@StephenHolz")
+						.on("click", function() { window.open("http://twitter.com/StephenHolz"); });
+};
+
+//Axis Controls
 //All xAxis Parameters For Each Mode Are Here
 var calc_xScale = function(){
 	if(current_mode === "Polling"){
@@ -246,96 +351,24 @@ var draw_yAxis = function(){
 					.call(yAxis)
 	};	
 };
-//All data manipulation and drawing are here
-var draw_data = function(GOPdata){
-	
-	if(current_mode==="Polling"){
-		if(current_party==="Republicans"){
+//All plot margins and height stuff
+var calc_plotDimension = function(){
+	margin = {top: 0, left: 85, bottom: 30, right: 80};
+	if(window.innerWidth<300){
+		width = 300 - margin.right - margin.left;
+	}else{
+		width = window.innerWidth - margin.right - margin.left;
+	};
 
-				republican_candidates.forEach(function(d){
-					d.nationalestimates = get_candidateEstimates(d.name,GOPdata);
-
-				});
-				calc_pollEstimatesLine();
-
-				republican_candidates.forEach(function(d,i){
-					estimates = d.nationalestimates;
-					chart.append("path")
-						.attr("id","line"+i)
-		      			.attr("class", "candidateline")
-		      			.attr("d", function(d) { return line(estimates)});
-				});
-
-			
-		}else if(current_party==="Democrats"){
-			
-				democrat_candidates.forEach(function(d){
-					d.nationalestimates = get_candidateEstimates(d.name,DEMdata);
-
-				});
-				calc_pollEstimatesLine();
-
-				democrat_candidates.forEach(function(d,i){
-					estimates = d.nationalestimates;
-					chart.append("path")
-						.attr("id","line"+i)
-		      			.attr("class", "candidateline")
-		      			.attr("d", function(d) { return line(estimates)});
-				});
-
-				pollaxisblocker = chart.append("rect")
-							.attr("class","blocker")
-	                        .attr("fill","white")
-	                        .attr("x",-50)
-	                        .attr("width", 50)
-	                        .attr("height",(window.innerHeight-162)+"px");
-	            draw_yAxis();
-				draw_xAxis();
-	            standingsblock = d3.select("#container").append("svg")
-							.attr("class","blocker")
-							.style("background-color","white")
-							.style("width","80px")
-							.style("height",(window.innerHeight-182)+"px")
-							.style("position","fixed")
-							.style("top","126px")
-							.style("right","0px") 
-			
-		}		
+	if(window.innerHeight<300){
+		height = 300 - 192
+	}else{
+		height = (window.innerHeight - 192);
 	};
 };
 
-var get_candidateEstimates = function(candidate,data){
-	var points = []
-
-	data.estimates_by_date.forEach(function(d){
-		var point = new Object();
-		for(c in d.estimates){
-			if(candidate === d.estimates[c].choice){
-				if(Date.parse(d.date)>=eval(startDate)){
-					point.date = Date.parse(d.date);
-					point.value = d.estimates[c].value;
-					points.push(point);
-				}
-				
-			};
-		}
-		
-	});
-
-	return points;
-};
-
-var calc_pollEstimatesLine = function(){
-
-
-	line = d3.svg.line()
-    //.interpolate("basis")
-    .x(function(d) { return xScale(d.date); })
-    .y(function(d) { return yScale(d.value); });
-}
-
-//Different chart generators
-var draw_pollingChart = function(selection,party){
+//Poll Chart Controls
+var draw_pollchart = function(selection,party){
 	calc_plotDimension();
 	top = 126;
 	chart = d3.select(selection)
@@ -346,107 +379,142 @@ var draw_pollingChart = function(selection,party){
 					.attr("height",
 						"100%")
 					.style("position","fixed")
-					.style("top","90px")
+					.style("top","126px")
 					.style("left",0)
 					.append("g")
 					.attr("transform","translate(" + margin.left + "," + margin.top + ")");
 
-
+	/*chart.append("svg")
+		.attr("width","40px")
+		.attr("height",window.innerHeight-162)
+		.style("background-color","yellow")
+*/
 	calc_xScale();
 	calc_xAxis();
-
+	draw_xAxis();
 	calc_yScale(party);
 	calc_yAxis(party);
-	
-	draw_xAxis();
 	draw_yAxis();
-	//draw_candidateStandings("#container",democrat_candidates)
 
-	//draw_data(GOPdata,DEMdata);
-	/*
-	var resize = function(){
-		d3.selectAll(".partybutton").remove()
-		draw_partybars(selection);
+}
+//Data controls
+var draw_data = function(){
+	line = d3.svg.line()
+	    .interpolate("basis")
+	    .x(function(d) { return xScale(d.date); })
+	    .y(function(d) { return yScale(d.polling); });
 
+	var color = d3.scale.category10();
+
+	if(current_party==="Republicans"){
+		csvfile = "gop_national_estimates.csv"
+	}else if(current_party==="Democrats"){
+		csvfile = "dem_national_estimates.csv"
+	}
+	
+	d3_queue.queue()
+		.defer(d3.csv,csvfile)
+		.await(function(error,data) {
+		  	if (error) throw error;
+		  	color.domain(d3.keys(data[0]).filter(function(key) { return key !== "date"; }));
+			cleandata =[]
+			data.forEach(function(d,i) {
+			    d.date = Date.parse(d.date);
+			    if(d.date >= eval(startDate)){
+			    	cleandata.push(d);
+			    }
+			});
+
+
+			var candidates = color.domain().map(function(name) {
+			    return {
+			      	name: name,
+			      	values: cleandata.map(function(d) {
+
+			        	return {date: d.date, polling: +d[name]};
+
+			      	})
+			    };
+			});
+
+			var candidate = chart.selectAll(".candidate")
+			      .data(candidates)
+			    .enter().append("g")
+			      .attr("class", "candidate");
+
+			candidatelines = candidate.append("path")
+      			.attr("class", "line")
+      			.attr("d", function(d) { return line(d.values); })
+      			.style("stroke", function(d) { return color(d.name); });
+
+ 
+		});
+
+}
+var update_chart = function(){
+	if(current_mode === "Polling"){
+		
+		calc_xScale();
+		calc_xAxis();
+		/*d3.select("#timeAxis").transition()
+			.duration(600)
+			.call(xAxis);*/
+		calc_yScale(current_party);
+		calc_yAxis(current_party);
+		if(current_party==="Republicans"){
+			//update rep lines
+				
+		}else if(current_party==="Democrats"){
+			//update dem lines
+				
+		}
+
+
+		d3.select("#pollAxis").transition()
+			.duration(600)
+			.call(yAxis);
+
+		d3.selectAll(".candidate").remove();
+		draw_data();
+
+		
+
+	};
+	update_titles(500,500);	
+}
+var resizeAll = function(){
+		d3.selectAll(".partytext").remove();
+		d3.selectAll(".partybutton").remove();
+		draw_partybars("#container");
 		calc_plotDimension();
 		calc_xScale();
 		calc_xAxis();
-		calc_yScale(party);
-		calc_yAxis(party);
+		calc_yScale(current_party);
+		calc_yAxis(current_party);
 		d3.selectAll(".axis").remove();
-		
-
-		d3.selectAll(".candidateAvatar").remove();
-		draw_candidateStandings("#container",democrat_candidates)
-		if(current_party==="Republicans"){
-			republican_candidates.forEach(function(d,i){
-				estimates = d.nationalestimates;
-
-				d3.select("#line"+i)
-					.attr("d", function(d) { return line(estimates); })
-			});	
-		}else if(current_party==="Democrats"){
-			democrat_candidates.forEach(function(d,i){
-				estimates = d.nationalestimates;
-
-				d3.select("#line"+i)
-					.attr("d", function(d) { return line(estimates); })
-			});
-		}
-		
-
-
-		pollaxisblocker
-			.attr("height",(window.innerHeight-162)+"px");
-		standingsblock
-			.style("height",(window.innerHeight-182)+"px");
 		draw_xAxis();
 		draw_yAxis();
+		line = d3.svg.line()
+		    .interpolate("basis")
+		    .x(function(d) { return xScale(d.date); })
+		    .y(function(d) { return yScale(d.polling); });
 
-	}
-	
-	d3.select(window).on("resize",resize);*/
+		candidatelines.attr("d", function(d) { return line(d.values); })
+
+		//d3.selectAll(".candidate").remove();
+		//draw_data();
+
 };
-var resizeAll = function(){
-	repbutton.style("height",((window.innerHeight-126)/2)+"px");
-	repbuttontext.remove();
+d3.select(window).on("resize",resizeAll);
+calc_dateformatters();
+calc_defaults();
+draw_titles("#container",title,subtitle);
+draw_modebar("#container",modes);
+draw_citeBar("#container");
+draw_pollchart("#container",current_party);
+draw_partybars("#container");
+draw_data();
 
-	repbuttontext = repbutton.append("g")
-			.attr("transform", "translate(25,"+(44+((window.innerHeight-126)/4))+")rotate(-90)")
-			.append("text")
-			.text("Republicans")
-			.style("font-family","Arial")
-
-	d3.select("#"+current_party+"_button")
-		.attr("class","partybutton partyselected");
-	d3.select(".chart").remove();
-	calc_plotDimension();
-	draw_pollingChart("#container",current_party);
-	calc_pollEstimatesLine();
-	if(current_party==="Republicans"){
-		republican_candidates.forEach(function(d,i){
-			estimates = d.nationalestimates;
-			chart.append("path")
-				.attr("id","line"+i)
-			    .attr("class", "candidateline")
-			    .attr("d", function(d) { return line(estimates)});
-		});		
-	}
-
-
-
-
-}
-d3.json("2016-president-gop-primary.json",function(GOPdata){
-		CALC_defaults();
-		DRAW_titles("#container",title,subtitle);
-		d3.select(window).on("resize",resizeAll);
-		DRAW_citeBar("#container");
-		calc_plotDimension();
-		draw_pollingChart("#container",current_party);
-		draw_data(GOPdata);
-
-});
 
 
 </script>
