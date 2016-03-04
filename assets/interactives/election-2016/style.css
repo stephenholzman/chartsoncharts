@@ -44,6 +44,9 @@ h3{
   	stroke: steelblue;
   	stroke-width: 2px;
 }
+.candidateLegend:hover{
+	cursor:crosshair;
+}
 .horizontal{
 	position: fixed;
 	width: 100%;
@@ -92,8 +95,8 @@ li {
 #tweetHandle:hover{
 	color:#55ACEE;
 }
-.partybutton:hover{
-
+.box g text{
+	text-align:right;
 }
 #Democrats_button:hover{
 	background-color:#2E7AC6;
