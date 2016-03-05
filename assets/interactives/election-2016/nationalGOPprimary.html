@@ -160,11 +160,11 @@ var update_mode = function(){
 	update_titles(500,500);
 	setTimeout(function(){
 		d3.select(".chart").remove();
-
+		candidateLegend.remove();
+		d3.select("#dateLabel").remove();
 		if(current_mode === "Polling"){
 			draw_pollchart("#container",current_party);
 			draw_data();
-
 			d3.select(".chart").style("opacity",0);
 			d3.select(".candidate").style("opacity",0);
 
@@ -184,6 +184,12 @@ var update_mode = function(){
 };
 //Party controls
 var draw_partybars = function(selection){
+
+	var update_party = function(){
+		if(current_mode==="Polling"){
+
+		}
+	}
 	dembutton = d3.select(selection)
 		.append("svg")
 		.attr("id","Democrats_button")
@@ -197,14 +203,17 @@ var draw_partybars = function(selection){
 			current_party = "Democrats"
 
 			d3.selectAll(".partybutton").remove();
-			
+
 			draw_partybars(selection);
 			update_titles(500,500);
 			update_chart();
 			candidateLegend.transition().style("opacity",0).duration(500)
 			d3.selectAll(".candidate").transition().style("opacity",0).duration(500)
+			d3.selectAll(".marker").transition().style("opacity",0).duration(500)
+
 			setTimeout(function(){
 				candidateLegend.remove();
+				d3.selectAll(".marker").remove();
 				d3.select("#dateLabel").remove();
 				d3.selectAll(".candidate").remove();
 				draw_data();
@@ -244,10 +253,13 @@ var draw_partybars = function(selection){
 			update_chart();
 			candidateLegend.transition().style("opacity",0).duration(500)
 			d3.selectAll(".candidate").transition().style("opacity",0).duration(500)
+			d3.selectAll(".marker").transition().style("opacity",0).duration(500)
+
 			setTimeout(function(){
 				candidateLegend.remove();
 				d3.select("#dateLabel").remove();				
 				d3.selectAll(".candidate").remove();
+				d3.selectAll(".marker").remove();				
 				draw_data();
 				d3.selectAll(".candidate").style("opacity",0)
 				d3.selectAll(".candidate").transition().style("opacity",1).duration(500)
@@ -380,7 +392,7 @@ var draw_yAxis = function(){
 var calc_plotDimension = function(){
 	margin = {top: 0, left: 150, bottom: 30, right: 40};
 
-	legend = {width: 90, height: (window.innerHeight-162)*.09}
+	legend = {width: 90, height: (window.innerHeight-162)*.087}
 	width = window.innerWidth - margin.right - margin.left;
 	height = (window.innerHeight - 192);
 
@@ -473,7 +485,25 @@ var draw_data = function(){
       			.style("stroke", function(d) { return color(d.name);});
 
  			draw_legend();
+
+ 			markers = chart.selectAll(".marker")
+ 				.data(candidates)
+ 			  .enter().append("g")
+ 			  	.attr("class","marker")
+
+ 			circles = markers.append("circle")
+ 				.attr("cx",function(d){
+ 					return xScale(d.values[0].date)
+ 				})
+ 				.attr("cy",function(d){
+ 					return yScale(d.values[0].polling)
+ 				})
+ 				.attr("r",4)
+ 				.style("fill",function(d) { return color(d.name);})
+ 				.style("opacity",.5)
+
  			draw_focus();
+
 		});
 
 }
@@ -497,14 +527,30 @@ var draw_focus = function(){
   	function mousemove() {
 
     	x0 = get_DayOfMonth(xScale.invert(d3.mouse(this)[0])); 
-    	i = bisect(sortedData, x0)
-    	console.log(i);
+    	index = bisect(sortedData, x0)
+    	circles
+    	 	.attr("cx",function(d){
+ 					return xScale(d.values[cleandata.length - index].date)
+ 				})
+ 			.attr("cy",function(d){
+ 					return yScale(d.values[cleandata.length - index].polling)
+ 				});
+
+ 		candidateBoxPoll.text(function(d){
+			return d.values[cleandata.length - index].polling
+		})
+
+ 		candidateDate.text(function(d,i){
+			if(i===0){
+				return dateNameFormat(d.values[cleandata.length - index].date)
+			}
+		})
     	//console.log(x0);
     	//get_DayOfMonth(x0);
         
-    }
+    };
 
-}
+};
 var draw_legend = function(){
 
 	candidateLegend = d3.select("#container").selectAll(".candidateLegend")
@@ -551,7 +597,7 @@ var draw_legend = function(){
 		.style("width",legend.width+"px")
 		.style("height",legend.height+"px")
 		.style("position","fixed")
-		.style("top",function(d,i){return (165 + i*legend.height)+"px";})
+		.style("top",function(d,i){return (152 + i*legend.height)+"px";})
 		.style("left","5px");
 		//.style("text-align","right")
 	candidateBoxText = candidateBox.append("g")
@@ -582,7 +628,6 @@ var draw_legend = function(){
 		.style("float","right")
 
  	candidateDate = d3.select("#container")
-		.append("g")
 		.data(candidates)
 		.append("text")
 		.attr("id","dateLabel")
@@ -627,10 +672,13 @@ var update_chart = function(){
 	update_titles(500,500);	
 }
 var resizeAll = function(){
-		d3.selectAll(".partytext").remove();
-		d3.selectAll(".partybutton").remove();
-		draw_partybars("#container");
-		calc_plotDimension();
+	d3.selectAll(".partytext").remove();
+	d3.selectAll(".partybutton").remove();
+	draw_partybars("#container");
+	calc_plotDimension();
+	
+	if(current_mode==="Polling"){
+
 		calc_xScale();
 		calc_xAxis();
 		calc_yScale(current_party);
@@ -639,7 +687,7 @@ var resizeAll = function(){
 		draw_xAxis();
 		draw_yAxis();
 		line = d3.svg.line()
-		    .interpolate("bundle").tension(.8)
+		    .interpolate("basis")
 		    .x(function(d) { return xScale(d.date); })
 		    .y(function(d) { return yScale(d.polling); });
 
@@ -648,6 +696,25 @@ var resizeAll = function(){
 		d3.select("#dateLabel").remove();				
 
 		draw_legend();
+		focusarea.attr("width", width)
+	    	.attr("height", height)
+		circles
+    	 	.attr("cx",function(d){
+ 					return xScale(d.values[0].date)
+ 				})
+ 			.attr("cy",function(d){
+ 					return yScale(d.values[0].polling)
+ 				});
+ 		candidateBoxPoll.text(function(d){
+			return d.values[0].polling
+		})
+ 		candidateDate.text(function(d,i){
+			if(i===0){
+				return dateNameFormat(d.values[0].date)
+			}
+		})	
+	}
+
 		//d3.selectAll(".candidate").remove();
 		//draw_data();
 
