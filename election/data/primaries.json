@@ -1,0 +1,1060 @@
+{
+    "states": {
+        "AlabamaD": [
+            {
+                "First Last": "Hillary Clinton",
+                "Count": "309,928",
+                "Percent": "77.84%",
+                "Delegates": 44
+            },
+            {
+                "First Last": "Bernie Sanders",
+                "Count": "76,399",
+                "Percent": "19.19%",
+                "Delegates": 9
+            }
+        ],
+        "AlabamaR": [
+            {
+                "First Last": "Donald Trump",
+                "Count": "371,735",
+                "Percent": "43.42%",
+                "Delegates": 36
+            },
+            {
+                "First Last": "Ted Cruz",
+                "Count": "180,608",
+                "Percent": "21.09%",
+                "Delegates": 13
+            },
+            {
+                "First Last": "Marco Rubio",
+                "Count": "159,802",
+                "Percent": "18.66%",
+                "Delegates": 1
+            },
+            {
+                "First Last": "Ben Carson",
+                "Count": "87,517",
+                "Percent": "10.22%",
+                "Delegates": 0
+            },
+            {
+                "First Last": "John Kasich",
+                "Count": "37,970",
+                "Percent": "4.43%",
+                "Delegates": 0
+            }
+        ],
+        "AlaskaR": [
+            {
+                "First Last": "Ted Cruz",
+                "Count": "7,973",
+                "Percent": "36.36%",
+                "Delegates": 12
+            },
+            {
+                "First Last": "Donald Trump",
+                "Count": "7,346",
+                "Percent": "33.5%",
+                "Delegates": 11
+            },
+            {
+                "First Last": "Marco Rubio",
+                "Count": "3,318",
+                "Percent": "15.13%",
+                "Delegates": 5
+            },
+            {
+                "First Last": "Ben Carson",
+                "Count": "2,401",
+                "Percent": "10.95%",
+                "Delegates": 0
+            },
+            {
+                "First Last": "John Kasich",
+                "Count": 892,
+                "Percent": "4.07%",
+                "Delegates": 0
+            }
+        ],
+        "ArkansasD": [
+            {
+                "First Last": "Hillary Clinton",
+                "Count": "144,580",
+                "Percent": "66.28%",
+                "Delegates": 22
+            },
+            {
+                "First Last": "Bernie Sanders",
+                "Count": "64,868",
+                "Percent": "29.74%",
+                "Delegates": 10
+            }
+        ],
+        "ArkansasR": [
+            {
+                "First Last": "Donald Trump",
+                "Count": "133,144",
+                "Percent": "32.75%",
+                "Delegates": 16
+            },
+            {
+                "First Last": "Ted Cruz",
+                "Count": "123,873",
+                "Percent": "30.47%",
+                "Delegates": 14
+            },
+            {
+                "First Last": "Marco Rubio",
+                "Count": "101,235",
+                "Percent": "24.9%",
+                "Delegates": 9
+            },
+            {
+                "First Last": "Others",
+                "Count": "33,172",
+                "Percent": "8.16%",
+                "Delegates": 0
+            },
+            {
+                "First Last": "John Kasich",
+                "Count": "15,098",
+                "Percent": "3.71%",
+                "Delegates": 0
+            }
+        ],
+        "ColoradoD": [
+            {
+                "First Last": "Bernie Sanders",
+                "Count": "72,115",
+                "Percent": "58.97%",
+                "Delegates": 38
+            },
+            {
+                "First Last": "Hillary Clinton",
+                "Count": "49,314",
+                "Percent": "40.32%",
+                "Delegates": 28
+            }
+        ],
+        "GeorgiaD": [
+            {
+                "First Last": "Hillary Clinton",
+                "Count": "543,008",
+                "Percent": "71.33%",
+                "Delegates": 72
+            },
+            {
+                "First Last": "Bernie Sanders",
+                "Count": "214,332",
+                "Percent": "28.16%",
+                "Delegates": 28
+            }
+        ],
+        "GeorgiaR": [
+            {
+                "First Last": "Donald Trump",
+                "Count": "501,707",
+                "Percent": "38.81%",
+                "Delegates": 40
+            },
+            {
+                "First Last": "Marco Rubio",
+                "Count": "315,979",
+                "Percent": "24.45%",
+                "Delegates": 14
+            },
+            {
+                "First Last": "Ted Cruz",
+                "Count": "305,109",
+                "Percent": "23.6%",
+                "Delegates": 18
+            },
+            {
+                "First Last": "Ben Carson",
+                "Count": "80,503",
+                "Percent": "6.23%",
+                "Delegates": 0
+            },
+            {
+                "First Last": "John Kasich",
+                "Count": "72,303",
+                "Percent": "5.59%",
+                "Delegates": 0
+            }
+        ],
+        "HawaiiR": [
+            {
+                "First Last": "Donald Trump",
+                "Count": "5,677",
+                "Percent": "42.44%",
+                "Delegates": 10
+            },
+            {
+                "First Last": "Ted Cruz",
+                "Count": "4,379",
+                "Percent": "32.74%",
+                "Delegates": 6
+            },
+            {
+                "First Last": "Marco Rubio",
+                "Count": "1,759",
+                "Percent": "13.15%",
+                "Delegates": 0
+            },
+            {
+                "First Last": "John Kasich",
+                "Count": "1,413",
+                "Percent": "10.56%",
+                "Delegates": 0
+            }
+        ],
+        "IdahoR": [
+            {
+                "First Last": "Ted Cruz",
+                "Count": "100,942",
+                "Percent": "45.43%",
+                "Delegates": 20
+            },
+            {
+                "First Last": "Donald Trump",
+                "Count": "62,478",
+                "Percent": "28.12%",
+                "Delegates": 12
+            },
+            {
+                "First Last": "Marco Rubio",
+                "Count": "35,347",
+                "Percent": "15.91%",
+                "Delegates": 0
+            },
+            {
+                "First Last": "John Kasich",
+                "Count": "16,517",
+                "Percent": "7.43%",
+                "Delegates": 0
+            }
+        ],
+        "IowaD": [
+            {
+                "First Last": "Hillary Clinton",
+                "Count": 701,
+                "Percent": "49.9%",
+                "Delegates": 23
+            },
+            {
+                "First Last": "Bernie Sanders",
+                "Count": 697,
+                "Percent": "49.6%",
+                "Delegates": 21
+            }
+        ],
+        "IowaR": [
+            {
+                "First Last": "Ted Cruz",
+                "Count": "51,666",
+                "Percent": "27.65%",
+                "Delegates": 8
+            },
+            {
+                "First Last": "Donald Trump",
+                "Count": "45,427",
+                "Percent": "24.31%",
+                "Delegates": 7
+            },
+            {
+                "First Last": "Marco Rubio",
+                "Count": "43,165",
+                "Percent": "23.1%",
+                "Delegates": 7
+            },
+            {
+                "First Last": "Ben Carson",
+                "Count": "17,395",
+                "Percent": "9.31%",
+                "Delegates": 3
+            },
+            {
+                "First Last": "Rand Paul",
+                "Count": "8,481",
+                "Percent": "4.54%",
+                "Delegates": 1
+            },
+            {
+                "First Last": "Jeb Bush",
+                "Count": "5,238",
+                "Percent": "2.8%",
+                "Delegates": 1
+            },
+            {
+                "First Last": "Carly Fiorina",
+                "Count": "3,485",
+                "Percent": "1.86%",
+                "Delegates": 1
+            },
+            {
+                "First Last": "John Kasich",
+                "Count": "3,474",
+                "Percent": "1.86%",
+                "Delegates": 1
+            },
+            {
+                "First Last": "Mike Huckabee",
+                "Count": "3,345",
+                "Percent": "1.79%",
+                "Delegates": 1
+            },
+            {
+                "First Last": "Chris Christie",
+                "Count": "3,284",
+                "Percent": "1.76%",
+                "Delegates": 0
+            },
+            {
+                "First Last": "Rick Santorum",
+                "Count": "1,783",
+                "Percent": "0.95%",
+                "Delegates": 0
+            }
+        ],
+        "KansasD": [
+            {
+                "First Last": "Bernie Sanders",
+                "Count": "26,450",
+                "Percent": "67.75%",
+                "Delegates": 24
+            },
+            {
+                "First Last": "Hillary Clinton",
+                "Count": "12,593",
+                "Percent": "32.25%",
+                "Delegates": 9
+            }
+        ],
+        "KansasR": [
+            {
+                "First Last": "Ted Cruz",
+                "Count": "35,207",
+                "Percent": "48.15%",
+                "Delegates": 24
+            },
+            {
+                "First Last": "Donald Trump",
+                "Count": "17,062",
+                "Percent": "23.34%",
+                "Delegates": 9
+            },
+            {
+                "First Last": "Marco Rubio",
+                "Count": "12,189",
+                "Percent": "16.67%",
+                "Delegates": 6
+            },
+            {
+                "First Last": "John Kasich",
+                "Count": "7,795",
+                "Percent": "10.66%",
+                "Delegates": 1
+            }
+        ],
+        "KentuckyR": [
+            {
+                "First Last": "Donald Trump",
+                "Count": "82,493",
+                "Percent": "35.92%",
+                "Delegates": 17
+            },
+            {
+                "First Last": "Ted Cruz",
+                "Count": "72,503",
+                "Percent": "31.57%",
+                "Delegates": 15
+            },
+            {
+                "First Last": "Marco Rubio",
+                "Count": "37,579",
+                "Percent": "16.36%",
+                "Delegates": 7
+            },
+            {
+                "First Last": "John Kasich",
+                "Count": "33,134",
+                "Percent": "14.43%",
+                "Delegates": 7
+            }
+        ],
+        "LouisianaR": [
+            {
+                "First Last": "Donald Trump",
+                "Count": "124,818",
+                "Percent": "41.44%",
+                "Delegates": 18
+            },
+            {
+                "First Last": "Ted Cruz",
+                "Count": "113,949",
+                "Percent": "37.84%",
+                "Delegates": 18
+            },
+            {
+                "First Last": "Marco Rubio",
+                "Count": "33,804",
+                "Percent": "11.22%",
+                "Delegates": 5
+            },
+            {
+                "First Last": "John Kasich",
+                "Count": "19,355",
+                "Percent": "6.43%",
+                "Delegates": 0
+            }
+        ],
+        "LousianaD": [
+            {
+                "First Last": "Hillary Clinton",
+                "Count": "221,615",
+                "Percent": "71.12%",
+                "Delegates": 37
+            },
+            {
+                "First Last": "Bernie Sanders",
+                "Count": "72,240",
+                "Percent": "23.18%",
+                "Delegates": 14
+            }
+        ],
+        "MaineD": [
+            {
+                "First Last": "Bernie Sanders",
+                "Count": "2,231",
+                "Percent": "64.29%",
+                "Delegates": 15
+            },
+            {
+                "First Last": "Hillary Clinton",
+                "Count": "1,232",
+                "Percent": "35.5%",
+                "Delegates": 8
+            }
+        ],
+        "MaineR": [
+            {
+                "First Last": "Ted Cruz",
+                "Count": "8,550",
+                "Percent": "45.9%",
+                "Delegates": 12
+            },
+            {
+                "First Last": "Donald Trump",
+                "Count": "6,070",
+                "Percent": "32.59%",
+                "Delegates": 9
+            },
+            {
+                "First Last": "John Kasich",
+                "Count": "2,270",
+                "Percent": "12.19%",
+                "Delegates": 2
+            },
+            {
+                "First Last": "Marco Rubio",
+                "Count": "1,492",
+                "Percent": "8.01%",
+                "Delegates": 0
+            }
+        ],
+        "MassachusettsD": [
+            {
+                "First Last": "Hillary Clinton",
+                "Count": "603,784",
+                "Percent": "50.11%",
+                "Delegates": 46
+            },
+            {
+                "First Last": "Bernie Sanders",
+                "Count": "586,716",
+                "Percent": "48.69%",
+                "Delegates": 45
+            }
+        ],
+        "MassachusettsR": [
+            {
+                "First Last": "Donald Trump",
+                "Count": "311,313",
+                "Percent": "49.31%",
+                "Delegates": 22
+            },
+            {
+                "First Last": "John Kasich",
+                "Count": "113,783",
+                "Percent": "18.02%",
+                "Delegates": 8
+            },
+            {
+                "First Last": "Marco Rubio",
+                "Count": "112,822",
+                "Percent": "17.87%",
+                "Delegates": 8
+            },
+            {
+                "First Last": "Ted Cruz",
+                "Count": "60,473",
+                "Percent": "9.58%",
+                "Delegates": 4
+            }
+        ],
+        "MichiganD": [
+            {
+                "First Last": "Bernie Sanders",
+                "Count": "595,222",
+                "Percent": "49.82%",
+                "Delegates": 67
+            },
+            {
+                "First Last": "Hillary Clinton",
+                "Count": "576,795",
+                "Percent": "48.28%",
+                "Delegates": 60
+            }
+        ],
+        "MichiganR": [
+            {
+                "First Last": "Donald Trump",
+                "Count": "483,751",
+                "Percent": "36.52%",
+                "Delegates": 25
+            },
+            {
+                "First Last": "Ted Cruz",
+                "Count": "330,015",
+                "Percent": "24.91%",
+                "Delegates": 17
+            },
+            {
+                "First Last": "John Kasich",
+                "Count": "321,655",
+                "Percent": "24.28%",
+                "Delegates": 17
+            },
+            {
+                "First Last": "Marco Rubio",
+                "Count": "123,673",
+                "Percent": "9.34%",
+                "Delegates": 0
+            }
+        ],
+        "MinnesotaD": [
+            {
+                "First Last": "Bernie Sanders",
+                "Count": "118,135",
+                "Percent": "61.64%",
+                "Delegates": 46
+            },
+            {
+                "First Last": "Hillary Clinton",
+                "Count": "73,510",
+                "Percent": "38.36%",
+                "Delegates": 31
+            }
+        ],
+        "MinnesotaR": [
+            {
+                "First Last": "Marco Rubio",
+                "Count": "41,126",
+                "Percent": "36.47%",
+                "Delegates": 17
+            },
+            {
+                "First Last": "Ted Cruz",
+                "Count": "32,684",
+                "Percent": "28.99%",
+                "Delegates": 13
+            },
+            {
+                "First Last": "Donald Trump",
+                "Count": "24,018",
+                "Percent": "21.3%",
+                "Delegates": 8
+            },
+            {
+                "First Last": "John Kasich",
+                "Count": "6,488",
+                "Percent": "5.75%",
+                "Delegates": 0
+            }
+        ],
+        "MississippiD": [
+            {
+                "First Last": "Hillary Clinton",
+                "Count": "182,447",
+                "Percent": "82.63%",
+                "Delegates": 30
+            },
+            {
+                "First Last": "Bernie Sanders",
+                "Count": "36,348",
+                "Percent": "16.46%",
+                "Delegates": 4
+            }
+        ],
+        "MississippiR": [
+            {
+                "First Last": "Donald Trump",
+                "Count": "191,755",
+                "Percent": "47.32%",
+                "Delegates": 24
+            },
+            {
+                "First Last": "Ted Cruz",
+                "Count": "147,065",
+                "Percent": "36.29%",
+                "Delegates": 13
+            },
+            {
+                "First Last": "John Kasich",
+                "Count": "35,817",
+                "Percent": "8.84%",
+                "Delegates": 0
+            },
+            {
+                "First Last": "Marco Rubio",
+                "Count": "20,768",
+                "Percent": "5.13%",
+                "Delegates": 0
+            }
+        ],
+        "NebraskaD": [
+            {
+                "First Last": "Bernie Sanders",
+                "Count": "19,120",
+                "Percent": "57.14%",
+                "Delegates": 15
+            },
+            {
+                "First Last": "Hillary Clinton",
+                "Count": "14,340",
+                "Percent": "42.86%",
+                "Delegates": 10
+            }
+        ],
+        "NevadaD": [
+            {
+                "First Last": "Hillary Clinton",
+                "Count": "6,316",
+                "Percent": "52.62%",
+                "Delegates": 20
+            },
+            {
+                "First Last": "Bernie Sanders",
+                "Count": "5,678",
+                "Percent": "47.31%",
+                "Delegates": 15
+            }
+        ],
+        "NevadaR": [
+            {
+                "First Last": "Donald Trump",
+                "Count": "34,531",
+                "Percent": "45.91%",
+                "Delegates": 14
+            },
+            {
+                "First Last": "Marco Rubio",
+                "Count": "17,940",
+                "Percent": "23.85%",
+                "Delegates": 7
+            },
+            {
+                "First Last": "Ted Cruz",
+                "Count": "16,079",
+                "Percent": "21.38%",
+                "Delegates": 6
+            },
+            {
+                "First Last": "Ben Carson",
+                "Count": "3,619",
+                "Percent": "4.81%",
+                "Delegates": 2
+            },
+            {
+                "First Last": "John Kasich",
+                "Count": "2,709",
+                "Percent": "3.6%",
+                "Delegates": 1
+            }
+        ],
+        "New HampshireD": [
+            {
+                "First Last": "Bernie Sanders",
+                "Count": "151,584",
+                "Percent": "60.4%",
+                "Delegates": 15
+            },
+            {
+                "First Last": "Hillary Clinton",
+                "Count": "95,252",
+                "Percent": "37.95%",
+                "Delegates": 9
+            }
+        ],
+        "New HampshireR": [
+            {
+                "First Last": "Donald Trump",
+                "Count": "100,406",
+                "Percent": "35.34%",
+                "Delegates": 11
+            },
+            {
+                "First Last": "John Kasich",
+                "Count": "44,909",
+                "Percent": "15.81%",
+                "Delegates": 4
+            },
+            {
+                "First Last": "Ted Cruz",
+                "Count": "33,189",
+                "Percent": "11.68%",
+                "Delegates": 3
+            },
+            {
+                "First Last": "Jeb Bush",
+                "Count": "31,310",
+                "Percent": "11.02%",
+                "Delegates": 3
+            },
+            {
+                "First Last": "Marco Rubio",
+                "Count": "30,032",
+                "Percent": "10.57%",
+                "Delegates": 2
+            },
+            {
+                "First Last": "Chris Christie",
+                "Count": "21,069",
+                "Percent": "7.42%",
+                "Delegates": 0
+            },
+            {
+                "First Last": "Carly Fiorina",
+                "Count": "11,706",
+                "Percent": "4.12%",
+                "Delegates": 0
+            },
+            {
+                "First Last": "Ben Carson",
+                "Count": "6,509",
+                "Percent": "2.29%",
+                "Delegates": 0
+            }
+        ],
+        "OklahomaD": [
+            {
+                "First Last": "Bernie Sanders",
+                "Count": "174,054",
+                "Percent": "51.87%",
+                "Delegates": 21
+            },
+            {
+                "First Last": "Hillary Clinton",
+                "Count": "139,338",
+                "Percent": "41.52%",
+                "Delegates": 17
+            }
+        ],
+        "OklahomaR": [
+            {
+                "First Last": "Ted Cruz",
+                "Count": "157,941",
+                "Percent": "34.37%",
+                "Delegates": 15
+            },
+            {
+                "First Last": "Donald Trump",
+                "Count": "130,141",
+                "Percent": "28.32%",
+                "Delegates": 13
+            },
+            {
+                "First Last": "Marco Rubio",
+                "Count": "119,562",
+                "Percent": "26.02%",
+                "Delegates": 12
+            },
+            {
+                "First Last": "Ben Carson",
+                "Count": "28,572",
+                "Percent": "6.22%",
+                "Delegates": 0
+            },
+            {
+                "First Last": "John Kasich",
+                "Count": "16,515",
+                "Percent": "3.59%",
+                "Delegates": 0
+            }
+        ],
+        "Puerto RicoR": [
+            {
+                "First Last": "Marco Rubio",
+                "Count": "27,485",
+                "Percent": "73.8%",
+                "Delegates": 23
+            },
+            {
+                "First Last": "Donald Trump",
+                "Count": "5,052",
+                "Percent": "13.6%",
+                "Delegates": 0
+            },
+            {
+                "First Last": "Ted Cruz",
+                "Count": "3,340",
+                "Percent": "9.0%",
+                "Delegates": 0
+            },
+            {
+                "First Last": "John Kasich",
+                "Count": "120,257",
+                "Percent": "4.25%",
+                "Delegates": 0
+            }
+        ],
+        "South CarolinaD": [
+            {
+                "First Last": "Hillary Clinton",
+                "Count": "271,514",
+                "Percent": "73.48%",
+                "Delegates": 39
+            },
+            {
+                "First Last": "Bernie Sanders",
+                "Count": "95,977",
+                "Percent": "25.97%",
+                "Delegates": 14
+            }
+        ],
+        "South CarolinaR": [
+            {
+                "First Last": "Donald Trump",
+                "Count": "239,851",
+                "Percent": "32.5%",
+                "Delegates": 50
+            },
+            {
+                "First Last": "Marco Rubio",
+                "Count": "165,881",
+                "Percent": "22.48%",
+                "Delegates": 0
+            },
+            {
+                "First Last": "Ted Cruz",
+                "Count": "164,790",
+                "Percent": "22.33%",
+                "Delegates": 0
+            },
+            {
+                "First Last": "Jeb Bush",
+                "Count": "57,863",
+                "Percent": "7.84%",
+                "Delegates": 0
+            },
+            {
+                "First Last": "John Kasich",
+                "Count": "56,206",
+                "Percent": "7.62%",
+                "Delegates": 0
+            },
+            {
+                "First Last": "Ben Carson",
+                "Count": "53,326",
+                "Percent": "7.23%",
+                "Delegates": 0
+            }
+        ],
+        "TennesseeD": [
+            {
+                "First Last": "Hillary Clinton",
+                "Count": "245,304",
+                "Percent": "66.11%",
+                "Delegates": 44
+            },
+            {
+                "First Last": "Bernie Sanders",
+                "Count": "120,333",
+                "Percent": "32.43%",
+                "Delegates": 23
+            }
+        ],
+        "TennesseeR": [
+            {
+                "First Last": "Donald Trump",
+                "Count": "332,702",
+                "Percent": "38.94%",
+                "Delegates": 33
+            },
+            {
+                "First Last": "Ted Cruz",
+                "Count": "211,159",
+                "Percent": "24.71%",
+                "Delegates": 16
+            },
+            {
+                "First Last": "Marco Rubio",
+                "Count": "180,989",
+                "Percent": "21.18%",
+                "Delegates": 9
+            },
+            {
+                "First Last": "Ben Carson",
+                "Count": "64,846",
+                "Percent": "7.59%",
+                "Delegates": 0
+            },
+            {
+                "First Last": "John Kasich",
+                "Count": "45,243",
+                "Percent": "5.3%",
+                "Delegates": 0
+            }
+        ],
+        "TexasD": [
+            {
+                "First Last": "Hillary Clinton",
+                "Count": "935,080",
+                "Percent": "65.21%",
+                "Delegates": 147
+            },
+            {
+                "First Last": "Bernie Sanders",
+                "Count": "475,561",
+                "Percent": "33.17%",
+                "Delegates": 74
+            }
+        ],
+        "TexasR": [
+            {
+                "First Last": "Ted Cruz",
+                "Count": "1,239,370",
+                "Percent": "43.76%",
+                "Delegates": 104
+            },
+            {
+                "First Last": "Donald Trump",
+                "Count": "757,618",
+                "Percent": "26.75%",
+                "Delegates": 48
+            },
+            {
+                "First Last": "Marco Rubio",
+                "Count": "502,223",
+                "Percent": "17.73%",
+                "Delegates": 3
+            },
+            {
+                "First Last": "John Kasich",
+                "Count": "120,257",
+                "Percent": "4.25%",
+                "Delegates": 0
+            },
+            {
+                "First Last": "Ben Carson",
+                "Count": "117,780",
+                "Percent": "4.16%",
+                "Delegates": 0
+            }
+        ],
+        "VermontD": [
+            {
+                "First Last": "Bernie Sanders",
+                "Count": "115,863",
+                "Percent": "86.1%",
+                "Delegates": 16
+            },
+            {
+                "First Last": "Hillary Clinton",
+                "Count": "18,335",
+                "Percent": "13.62%",
+                "Delegates": 0
+            }
+        ],
+        "VermontR": [
+            {
+                "First Last": "Donald Trump",
+                "Count": "19,968",
+                "Percent": "32.73%",
+                "Delegates": 8
+            },
+            {
+                "First Last": "John Kasich",
+                "Count": "18,543",
+                "Percent": "30.39%",
+                "Delegates": 8
+            },
+            {
+                "First Last": "Marco Rubio",
+                "Count": "11,778",
+                "Percent": "19.3%",
+                "Delegates": 0
+            },
+            {
+                "First Last": "Ted Cruz",
+                "Count": "5,929",
+                "Percent": "9.72%",
+                "Delegates": 0
+            },
+            {
+                "First Last": "Ben Carson",
+                "Count": "2,544",
+                "Percent": "4.17%",
+                "Delegates": 0
+            }
+        ],
+        "VirginiaD": [
+            {
+                "First Last": "Hillary Clinton",
+                "Count": "503,358",
+                "Percent": "64.29%",
+                "Delegates": 62
+            },
+            {
+                "First Last": "Bernie Sanders",
+                "Count": "275,507",
+                "Percent": "35.19%",
+                "Delegates": 33
+            }
+        ],
+        "VirginiaR": [
+            {
+                "First Last": "Donald Trump",
+                "Count": "355,960",
+                "Percent": "34.73%",
+                "Delegates": 17
+            },
+            {
+                "First Last": "Marco Rubio",
+                "Count": "327,042",
+                "Percent": "31.91%",
+                "Delegates": 16
+            },
+            {
+                "First Last": "Ted Cruz",
+                "Count": "173,193",
+                "Percent": "16.9%",
+                "Delegates": 8
+            },
+            {
+                "First Last": "John Kasich",
+                "Count": "96,519",
+                "Percent": "9.42%",
+                "Delegates": 5
+            },
+            {
+                "First Last": "Ben Carson",
+                "Count": "60,093",
+                "Percent": "5.86%",
+                "Delegates": 3
+            }
+        ]
+    }
+}
