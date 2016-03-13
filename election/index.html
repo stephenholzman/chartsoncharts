@@ -24,7 +24,7 @@ var calc_defaults = function(){
 	month_view = "all";
 	startDate = "new Date(2015,3,1)";
 
-	modes = ["Polling","Delegates","Funding","Primaries"]
+	modes = ["Polling","Delegates"]
 	current_mode = "Polling";
 
 	current_party = "Republicans"
@@ -55,12 +55,14 @@ var calc_titles = function(){
 			title = current_mode + " - " + monthNames[month_view.getMonth()] + " " + month_view.getFullYear();
 			subtitle = current_party;
 		}else if(month_view === "all"){
-			title = "National Polling"
+			title = "National Polling Average"
 			subtitle = current_party;
-		};		
+		};
+		citation = "Source: HuffPo Pollster";		
 	}else if(current_mode==="Delegates"){
 		title = "Delegate Counts"
-		subtitle = current_party;
+		subtitle = "Estimated Pledged Delegates Won in Primaries or Caucuses";
+		citation = "Source: AP, Updated 03-12-2016";
 	}else if(current_mode==="Funding"){
 		title = "Campaign Finance"
 		subtitle = current_party;
@@ -97,6 +99,9 @@ var update_titles = function(fadeout,fadein){
 			.text(subtitle)
 			.style("opacity","1")
 			.duration(fadein);
+
+		d3.select("#dataSource")
+			.text(citation)
 
 	},fadeout);
 }
@@ -153,6 +158,9 @@ var update_mode = function(){
 	d3.select(".chart").transition()
 		.style("opacity","0")
 		.duration(500);
+	candidateLegend.transition()
+		.style("opacity","0")
+		.duration(500);
 	update_titles(500,500);
 	setTimeout(function(){
 		d3.select(".chart").remove();
@@ -176,6 +184,12 @@ var update_mode = function(){
 			draw_partybars("#container");
 		}else if(current_mode === "Delegates"){
 			draw_delegateschart("#container",current_party);
+			d3.select(".chart").style("opacity",0);
+			d3.select(".chart").transition()
+				.style("opacity",1)
+				.duration(500);
+			d3.selectAll(".partybutton")
+				.attr("class",".partybutton")
 		};
 
 	},500);
@@ -187,6 +201,8 @@ var draw_partybars = function(selection){
 
 	var update_party = function(){
 		if(current_mode==="Polling"){
+			update_titles(500,500);
+			update_chart();
 			candidateLegend.transition().style("opacity",0).duration(500)
 			d3.selectAll(".candidate").transition().style("opacity",0).duration(500)
 			d3.selectAll(".marker").transition().style("opacity",0).duration(500)
@@ -218,8 +234,7 @@ var draw_partybars = function(selection){
 			d3.selectAll(".partybutton").remove();
 
 			draw_partybars(selection);
-			update_titles(500,500);
-			update_chart();
+
 			update_party();
 
 		});
@@ -249,8 +264,7 @@ var draw_partybars = function(selection){
 			d3.selectAll(".partybutton").remove();
 			
 			draw_partybars(selection);
-			update_titles(500,500);
-			update_chart();
+
 			update_party();
 
 		});
@@ -277,7 +291,12 @@ var draw_citeBar = function(selection){
 		.append("li")
 		.attr("id","dataSource")
 		.text(citation)
-		.on("click", function() { window.open("http://elections.huffingtonpost.com/pollster/api"); });
+		.on("click", function() { 
+			if(current_mode==="Polling"){
+				window.open("http://elections.huffingtonpost.com/pollster/api");
+			}else if(current_mode==="Delegates"){
+
+			} });
 	var tweetHandle = citeBar
 		.append("li")
 		.attr("id","tweetHandle")
@@ -301,11 +320,11 @@ var calc_xScale = function(){
 	}else if(current_mode === "Delegates"){
 		xScaleR = d3.scale.linear()
 			.range([0, width])
-			.domain([0, 1500])
+			.domain([0, 1237*1.2])
 
 		xScaleD = d3.scale.linear()
 			.range([0,width])
-			.domain([0,2500])
+			.domain([0,2383*1.2])
 
 	}
 };
@@ -334,22 +353,24 @@ var calc_xAxis = function(){
 		xAxisR = d3.svg.axis()
 			.scale(xScaleR)
 			.orient("bottom")
-			.ticks(5)
+			.tickValues([1237])
+			/*.ticks(5)
 			.tickFormat(function(d){
 				if(d != 0){
 					return d;
 				}
-			})
+			})*/
 
 		xAxisD = d3.svg.axis()
 			.scale(xScaleD)
 			.orient("top")
-			.ticks(5)
+			.tickValues([2383])
+			/*.ticks(5)
 			.tickFormat(function(d){
 				if(d != 0){
 					return d;
 				}
-			})
+			})*/
 
 	}
 };
@@ -662,6 +683,7 @@ var draw_data = function(){
 					"count": sanders
 				}
 			]
+			colorlist =[ "#6464E2","#C9C935","#F75C5C","#35C9C9"]
 
 			countBarsR = chart.selectAll(".countBarR")
 	 				.data(candDelegatesR)
@@ -683,8 +705,9 @@ var draw_data = function(){
 	 				.attr("height","20px")
 	 				.attr("class","countBar")
 					.attr("transform", "translate(0," + (window.innerHeight-162)/2 + ")")
-	 				.style("fill",function(d) { return color(d.name);})
+	 				.style("fill",function(d,i) { return colorlist[i];})
 	 				.style("opacity",.5)
+	 				
 
 	 		rectsD = countBarsD.append("rect")
 	 				.attr("width",function(d){
@@ -696,8 +719,33 @@ var draw_data = function(){
 	 				})
 	 				.attr("height","20px")
 	 				.attr("class","countBar")
-	 				.style("fill",function(d) { return color(d.name);})
+	 				.style("fill",function(d,i) { return colorlist[i];})
 	 				.style("opacity",.5)
+
+			countTextR = countBarsR.append("text")
+				.attr("x",function(d){
+	 					return xScaleR(d.count)+5
+	 				})
+	 			.attr("y",function(d,i){
+	 					return yScaleR(i+1)+5
+	 				})
+	 			.attr("transform", "translate(0," + (window.innerHeight-162)/2 + ")")
+				.text(function(d){
+					return d.count;
+				})
+				.style("fill",function(d,i) { return colorlist[i];})
+
+			countTextD = countBarsD.append("text")
+				.attr("x",function(d){
+	 					return xScaleD(d.count)+5
+	 				})
+	 			.attr("y",function(d,i){
+	 					return yScaleD(i+1)+5
+	 				})
+				.text(function(d){
+					return d.count;
+				})
+				.style("fill",function(d,i) { return colorlist[i];})
 
 		});	
 	}
@@ -930,7 +978,6 @@ var resizeAll = function(){
 
 		d3.select("#candAxisD")
 			.call(yAxisD)
-
 	 	rectsR
 	 				.attr("width",function(d){
 	 					return xScaleR(d.count)
@@ -942,8 +989,9 @@ var resizeAll = function(){
 	 				.attr("height","20px")
 	 				.attr("class","countBar")
 					.attr("transform", "translate(0," + (window.innerHeight-162)/2 + ")")
-	 				//.style("fill",function(d) { return color(d.name);})
+	 				.style("fill",function(d,i) { return colorlist[i];})
 	 				.style("opacity",.5)
+	 				
 
 	 	rectsD
 	 				.attr("width",function(d){
@@ -955,8 +1003,33 @@ var resizeAll = function(){
 	 				})
 	 				.attr("height","20px")
 	 				.attr("class","countBar")
-	 				//.style("fill",function(d) { return color(d.name);})
+	 				.style("fill",function(d,i) { return colorlist[i];})
 	 				.style("opacity",.5)
+	 	countTextR
+				.attr("x",function(d){
+	 					return xScaleR(d.count)+5
+	 				})
+	 			.attr("y",function(d,i){
+	 					return yScaleR(i+1)+5
+	 				})
+	 			.attr("transform", "translate(0," + (window.innerHeight-162)/2 + ")")
+				.text(function(d){
+					return d.count;
+				})
+				.style("fill",function(d,i) { return colorlist[i];})
+
+			countTextD
+				.attr("x",function(d){
+	 					return xScaleD(d.count)+5
+	 				})
+	 			.attr("y",function(d,i){
+	 					return yScaleD(i+1)+5
+	 				})
+				.text(function(d){
+					return d.count;
+				})
+				.style("fill",function(d,i) { return colorlist[i];})
+
 	}
 
 		//d3.selectAll(".candidate").remove();
@@ -974,7 +1047,10 @@ draw_partybars("#container");
 draw_data();
 d3.select(window).on("resize",resizeAll);
 setTimeout(resizeAll,250);
-
+setTimeout(function(){
+	calc_titles();
+	update_titles(500,500);
+},2000)
 
 
 

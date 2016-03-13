@@ -138,6 +138,32 @@
                 "Delegates": 28
             }
         ],
+        "DCR": [
+            {
+                "First Last": "Marco Rubio",
+                "Count": "1,059",
+                "Percent": "37.3%",
+                "Delegates": 10
+            },
+            {
+                "First Last": "John Kasich",
+                "Count": "1,009",
+                "Percent": "35.54%",
+                "Delegates": 9
+            },
+            {
+                "First Last": "Donald Trump",
+                "Count": 391,
+                "Percent": "13.77%",
+                "Delegates": 0
+            },
+            {
+                "First Last": "Ted Cruz",
+                "Count": 351,
+                "Percent": "12.36%",
+                "Delegates": 0
+            }
+        ],
         "GeorgiaD": [
             {
                 "First Last": "Hillary Clinton",
@@ -1054,6 +1080,26 @@
                 "Count": "60,093",
                 "Percent": "5.86%",
                 "Delegates": 3
+            }
+        ],
+        "WyomingR": [
+            {
+                "First Last": "Ted Cruz",
+                "Count": 644,
+                "Percent": "66.32%",
+                "Delegates": 9
+            },
+            {
+                "First Last": "Marco Rubio",
+                "Count": 189,
+                "Percent": "19.46%",
+                "Delegates": 1
+            },
+            {
+                "First Last": "Donald Trump",
+                "Count": 70,
+                "Percent": "7.21%",
+                "Delegates": 1
             }
         ]
     }
