@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<meta charset="utf-8"/>
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+
+<title>UN World Population Prospects 2015 Revisions &#8211; Charts On Charts</title>
+<meta name="description" content="Terrible website with charts and the code that created them.">
+<meta name="keywords" content="Data Visualization, Charts, Code, Tutorials">
+
+<!-- Twitter Cards -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="/images/logo.png">
+<meta name="twitter:title" content="UN World Population Prospects 2015 Revision">
+<meta name="twitter:description" content="Explore UN population data spanning 1950 to 2100">
+<meta name="twitter:creator" content="@StephenHolz">
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="UN World Population Prospects 2015 Revision">
+<meta property="og:description" content="Explore UN population data spanning 1950 to 2100">
+<meta property="og:url" content="chartsoncharts.com/assets/interactives/UNWPP2015/index.html">
+<meta property="og:site_name" content="Charts On Charts">
+<meta property="og:image" content="/images/logo.png">
+<link rel="stylesheet" href="style.css" type="text/css" media="screen"/>
+<link rel="stylesheet" href="awesomplete.css" type="text/css" media="screen"/>
+<script src="/assets/js/d3-queue/d3-queue.min.js"></script>
+<script src="/assets/d3/d3.min.js"></script>
+<!--<script src="/assets/js/date.js"></script>-->
+<!--<script src="/assets/js/vendor/jquery-1.9.1.min.js"></script>-->
+<script src="/assets/js/awesomplete/awesomplete.js"></script>
+
+<div id="container"></div>
+
+<script>
+
+var calc_defaults = function(){
+	title = "UN World Population Prospects"
+	subtitle = "2015 Revision - Estimates By Age and Sex"
+
+	citation = "Source: United Nations"
+	citationLink = "http://esa.un.org/unpd/wpp/"
+
+	modes = ["Multiples","Compare","Single"]
+	current_mode = "Single";
+
+	current_country = "WORLD";
+	current_countrycode = 900;
+	years = [
+			1950,
+			1960,
+			1970,
+			1980,
+			1990,
+			2000,
+			2010,
+			2020,
+			2030,
+			2040,
+			2050,
+			2060,
+			2070,
+			2080,
+			2090,
+			2100
+	]
+
+	paused = false;
+
+};
+
+var draw_titles = function(selection,title,subtitle){
+	var header = d3.select(selection)
+		.append("div")
+		.attr("id","header");
+
+	header.append("h1")
+		.attr("id","title")
+		.attr("class","title-text")
+		.text(title);
+
+	header.append("h3")
+		.attr("id","subtitle")
+		.attr("class","title-text")
+		.text(subtitle);
+};
+//Mode Controls
+var draw_modebar = function(selection,modes){
+	var mode_select = d3.select(selection)
+		.append("div")
+		.attr("id","top_navbar")
+		.attr("class","navbar horizontal")
+		.append("ul");
+
+	mode_select.append("li")
+		.attr("class","region")
+		.append("a")
+		.text("Region/Country Select:")
+	mode_select.append("li")
+		.append("input")
+		.attr("id","myinput")
+		.style("margin","8px 8px")
+		.style("width","130%")
+		.attr("autofocus","autofocus");
+
+	input = document.getElementById("myinput");
+	awesomplete = new Awesomplete(input);
+
+
+	for(mode in modes){
+
+		mode_select.append("li")
+			.attr("id",modes[mode])
+			.attr("class","active mode")
+			.on("click",function(){
+				d3.selectAll(".mode")
+					.attr("class","active mode");
+
+				d3.select(this)
+					.attr("class","active selected mode");
+
+				current_mode = d3.select(this).text();
+				d3.selectAll(".bottom_playbar").remove();
+				d3.selectAll(".chart-wrapper").remove();
+				d3.selectAll(".slider").remove();
+				load_country(current_countrycode);
+				//update_mode();
+				paused = true;
+			})
+			.append("a")
+			.text(modes[mode])
+			
+	};
+
+	d3.select("#"+current_mode).attr("class","active selected mode");
+};
+//citation bar
+var draw_citeBar = function(selection){
+	citeBar = d3.select(selection)
+		.append("div")
+		.attr("id","bottom_navbar")
+		.attr("class","navbar horizontal")
+		.append("ul");
+	var dataSource = citeBar
+		.append("li")
+		.attr("id","dataSource")
+		.text(citation)
+		.on("click", function() { 
+			window.open(citationLink);
+		});
+	var tweetHandle = citeBar
+		.append("li")
+		.attr("id","tweetHandle")
+		.text("@StephenHolz")
+		.on("click", function() { window.open("http://twitter.com/StephenHolz"); });
+};
+//Axis Controls
+//All xAxis Parameters For Each Mode Are Here
+var calc_xScale = function(maxtick){
+
+	xScale1 = d3.scale.linear()
+				.domain([0,maxtick])
+				.range([0,width/2]);
+
+	xScale2 = d3.scale.linear()
+				.domain([0,maxtick])
+				.range([width/2,0]);
+};
+var calc_xAxis = function(){
+	if(current_mode==="Single"){
+		xTickNumber = 4;
+	}else if(current_mode==="Compare"){
+		xTickNumber = 3;
+	}else if(current_mode==="Multiples"){
+		xTickNumber = 2;
+	}
+	xAxis1 = d3.svg.axis()
+		.scale(xScale1)
+		.orient("bottom")
+		.ticks(xTickNumber)
+		.tickFormat(function(d){
+			if(d === 0){
+				return d;
+			}else if(d < 1000){
+				return d + "k";
+			}else{
+				return d/1000 + "M";
+			};
+		})
+
+
+	xAxis2 = d3.svg.axis()
+		.scale(xScale2)
+		.orient("bottom")
+		.ticks(xTickNumber)
+		.tickFormat(function(d){
+			if(d === 0){
+				return d;
+			}else if(d < 1000){
+				return d + "k";
+			}else{
+				return d/1000 + "M";
+			};
+		});
+};
+var draw_xAxis = function(id){
+
+		malePopAxis = chart.append("g")
+			.attr("id","malePopAxis"+id)
+			.attr("class","x axis malePopAxis")
+			.attr("z-index","100")
+			.attr("transform", "translate("+ width/2+"," + height + ")")
+			.call(xAxis1);
+
+		femalePopAxis = chart.append("g")
+			.attr("id","femalePopAxis"+id)
+			.attr("class","x axis femalePopAxis")
+			.attr("z-index","100")
+			.attr("transform", "translate(0," + height + ")")
+			.call(xAxis2);		
+	
+
+
+};
+var calc_yScale = function(){
+
+	if(current_mode==="Multiples"){
+		yDom = [0,100]
+	}else{
+		yDom = [0,110]
+	}
+	yScale = d3.scale.linear()
+				.domain(yDom)
+				.range([height,0]);
+
+
+};
+var calc_yAxis = function(){
+	if(current_mode==="Single"){
+		tickNumber = 10;
+	}else if(current_mode==="Compare"){
+		tickNumber = 10;
+	}else if(current_mode==="Multiples"){
+		tickNumber = 3;
+	}
+	yAxis2 = d3.svg.axis()
+					.scale(yScale)
+					.orient("left")
+					.ticks(tickNumber)
+					.tickFormat(function(d){
+						if (d === 110){
+							return ""
+						}else if(d % 10 === 0){
+							return d;
+						};
+					});
+
+	yAxis1 = d3.svg.axis()
+					.scale(yScale)
+					.orient("right")
+					.ticks(tickNumber)
+					.tickFormat(function(d){
+						if (d === 110){
+							return ""
+						}else if(d % 10 === 0){
+							return d;
+						};
+					});
+
+		
+};
+
+var draw_yAxis = function(id){
+	femaleAgeAxis = chart.append("g")
+		.attr("class","y axis femaleAgeAxis")
+		.attr("id","femaleAgeAxis"+id)
+		//.attr("transform", "translate("+window.innerWidth*.1+",0)")
+		.call(yAxis2);
+
+	maleAgeAxis = chart.append("g")
+		.attr("class","y axis maleAgeAxis")
+		.attr("id","maleAgeAxis"+id)
+		.attr("transform", "translate("+width+",0)")
+		.call(yAxis1);
+};
+var calc_plotDimension = function(){
+	if(current_mode==="Single"){
+		margin = {top: 126, left: 35, bottom: 90, right: 35};
+		width = window.innerWidth - margin.right - margin.left;
+		height = (window.innerHeight - margin.bottom - margin.top);	
+		leftpositions = [35]
+		toppositions = [126]
+	}else if(current_mode==="Compare"){
+		margin = {top: 126, left: 35, bottom: 90, right: 35};
+		width = window.innerWidth/2 - margin.right - margin.left;
+		height = (window.innerHeight - margin.bottom - margin.top);
+		leftpositions = [35,35+window.innerWidth/2]
+		toppositions = [126,126]
+	}else if(current_mode==="Multiples"){
+		margin = {top: 0, left: 35, bottom: 30, right: 35};
+		width = window.innerWidth/4 - margin.right - margin.left;
+		height = ((window.innerHeight-162)/4 - margin.bottom - margin.top);
+		leftpositions = [35,35+window.innerWidth/4,35+window.innerWidth/2,35+3*window.innerWidth/4,35,35+window.innerWidth/4,35+window.innerWidth/2,35+3*window.innerWidth/4,35,35+window.innerWidth/4,35+window.innerWidth/2,35+3*window.innerWidth/4,35,35+window.innerWidth/4,35+window.innerWidth/2,35+3*window.innerWidth/4]
+		toppositions = [
+			136,
+			136,
+			136,
+			136,
+			136+(window.innerHeight-162)/4,
+			136+(window.innerHeight-162)/4,
+			136+(window.innerHeight-162)/4,
+			136+(window.innerHeight-162)/4,
+			136+(window.innerHeight-162)/2,
+			136+(window.innerHeight-162)/2,
+			136+(window.innerHeight-162)/2,
+			136+(window.innerHeight-162)/2,
+			136+3*(window.innerHeight-162)/4,
+			136+3*(window.innerHeight-162)/4,
+			136+3*(window.innerHeight-162)/4,
+			136+3*(window.innerHeight-162)/4,
+		]
+	}
+
+};
+var get_population = function(year,data){
+
+	if(year < 1990){
+		demogdata = data[0];
+		baseyear = 1950
+		maxage = 80
+		ages = [];
+		for(i = 0; i < maxage+1; i++){
+			ages.push(i);
+		}
+	}else if(year >= 1990){
+		demogdata = data[1];
+		baseyear = 1990
+		maxage = 100
+		ages = [];
+		for(i = 0; i < maxage+1; i++){
+			ages.push(i);
+		}
+	}
+	
+}
+
+
+var draw_data = function(year,id,data){
+	//d3.select("#chart-wrapper"+id)
+	get_population(year,data);
+
+	rTransform = function(d,i) {
+	    return "translate("+width/2+","+yScale(i+1).toFixed(2)+")";
+	};
+
+	d3.select("#chart-wrapper"+id).selectAll("rect.male")
+		.data(ages)
+		.enter()
+		.append("rect")
+		.attr("class","male"+id)
+		.attr("fill","#6464E2")
+		.attr("transform",rTransform)
+		.attr("width",function(d){return xScale1(demogdata.pop.Male[d][year-baseyear])})
+		.attr("height",height/100)
+		.attr("y",0)
+		.attr("opacity",.5);
+
+	lTransform = function(d,i) {
+	    return "translate("+(xScale2(demogdata.pop.Female[d][year-baseyear]))+","+yScale(i+1).toFixed(2)+")";
+	};
+
+	d3.select("#chart-wrapper"+id).selectAll("rect.female")
+		.data(ages)
+		.enter()
+		.append("rect")
+		.attr("class","female"+id)
+		.attr("fill","#8888D3")
+		.attr("transform",lTransform)
+		.attr("width",function(d){return xScale1(demogdata.pop.Female[d][year-baseyear])})
+		.attr("height",height/100)
+		.attr("y",0)
+		.attr("opacity",.5)
+	maleTotal = 0;
+	femaleTotal = 0;
+	for(age in ages){
+		maleTotal = maleTotal+demogdata.pop.Male[age][year-baseyear]
+		femaleTotal = femaleTotal+demogdata.pop.Female[age][year-baseyear]
+	}
+	d3.select("#chart-wrapper"+id).append("text")
+					.attr("id","male-label"+id)
+					.attr("class","male-label")
+					.attr("text-anchor","end")
+					//.attr("x",xScale2(0-data[2]/2))
+					//.attr("y",yScale(20))
+					.attr("transform","translate("+(5*width/6)+","+yScale(95)+")")
+					.attr("font-family","arial")
+					.attr("font-size",function(){
+						if(current_mode==="Multiples"){
+							return .05*width+"px";
+						}else{
+							return .04*width+"px";
+						}
+					})
+					.attr("fill","#6464E2")
+					.attr("opacity",1)
+					.text(function(){
+						if(maleTotal>1000000){
+							return "Males: " + (maleTotal/1000000).toFixed(1) + "B"	
+						}else if(maleTotal>1000){
+							return "Males: " + (maleTotal/1000).toFixed(1) + "M"
+						}else if(maleTotal>1){
+							return "Males: " + (maleTotal).toFixed(1) + "k"	
+						}
+					})
+					.style("text-align","right");
+
+	d3.select("#chart-wrapper"+id).append("text")
+					.attr("id","female-label"+id)
+					.attr("class","female-label")
+					.attr("text-anchor","end")
+					//.attr("x",xScale2(0-data[2]/2))
+					//.attr("y",yScale(20))
+					.attr("transform","translate("+(2.5*width/6)+","+yScale(95)+")")
+					.attr("font-family","arial")
+					.attr("font-size",function(){
+						if(current_mode==="Multiples"){
+							return .05*width+"px";
+						}else{
+							return .04*width+"px";
+						}
+					})
+					.attr("fill","#8888D3")
+					.attr("opacity",1)
+					.text(function(){
+						if(femaleTotal>1000000){
+							return "Females: " + (femaleTotal/1000000).toFixed(1) + "B"	
+						}else if(femaleTotal>1000){
+							return "Females: " + (femaleTotal/1000).toFixed(1) + "M"
+						}else if(femaleTotal>1){
+							return "Females: " + (femaleTotal).toFixed(1) + "k"	
+						}
+					})
+					.style("text-align","right");
+}
+var controller_slider = function(selection,id,data){
+	playbar = d3.select(selection)
+		.append("div")
+		.attr("id","bottom_playbar"+id)
+		.attr("class","navbar horizontal bottom_playbar")
+
+	if(current_mode==="Single"){
+		controller_animation("#bottom_playbar0")
+	}
+	//Slider setup
+	slideMargin = {top: 2, right: 7, bottom: 2, left: 10},
+    slideWidth = width - slideMargin.left - slideMargin.right,
+    slideHeight = 20 - slideMargin.bottom - slideMargin.top;
+
+	xBar = d3.scale.linear()
+		        .domain([1950,2100])
+		        .range([0, slideWidth]);
+
+	//Establish brush 
+	brush = d3.svg.brush()
+		        .x(xBar)
+		        .extent([0,0])
+		        .on("brush", brushed);
+
+	//Add svg and g element to the target wrapper
+	
+	adjust = 20;
+	if(current_mode!="Single"){
+		adjust = 0;
+	}
+
+	svgSlider = d3.select("#container").append("svg")
+				//.attr("z-index","1010")
+				.style("position","fixed")
+				.style("bottom","38px")
+				.style("left",(leftpositions[id]+adjust)+"px")
+		    	.attr("id",id+"slider")
+		    	.attr("class","slider")
+		        .attr("width", slideWidth + slideMargin.left + slideMargin.right)
+		        .attr("height", slideHeight + slideMargin.top + slideMargin.bottom)
+		        .append("g")
+		        .attr("transform", "translate(" + slideMargin.left + "," + slideMargin.top + ")");
+
+
+	//transform it
+	svgSlider.append("g")
+		        .attr("class", "x axis")
+		        .style("stroke","#0f0")
+		        .attr("transform", "translate(0," + slideHeight / 2 + ")")
+		        .call(d3.svg.axis()
+		            .scale(xBar)
+		            .orient("bottom")
+		            .ticks(0)
+		            .tickSize(0)
+		            .tickPadding(12))
+		        .select(".domain")
+		        .select(function() { return this.parentNode.appendChild(this.cloneNode(true)); })
+		            .attr("class", "halo");
+
+	slider = svgSlider.append("g")
+		        .attr("class", "slider")
+		        .call(brush);
+
+	slider.selectAll(".extent,.resize")
+		        .remove();
+
+	slider.select(".background")
+		        .attr("height", slideHeight)
+		        .style("cursor", "col-resize");
+
+	//Append the handle circle to the slider. Could be another shape.
+	handle = slider.append("circle")
+				.attr("id","handle"+id)
+		        .attr("class", "handle")
+		        .attr("transform", "translate(0," + slideHeight / 2 + ")")
+		        .attr("r", 6)
+		        .attr("cx", xBar(years[id]))
+		        .attr("fill","white");
+	
+	//Update the year value, this could use some cleaning for lifting function to future projects
+
+	//Brushed function
+	function brushed() {
+    	
+    	//Stop the animation!
+	    slider_brushed = true;
+	    paused = true;
+
+	    value = +brush.extent()[0].toFixed(0);
+	    if (d3.event.sourceEvent) {
+		    value = Math.round( xBar.invert(d3.mouse(this)[0]) );
+		    if (value < 1950) value = 1950;
+		    else if (value > 2100) value = 2100;
+		    brush.extent([value, value]);
+	    	years[id] = value; 
+		            
+		    d3.select("#handle"+id).attr("cx", xBar(value));
+
+			d3.selectAll(".female"+id).remove();
+
+
+			d3.selectAll(".male"+id).remove();
+			d3.select("#male-label"+id).remove();
+			d3.select("#female-label"+id).remove();
+			draw_data(value,id,data);
+			d3.select("#year-label"+id)
+				.attr("transform","translate("+(xScale2(0)+.22*width)+","+yScale(2)+")")
+				.text(years[id]);
+			d3.select("#play-controller").attr("class","paused");
+
+    	};
+
+   		d3.select("#play-controller").attr("class","paused");
+ 	
+	};
+	           
+};
+function controller_animation(target){
+	var anim_wrapper = d3.select(target)
+			.append("div")
+			.attr("id","anim-wrapper")
+
+	var background = d3.select("#anim-wrapper")
+		.append("div")
+		.attr("id","play-wrapper")
+
+	var playpause = d3.select("#play-wrapper")
+		.append("div")
+		.attr("id","play-controller")
+		//.attr("class","playing")
+		
+	d3.select("#play-controller").on("click",function(){
+		if (paused === true){
+			paused = false;
+			d3.select(this).attr("class","playing");
+			setTimeout(timer,speed);
+		}else{
+			paused = true;
+			d3.select(this).attr("class","paused")
+		};
+	});
+	if (paused === false){
+			d3.select("#play-controller").attr("class","playing");
+	}else{
+		d3.select("#play-controller").attr("class","paused")
+	};
+};
+var draw_popdist = function(selection,id,data){
+	calc_plotDimension();
+	calc_xScale(data[2])
+	calc_xAxis();
+	calc_yScale();
+	calc_yAxis();
+
+	chart = d3.select(selection)
+				.append("svg")
+				.attr("id","chart-wrapper"+id)
+				.attr("class","chart-wrapper")
+				.attr("width",width)
+				.attr("height", height)
+				.style("position","fixed")
+				.style("top",toppositions[id]+"px")
+				.style("left",leftpositions[id]+"px")
+				.style("overflow","visible")
+
+	draw_xAxis(id)
+	draw_yAxis(id);
+	chart.append("text")
+					.attr("id","year-label"+id)
+					.attr("class","year-label")
+					.attr("text-anchor","end")
+					//.attr("x",xScale2(0-data[2]/2))
+					//.attr("y",yScale(20))
+					.attr("transform","translate("+(xScale2(0)+.22*width)+","+yScale(2)+")")
+					.attr("font-family","arial")
+					.attr("font-size",function(){
+						if(current_mode==="Multiples"){
+							return .2*width+"px";
+						}else{
+							return .2*width+"px";
+						}
+					})
+					.attr("fill","#000")
+					.attr("opacity",.2)
+					.text(years[id])
+					.style("text-align","right");
+
+
+
+}
+var load_country = function(code){
+	d3_queue.queue()
+		.defer(d3.json,"data/"+code+".json")
+		.await(function(error,data){
+			if(current_mode==="Single"){
+				draw_popdist("#container",0,data)	
+				draw_data(years[0],0,data);
+				controller_slider("#container",0,data);
+				
+			}else if(current_mode==="Compare"){
+				draw_popdist("#container",0,data)
+				draw_data(years[0],0,data);	
+				draw_popdist("#container",1,data)
+				draw_data(years[1],1,data);
+				controller_slider("#container",0,data);
+				controller_slider("#container",1,data);
+			
+			}else if(current_mode==="Multiples"){
+				years = [
+					1950,
+					1960,
+					1970,
+					1980,
+					1990,
+					2000,
+					2010,
+					2020,
+					2030,
+					2040,
+					2050,
+					2060,
+					2070,
+					2080,
+					2090,
+					2100
+				]
+				for(i = 0; i <16; i++){
+					draw_popdist("#container",i,data)
+				}
+				for(j = 0; j < 16; j++){
+					draw_data(years[j],j,data);
+				}			
+
+			}
+			if(current_mode==="Multiples"){
+				d3.selectAll(".axis")
+					.selectAll("text")
+					.style("font-size","10px");
+			}
+
+			d3.select(window).on('resize',function(){
+				paused = true;
+				resizeAll(data);
+				d3.select("#play-controller").attr("class","paused");
+			});
+			speed = 50;
+			timer = function(){
+				if(paused===false){
+					if(current_mode==="Single"){
+
+						if(years[0]===2100){
+							years[0] = 1950;
+							resizeAll(data);
+							setTimeout(timer,speed*20)
+						}else if(years[0]===2099){
+							years[0] = years[0]+1
+							resizeAll(data);
+							setTimeout(timer,speed*20)
+						}else{
+							years[0] = years[0]+1
+							resizeAll(data)
+							setTimeout(timer,speed)	
+						}
+		
+					}					
+				}
+
+
+			}
+			setTimeout(timer,speed*5)	
+
+		});
+};
+resizeAll = function(data){
+	calc_plotDimension();
+	xScale1
+		.range([0,width/2]);
+
+	xScale2
+		.range([width/2,0]);
+	calc_xAxis();
+
+	d3.selectAll(".malePopAxis")
+		.attr("transform", "translate("+ width/2+"," + height + ")")
+		.call(xAxis1);
+
+	d3.selectAll(".femalePopAxis")
+		.attr("transform", "translate(0," + height + ")")
+		.call(xAxis2);
+	calc_yScale();
+	calc_yAxis();
+
+	d3.selectAll(".femaleAgeAxis")
+		.call(yAxis2);
+
+	d3.selectAll(".maleAgeAxis")
+		.attr("transform", "translate("+width+",0)")
+		.call(yAxis1);
+
+
+
+
+	if(current_mode==="Compare"){
+		d3.selectAll(".slider").remove();
+		d3.selectAll(".bottom_playbar").remove();
+		controller_slider("#container",0,data);
+		controller_slider("#container",1,data);		
+	}
+	if(current_mode==="Single" && paused===true){
+		d3.selectAll(".slider").remove();
+		d3.selectAll(".bottom_playbar").remove();
+		controller_slider("#container",0,data);
+	}
+	d3.select("#handle0").attr("cx", xBar(years[0]))
+
+	for(k = 0; k < 16; k++){
+		d3.select("#chart-wrapper"+k)
+			.attr("width",width)
+			.attr("height", height)
+			.style("top",toppositions[k]+"px")
+			.style("left",leftpositions[k]+"px")
+
+		d3.selectAll(".male"+k).remove();
+		d3.selectAll(".female"+k).remove();
+		get_population(years[k],data);
+		d3.select("#male-label"+k).remove();
+		d3.select("#female-label"+k).remove();
+		draw_data(years[k],k,data);
+		d3.select("#year-label"+k)
+			.attr("transform","translate("+(xScale2(0)+.22*width)+","+yScale(2)+")")
+			.attr("font-size",function(){
+				if(current_mode==="Multiples"){
+					return .2*width+"px";
+				}else{
+					return .2*width+"px";
+				}
+			})
+			.text(years[k]);
+
+	}
+
+	if(current_mode != "Single" && window.innerWidth < 568){
+		current_mode = "Single"
+		d3.selectAll(".chart-wrapper").remove();
+		d3.selectAll(".slider").remove();
+		load_country(current_countrycode);
+		d3.selectAll(".mode").attr("class","active mode");
+		d3.select("#Single").attr("class","active selected mode");
+
+
+	}
+	//d3.selectAll(".chart-wrapper").remove();
+	//load_country(current_countrycode)
+}
+
+calc_defaults();
+draw_titles("#container",title,subtitle);
+draw_modebar("#container",modes);
+draw_citeBar("#container");
+load_country(current_countrycode);
+d3.csv("data/UnitedNationsGeoCodes.csv",function(data){
+	countries = [];
+	data.forEach(function(d){
+		countries.push(d.Geography);
+	})
+
+	awesomplete.list = countries
+	awesomplete.autoFirst = true;
+	d3.select("#myinput")
+		.on("awesomplete-selectcomplete",function(){
+			paused = true;
+			d3.selectAll(".chart-wrapper").remove();
+			d3.selectAll(".slider").remove();
+			d3.selectAll(".bottom_playbar").remove();
+
+			current_country = document.getElementById("myinput").value;
+			data.forEach(function(d){
+				if(d.Geography===current_country){
+					current_countrycode = d.Code;
+					load_country(current_countrycode);
+					paused = true;
+
+					
+				}
+			})
+		})
+
+	document.getElementById("myinput").value = "WORLD";
+
+})
+
+
+</script>
+
+<!-- Asynchronous Google Analytics snippet -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-73122018-1', 'auto');
+  ga('require', 'linkid', 'linkid.js');
+  ga('send', 'pageview');
+</script>

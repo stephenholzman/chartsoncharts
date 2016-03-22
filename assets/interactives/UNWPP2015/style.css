@@ -1,0 +1,263 @@
+#container{
+	padding:0px;
+	left:0;
+	top:0;
+	width:100%;
+	height:100%;
+}
+
+#header{
+	width: 100%;
+	top: 0px;
+	background-color: #333;
+	z-index:100;
+	left:0;
+	color:#FFF;
+	position:fixed;
+	font-family:arial;
+	height:90px;
+}
+#top_navbar{
+	background-color:#666;
+	top:90px;
+	height:36px;
+}
+#bottom_navbar{
+	background-color: #333;
+	bottom: 0px;
+}
+#bottom_playbar0,#bottom_playbar1{
+	background-color: #666666;
+	bottom:34px;
+	height:30px;
+	z-index:-100;
+}
+#play-wrapper{
+	position:fixed;
+	left:10px;
+	background-color:#fff;
+	height:30px;
+	width:30px;
+}
+#play-wrapper:hover{
+	background-color:yellow;
+	cursor:pointer;
+}
+div #play-controller{
+	float:bottom;
+	height:30px;
+	width:30px;
+	background-size: 30px 30px;
+}
+.playing{
+	background: url(pausebutton-01.png) no-repeat 0% 0;
+
+}
+.paused{
+	background: url(playbutton-01.png) no-repeat 0% 0;
+}
+#tweetHandle:hover{
+	color:#55ACEE;
+}
+
+.horizontal ul {
+	text-style-type: none;
+	margin: 0;
+	padding: 0;
+	width:100%;
+
+}
+
+.horizontal li{
+	display:inline-block;
+
+}
+
+ul .mode{
+	display:none;
+	float:right;
+	cursor:pointer;
+	padding: 8px 8px;
+}
+ul .region{
+	padding: 8px 8px;
+	float:left;
+}
+.horizontal a{
+    color:#fff;
+    float:right;
+    text-align:center;
+
+}
+
+
+.horizontal{
+	position: fixed;
+	width: 100%;
+	z-index:100;
+	left:0;
+}
+
+.active:hover{
+	background-color: #111;
+	color:yellow;
+}
+.selected a{
+	display: inline-block;
+	color:yellow;
+}
+#dataSource {
+	float:left;
+	display: inline-block;
+	padding: 8px 8px;
+	cursor:pointer;
+	color:white;
+}
+#tweetHandle {
+	text-align:center;
+
+	padding: 8px 8px;
+	cursor:pointer;
+	float:right;
+	color:white;
+}
+
+.awesomplete ul{
+	text-align:center;
+	color:black;
+	float:bottom;
+	width:50%;
+}
+
+h1{
+	margin-top:10px;
+	margin-bottom:3px;
+	padding:0px 16px;
+	font-size:20px
+}
+h3{
+	margin-top:0px;
+	padding:0px 16px;
+	font-size:12px;
+}
+@media screen and (min-width: 370px){
+	h1{
+		font-size:24px;
+	}
+	h3{
+		font-size:14px;
+	}
+	#tweetHandle{
+		display:inline-block;
+	}
+}
+@media screen and (min-width: 463px){
+	h1{
+		font-size:26px;
+	}
+
+}
+@media screen and (min-width: 568px){
+	ul .mode{
+		display:inline-block;
+	}
+	h1{
+		font-size:32px;
+	}
+	h3{
+		font-size:16px;
+	}
+}
+.axis path, .axis line{
+  fill: none;
+  stroke: #000;
+
+}
+.tick line{
+	stroke-radius:4;
+	stroke: #000;
+}
+.chart-wrapper{
+	overflow:visible;
+}
+/*#top_navbar ul li{
+	width:15%;
+}
+
+/*
+
+
+
+.active{
+	color:#fff;
+}
+
+/*li {
+	text-align:center;
+	display: none;
+	padding: 8px 8px;
+	cursor:pointer;
+
+}*/
+
+
+/*
+
+.axis{
+	background-color: yellow;
+}
+
+.candidate{
+	fill: none;
+  	stroke: steelblue;
+  	stroke-width: 2px;
+}
+.candidateLegend:hover{
+	cursor:crosshair;
+}
+
+
+
+
+#Republican_poll_chart{
+
+}
+
+
+.box g text{
+	text-align:right;
+}
+#Democrats_button:hover{
+	background-color:#2E7AC6;
+}
+#Republicans_button:hover{
+	background-color:#AF4A4A;
+}
+#Democrats_button{
+	background-color:#3E92F7;
+}
+#Republicans_button{
+	background-color:#F96E6E;
+}
+.partybutton{
+	fill:white;
+}
+.partybutton:hover, .partyselected{
+	cursor:pointer;
+	fill:yellow;
+}
+#previous, #next, .feature-month, #top_navbar ul li{
+	display: inline-block;
+}
+
+
+#fullview,#dataSource {
+	float:left;
+	display: inline-block;
+
+}
+
+
+.inactive{
+	color:#222;
+}
