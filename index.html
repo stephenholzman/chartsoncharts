@@ -44,9 +44,9 @@ comments: false
 <div class="pagination">
   {% if paginator.previous_page %}
     {% if paginator.previous_page == 1 %}
-      <a href="/blog" class="btn">Previous</a>
+      <a href="/" class="btn">Previous</a>
     {% else %}
-      <a href="/blog/page{{ paginator.previous_page }}" class="btn">Previous</a>
+      <a href="/page{{ paginator.previous_page }}" class="btn">Previous</a>
     {% endif %}
   {% else %}
     Previous
@@ -56,7 +56,7 @@ comments: false
       {% if paginator.page == 1 %}
         <span class="current-page">1</span>
       {% else %}
-        <a href="/blog/">1</a>
+        <a href="/">1</a>
       {% endif %}
     </li>
     {% for count in (2..paginator.total_pages) %}
@@ -64,13 +64,13 @@ comments: false
         {% if count == paginator.page %}
           <span class="current-page">{{ count }}</span>
         {% else %}
-          <a href="/blog/page{{ count }}">{{ count }}</a>
+          <a href="/page{{ count }}">{{ count }}</a>
         {% endif %}
       </li>
     {% endfor %}
   </ul>
   {% if paginator.next_page %}
-    <a href="/blog/page{{ paginator.next_page }}" class="btn">Next</a>
+    <a href="/page{{ paginator.next_page }}" class="btn">Next</a>
   {% else %}
     Next
   {% endif %}
