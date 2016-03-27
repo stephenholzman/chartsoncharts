@@ -2,7 +2,7 @@
 layout: post
 title: Using R and Adobe Illustrator to Make Excellent Charts
 description: "Learn the basics of using R, ggplot2, and Adobe Illustrator to make rad charts while staying sane."
-modified: 2016-03-24
+modified: 2016-03-26
 tags: [R, ggplot2, Illustrator, tutorial, Static Charts]
 categories: [Tutorials]
 author: "Stephen Holzman"
@@ -11,6 +11,12 @@ image: "unemploymentTeaser.png"
 I recorded a tutorial on how I use R, ggplot2, and Illustrator to make static charts! The data comes from the Bureau of Labor Statistics API, so all you need is an internet connection and an Illustrator license to recreate this chart. The R Script is also included below the video.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Sa2jQgTWShQ" frameborder="0" allowfullscreen> </iframe>
+
+<center><h2>Final Chart</h2></center>
+
+<figure>
+  <a href="/images/UnemploymentByRaceSex-01.png"><img src="/images/UnemploymentByRaceSex-01.png" alt=""></a>
+</figure>
 
 <center><h2>R Code</h2></center>
 

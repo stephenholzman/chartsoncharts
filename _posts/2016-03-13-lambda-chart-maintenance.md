@@ -2,7 +2,7 @@
 layout: post
 title: Keeping D3 Visualizations Current with AWS Lambda
 description: "How to keep D3 visualizations up-to-date on the cheap using AWS Lambda, S3 Static Sites, and Public APIs"
-modified: 2016-03-13
+modified: 2016-03-26
 tags: [Amazon Web Services, Interactive Charts, Lambda, S3, Huffington Post Pollster]
 categories: [Tutorials]
 author: "Stephen Holzman"
@@ -75,6 +75,7 @@ exports.handler = function(event, context){
 
         var s3 = new AWS.S3();
         var prepJSONforCSV = [];
+        var partiesdone = 0;
 
         /* Build JSON that works with json2csv from uploadobject
          */
