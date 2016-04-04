@@ -31,10 +31,18 @@ var calc_xScale = function(){
 
 var calc_xAxis = function(){
 
+	if(window.innerWidth > 700){
+		numberTicks = 8;
+	}else if(window.innerWidth > 500){
+		numberTicks = 4;	
+	}else{
+		numberTicks = 2;
+	}
+
 	xAxis = d3.svg.axis()
 		.scale(xScale)
 		.orient("top")
-		.ticks(8)
+		.ticks(numberTicks)
 
 }
 

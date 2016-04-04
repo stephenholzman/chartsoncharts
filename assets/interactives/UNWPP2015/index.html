@@ -97,7 +97,15 @@ var draw_modebar = function(selection,modes){
 		.attr("class","region")
 		.append("a")
 		.text("Region/Country Select:")
+
 	mode_select.append("li")
+		.append("select")
+		.attr("id","selection-dropdown")
+		.style("margin","8px 8px")
+		.style("width","160px")
+		.attr("autofocus","autofocus");
+
+	/*mode_select.append("li")
 		.append("input")
 		.attr("id","myinput")
 		.style("margin","8px 8px")
@@ -105,7 +113,7 @@ var draw_modebar = function(selection,modes){
 		.attr("autofocus","autofocus");
 
 	input = document.getElementById("myinput");
-	awesomplete = new Awesomplete(input);
+	awesomplete = new Awesomplete(input);*/
 
 
 	for(mode in modes){
@@ -688,6 +696,19 @@ var load_country = function(code){
 				resizeAll(data);
 				d3.select("#play-controller").attr("class","paused");
 			});
+			d3.select("#selection-dropdown").on("change",function(){
+				current_country = countrylist[this.selectedIndex].Geography;
+				current_countrycode = countrylist[this.selectedIndex].Code;
+				paused = true;
+				d3.selectAll(".chart-wrapper").remove();
+				d3.selectAll(".slider").remove();
+				d3.selectAll(".bottom_playbar").remove();
+				load_country(current_countrycode);
+				d3.selectAll(".slider").remove();
+
+				//resizeAll(data);
+
+			});
 			speed = 50;
 			timer = function(){
 				if(paused===false){
@@ -804,12 +825,22 @@ draw_modebar("#container",modes);
 draw_citeBar("#container");
 load_country(current_countrycode);
 d3.csv("data/UnitedNationsGeoCodes.csv",function(data){
+	countrylist = data;
 	countries = [];
 	data.forEach(function(d){
 		countries.push(d.Geography);
+		d3.select("#selection-dropdown")
+			.append("option")
+			.attr("code",d.Code)
+			.text(d.Geography)
+
 	})
 
-	awesomplete.list = countries
+
+
+	
+	
+	/*awesomplete.list = countries
 	awesomplete.autoFirst = true;
 	d3.select("#myinput")
 		.on("awesomplete-selectcomplete",function(){
@@ -831,6 +862,8 @@ d3.csv("data/UnitedNationsGeoCodes.csv",function(data){
 		})
 
 	document.getElementById("myinput").value = "WORLD";
+	*/
+
 
 })
 
