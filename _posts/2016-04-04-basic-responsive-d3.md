@@ -38,6 +38,9 @@ For simplicity, this example goes over how I would set this up for a chart wrapp
 {% highlight HTML %}
 <!DOCTYPE html>
 <meta charset="utf-8"/>
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1.0, user-scalable=no">
 
 <link rel="stylesheet" href="style.css" type="text/css" media="screen"/>
 
@@ -146,6 +149,7 @@ var update_chartAttr = function(){
     .attr("id","chart0")
     .attr("width",width+margin.left+margin.right)
     .attr("height",height)
+    .style("position","fixed")
 
 }
 
@@ -207,8 +211,8 @@ I split xScale and xAxis into their own functions for completeness even though y
 
 The result from the above code is an x-Axis with a width that adjusts to the width available. Viewing it just below or <a href="/assets/interactives/responsive/example1.html" target="_blank">in another window</a>, play around with it to see how it responds instantly to adjustments. If you're viewing on mobile, rotate your screen to change the orientation. You might also notice that the tick labels overlap when the width is low...
 
-<div position="relative" padding-bottom="56%" height="0px" min-height="100px" overflow="hidden" align="center">
-<iframe src="/assets/interactives/responsive/example1.html" frameborder="0" position="absolute" top="0px" left="0px" width="100%" height="100%" scrolling="no"> </iframe>
+<div position="relative" padding-bottom="56%" height="0px" overflow="hidden" align="center">
+<iframe src="/assets/interactives/responsive/example1.html" frameborder="0" position="absolute" top="0px" left="0px" width="100%" scrolling="no"> </iframe>
 </div>
 
 There are a few strategies you might use to improve the clarity of the chart at different screen sizes. You could change the font size or hide things using CSS media queries, but the way the code is set up makes it extremely easy to make adjustments using JavaScript.
@@ -236,8 +240,8 @@ var calc_xAxis = function(){
 
 {% endhighlight %}
 
-<div position="relative" padding-bottom="56%" height="0px" min-height="100px" overflow="hidden" align="center">
-<iframe src="/assets/interactives/responsive/example2.html" frameborder="0" position="absolute" top="0px" left="0px" width="100%" height="100%" scrolling="no"> </iframe>
+<div position="relative" padding-bottom="56%" height="0px" overflow="hidden" align="center">
+<iframe src="/assets/interactives/responsive/example2.html" frameborder="0" position="absolute" top="0px" left="0px" width="100%" scrolling="no"> </iframe>
 </div>
 
 This modification to the calc_xAxis function should look very similar to the media query strategy, although the modifications happen in the same place where you dictate the relevant feature and JavaScript lets you be a bit more creative with how many ticks exist in the DOM. <a href="/assets/interactives/responsive/example2.html" target="_blank">Check it out in a fresh window</a>
