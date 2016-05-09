@@ -28,9 +28,7 @@ Pass data in "long" format. Use melt from the reshape2 package to help wrangle i
 {% highlight R %}
 
 library(COCLIBRARY)
-library(ggplot2)
 library(reshape2)
-library(grid)
 
 df <- NULL
 df$day <- c(1,2,3,4,5)
@@ -55,7 +53,7 @@ basicMultiline(data = dfmelt,
                cite = "Source: Thin Air",
                author = "@StephenHolz",
                ylabel = "Y Scale",
-               xlabel = "",
+               xlabel = "X Scale",
                ylimits = c(0,55),
                ybreaks = c(0, 10, 20, 30, 40, 50),
                ylabels = c("$0","$10","$20","$30","$40","$50"),
@@ -65,5 +63,40 @@ basicMultiline(data = dfmelt,
 {% endhighlight %}
 
 <figure>
-  <a href="/images/testnumeric.png"><img src="/images/testnumeric.png" alt=""></a>
+  <a href="/images/testmultiline.png"><img src="/images/testmultiline.png" alt=""></a>
+</figure>
+
+<h3>basicScatter Example</h3>
+
+{% highlight R %}
+
+library(COCLIBRARY)
+
+df <- NULL
+df$group <- c("group1","group1","group1","group2","group2","group2","group3","group3","group3")
+df$random1 <-c(10,20,30,24,12,23,12,42,4)
+df$random2 <-c(33,45,27,18,10,32,15,7,18)
+
+df <- data.frame(df)
+
+basicScatter(data = df,
+               xvar = "random1",
+               yvar = "random2",
+               colourvar = "group",
+               title = "Random Numbers",
+               subtitle = "Completely Made Up",
+               cite = "Source: Thin Air",
+               author = "@StephenHolz",
+               ylabel = "Y Scale",
+               xlabel = "X Scale",
+               ylimits = c(0,55),
+               ybreaks = c(0, 10, 20, 30, 40, 50),
+               ylabels = c("0","10","20","30","40","50"),
+               path = "/Volumes/Storage/testscatter.png"
+)
+
+{% endhighlight %}
+
+<figure>
+  <a href="/images/testscatter.png"><img src="/images/testscatter.png" alt=""></a>
 </figure>
