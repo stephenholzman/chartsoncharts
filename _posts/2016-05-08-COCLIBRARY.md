@@ -21,6 +21,46 @@ install_github('StephenHolzman/COCLIBRARY')
 
 This page will be sparse for a while, but it will be updated to provide an example for each function as they are added. Charts are for now designed to be saved as a PNG to disk, not look at in R or export to PDF for edits in Illustrator.
 
+<h3>basicBoxplot Example</h3>
+
+{% highlight R %}
+
+library(COCLIBRARY)
+library(dplyr)
+
+#Use data from "mpg" dataset included with ggplot2
+
+plotdata <- mpg %>%
+  mutate(drive = replace(drv, drv=="f", "Front")) %>%
+  mutate(drive = replace(drive, drv=="r", "Rear")) %>%
+  mutate(drive = replace(drive, drv=="4", "4WD")) %>%
+  as.data.frame()
+
+basicBoxplot(data = plotdata,
+         xvar = "class",
+         yvar = "hwy",
+         colourvar = "drive",
+         stat = "boxplot",
+         pos = "dodge",
+         flip = FALSE,
+         title = "Vehicle Highway MPG Performance",
+         subtitle = "By Vehicle Class and Drive Type",
+         cite = "Source: ggplot2 mpg Data",
+         author = "@StephenHolz",
+         ylabel = "Highway MPG",
+         xlabel = "Vehicle Class",
+         ylimits = c(10,55),
+         ybreaks = c(10, 20, 30, 40, 50),
+         ylabels = c("10","20","30","40","50"),
+         path = "/Volumes/Storage/testboxplot.png"
+)
+
+{% endhighlight %}
+
+<figure>
+  <a href="/images/testboxplot.png"><img src="/images/testboxplot.png" alt=""></a>
+</figure>
+
 <h3>basicMultiline Example</h3>
 
 {% highlight R %}
@@ -211,3 +251,5 @@ basicBar(data = df,
 <figure>
   <a href="/images/testcol.png"><img src="/images/testcol.png" alt=""></a>
 </figure>
+
+
