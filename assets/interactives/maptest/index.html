@@ -9,14 +9,17 @@
   <!-- <script type="text/javascript" src="http://d3js.org/topojson.v1.min.js"></script> -->
 </head>
 <style>
-
+html {
+  background: #EDEAD6;
+}
 path {
   stroke:white;
   stroke-width: 1px;
 }
 
-body {
-  font-family: Arial, sans-serif;
+h1 {
+  font-family: "Times New Roman", sans-serif;
+  color: #011B42;
 }
 
 .city {
@@ -44,8 +47,8 @@ div.tooltip {
 <body>
 <h1>Independent Farms in the USA</h1>
   <script type="text/javascript">
-  var width = 960,
-  height = 500;
+  var width = window.innerWidth,
+  height = window.innerHeight;
 
   // Setting color domains(intervals of values) for our map
 
@@ -54,7 +57,7 @@ div.tooltip {
   var legend_labels = ["< 500", "500+", "1000+", "1500+", "2000+", "2500+", "3000+", "3500+", "4000+", "4500+", "5000+", "5500+", "6000+"]              
   var color = d3.scale.threshold()
   .domain(color_domain)
-  .range(["#dcdcdc", "#d0d6cd", "#bdc9be", "#aabdaf", "#97b0a0", "#84a491", "719782", "#5e8b73", "#4b7e64", "#387255", "#256546", "#125937", "#004d28"]);
+  .range(["#dcdcdc", "#ececec", "#FFF5EE", "#FFF5ED", "#FFEBDE", "#FEDFC9", "#FED3B6", "#FEC8A5", "#FDAC7B", "#FD975D", "#FD8647", "#FC6F26", "#FC5E14"]);
 
   var div = d3.select("body").append("div")   
   .attr("class", "tooltip")               
@@ -65,7 +68,9 @@ div.tooltip {
   .attr("height", height)
   .style("margin", "10px auto");
 
-  var projection = d3.geo.albersUsa().scale(500);
+  var projection = d3.geo.albersUsa()
+    .scale(width)
+    .translate([width/2,width*.5/2]);
 
   var path = d3.geo.path()
     .projection(projection);
@@ -136,18 +141,103 @@ svg.append("g")
   var ls_w = 20, ls_h = 20;
 
   legend.append("rect")
-  .attr("x", 20)
-  .attr("y", function(d, i){ return height - (i*ls_h) - 2*ls_h;})
+  .attr("x", width-82)
+  .attr("y", function(d, i){ return height/2 - (i*ls_h) - 2*ls_h;})
   .attr("width", ls_w)
   .attr("height", ls_h)
   .style("fill", function(d, i) { return color(d); })
   .style("opacity", 0.8);
 
   legend.append("text")
-  .attr("x", 50)
-  .attr("y", function(d, i){ return height - (i*ls_h) - ls_h - 4;})
+  .attr("x", width-60)
+  .attr("y", function(d, i){ return height/2 - (i*ls_h) - ls_h - 4;})
   .text(function(d, i){ return legend_labels[i]; });
 
+
+//All functions managing the citations.
+
+var calc_citation = function(){
+
+  sourceText = {text: "Source: ACS", link: "https://upload.wikimedia.org/wikipedia/commons/7/7b/Donkey_1_arp_750px.jpg"}
+
+  authorText = {text: "@StephenHolz", link: "https://twitter.com/StephenHolz"}
+
+}
+
+var update_citationAttr = function(){
+
+  calc_citation()
+
+  citationAttr = citation
+    .attr("id","citation")
+    .style("width",citationDimensions.width)
+    .style("height", citationDimensions.height + "px")
+    .style("position","fixed")
+    .style("bottom","0px")
+    .style("left","0px")
+    .style("background-color","#011B42")
+    .style("color","#FFF")
+    //.style("font-family","arial")
+
+  sourceAttr = source
+    .attr("id","source")
+    .attr("class","title-text link")
+    /*.style("margin-top","8px")
+    .style("margin-left","10px")
+    .style("margin-bottom","3px")*/
+    .style("position","fixed")
+    .style("bottom","6px")
+    .style("left","10px")
+    .style("font-size","12px")
+    .style("float","left")
+    .text(sourceText.text)
+    .on("click", function(){
+      window.open(sourceText.link)
+    })
+
+  authorAttr = author
+    .attr("id","author")
+    .attr("class","title-text link")
+    /*.style("margin-top","4px")
+    .style("margin-left","10px")
+    .style("margin-right","10px")
+    .style("margin-bottom","3px")*/
+    .style("position","fixed")
+    .style("left","10px")
+    .style("bottom","18px")
+    .style("font-size","14px")
+    .style("float","left")
+    .text(authorText.text)
+    .on("click", function(){
+      window.open(authorText.link)
+    }) 
+
+
+}
+
+var draw_citation = function(){
+
+  citation = d3.select("html")
+    .append("div")
+  author = citation
+    .append("a")
+  source = citation
+    .append("a")
+
+  logo = citation
+    .append("img")
+    .attr("src","uvademtemplogo-01.png")
+    .style("float","right")
+    .style("height","40px")
+
+
+  update_citationAttr()
+
+
+}
+citationDimensions = {width: "100%", height: 40}
+
+draw_citation();
   </script>
 </body>
 </html>
